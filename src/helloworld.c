@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> // This is an error for me for some reason idk
 
 int main() {
    // printf() displays the string inside quotation

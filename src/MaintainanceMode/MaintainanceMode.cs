@@ -34,6 +34,9 @@ namespace MaintainanceMode{
         private Button btnServoMove;
         private Label lblReadPosition;
         private Button btnServoRead;
+        private Label lblSensorOps;
+        private Button btnReadDistance;
+        private Button btnColour;
 
         //Variables
         int global_error;
@@ -81,13 +84,16 @@ namespace MaintainanceMode{
             this.btnServoMove = new System.Windows.Forms.Button();
             this.lblReadPosition = new System.Windows.Forms.Label();
             this.btnServoRead = new System.Windows.Forms.Button();
+            this.lblSensorOps = new System.Windows.Forms.Label();
+            this.btnReadDistance = new System.Windows.Forms.Button();
+            this.btnColour = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoAngle)).BeginInit();
             this.SuspendLayout();
             // 
             // tbDisplay
             // 
-            this.tbDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.tbDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbDisplay.Location = new System.Drawing.Point(12, 650);
@@ -131,26 +137,31 @@ namespace MaintainanceMode{
             // 
             // lblServoOps
             // 
+            this.lblServoOps.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblServoOps.AutoSize = true;
             this.lblServoOps.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServoOps.Location = new System.Drawing.Point(16, 75);
+            this.lblServoOps.Location = new System.Drawing.Point(116, 73);
             this.lblServoOps.Name = "lblServoOps";
             this.lblServoOps.Size = new System.Drawing.Size(244, 35);
             this.lblServoOps.TabIndex = 4;
             this.lblServoOps.Text = "Servo Operations:";
+            this.lblServoOps.Click += new System.EventHandler(this.lblServoOps_Click);
             // 
             // lblServoMove1
             // 
+            this.lblServoMove1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblServoMove1.AutoSize = true;
-            this.lblServoMove1.Location = new System.Drawing.Point(22, 141);
+            this.lblServoMove1.Location = new System.Drawing.Point(19, 131);
             this.lblServoMove1.Name = "lblServoMove1";
             this.lblServoMove1.Size = new System.Drawing.Size(108, 22);
             this.lblServoMove1.TabIndex = 5;
             this.lblServoMove1.Text = "Move Servo";
+            this.lblServoMove1.Click += new System.EventHandler(this.lblServoMove1_Click);
             // 
             // nudServoNo
             // 
-            this.nudServoNo.Location = new System.Drawing.Point(136, 133);
+            this.nudServoNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nudServoNo.Location = new System.Drawing.Point(133, 123);
             this.nudServoNo.Maximum = new decimal(new int[] {
             5,
             0,
@@ -159,24 +170,28 @@ namespace MaintainanceMode{
             this.nudServoNo.Name = "nudServoNo";
             this.nudServoNo.Size = new System.Drawing.Size(57, 30);
             this.nudServoNo.TabIndex = 6;
+            this.nudServoNo.ValueChanged += new System.EventHandler(this.nudServoNo_ValueChanged);
             // 
             // lblServoMove2
             // 
+            this.lblServoMove2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblServoMove2.AutoSize = true;
-            this.lblServoMove2.Location = new System.Drawing.Point(210, 141);
+            this.lblServoMove2.Location = new System.Drawing.Point(207, 131);
             this.lblServoMove2.Name = "lblServoMove2";
             this.lblServoMove2.Size = new System.Drawing.Size(29, 22);
             this.lblServoMove2.TabIndex = 7;
             this.lblServoMove2.Text = "by";
+            this.lblServoMove2.Click += new System.EventHandler(this.lblServoMove2_Click);
             // 
             // nudServoAngle
             // 
+            this.nudServoAngle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nudServoAngle.Increment = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            this.nudServoAngle.Location = new System.Drawing.Point(258, 133);
+            this.nudServoAngle.Location = new System.Drawing.Point(255, 123);
             this.nudServoAngle.Maximum = new decimal(new int[] {
             90,
             0,
@@ -190,10 +205,12 @@ namespace MaintainanceMode{
             this.nudServoAngle.Name = "nudServoAngle";
             this.nudServoAngle.Size = new System.Drawing.Size(54, 30);
             this.nudServoAngle.TabIndex = 8;
+            this.nudServoAngle.ValueChanged += new System.EventHandler(this.nudServoAngle_ValueChanged);
             // 
             // btnServoMove
             // 
-            this.btnServoMove.Location = new System.Drawing.Point(339, 130);
+            this.btnServoMove.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnServoMove.Location = new System.Drawing.Point(336, 120);
             this.btnServoMove.Name = "btnServoMove";
             this.btnServoMove.Size = new System.Drawing.Size(124, 33);
             this.btnServoMove.TabIndex = 9;
@@ -203,16 +220,19 @@ namespace MaintainanceMode{
             // 
             // lblReadPosition
             // 
+            this.lblReadPosition.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblReadPosition.AutoSize = true;
-            this.lblReadPosition.Location = new System.Drawing.Point(22, 195);
+            this.lblReadPosition.Location = new System.Drawing.Point(76, 204);
             this.lblReadPosition.Name = "lblReadPosition";
             this.lblReadPosition.Size = new System.Drawing.Size(423, 22);
             this.lblReadPosition.TabIndex = 10;
             this.lblReadPosition.Text = "Read the position of the most recently moved Servo:";
+            this.lblReadPosition.Click += new System.EventHandler(this.lblReadPosition_Click);
             // 
             // btnServoRead
             // 
-            this.btnServoRead.Location = new System.Drawing.Point(26, 220);
+            this.btnServoRead.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnServoRead.Location = new System.Drawing.Point(190, 247);
             this.btnServoRead.Name = "btnServoRead";
             this.btnServoRead.Size = new System.Drawing.Size(93, 31);
             this.btnServoRead.TabIndex = 11;
@@ -220,10 +240,47 @@ namespace MaintainanceMode{
             this.btnServoRead.UseVisualStyleBackColor = true;
             this.btnServoRead.Click += new System.EventHandler(this.btnServoRead_Click);
             // 
+            // lblSensorOps
+            // 
+            this.lblSensorOps.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblSensorOps.AutoSize = true;
+            this.lblSensorOps.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSensorOps.Location = new System.Drawing.Point(116, 349);
+            this.lblSensorOps.Name = "lblSensorOps";
+            this.lblSensorOps.Size = new System.Drawing.Size(257, 35);
+            this.lblSensorOps.TabIndex = 12;
+            this.lblSensorOps.Text = "Sensor Operations:";
+            this.lblSensorOps.Click += new System.EventHandler(this.lblSensorOps_Click);
+            // 
+            // btnReadDistance
+            // 
+            this.btnReadDistance.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReadDistance.Location = new System.Drawing.Point(39, 417);
+            this.btnReadDistance.Name = "btnReadDistance";
+            this.btnReadDistance.Size = new System.Drawing.Size(168, 52);
+            this.btnReadDistance.TabIndex = 13;
+            this.btnReadDistance.Text = "Get Distance";
+            this.btnReadDistance.UseVisualStyleBackColor = true;
+            this.btnReadDistance.Click += new System.EventHandler(this.btnReadDistance_Click);
+            // 
+            // btnColour
+            // 
+            this.btnColour.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnColour.Location = new System.Drawing.Point(280, 417);
+            this.btnColour.Name = "btnColour";
+            this.btnColour.Size = new System.Drawing.Size(168, 52);
+            this.btnColour.TabIndex = 14;
+            this.btnColour.Text = "Get Colour";
+            this.btnColour.UseVisualStyleBackColor = true;
+            this.btnColour.Click += new System.EventHandler(this.btnColour_Click);
+            // 
             // MaintainanceForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(488, 853);
+            this.Controls.Add(this.btnColour);
+            this.Controls.Add(this.btnReadDistance);
+            this.Controls.Add(this.lblSensorOps);
             this.Controls.Add(this.btnServoRead);
             this.Controls.Add(this.lblReadPosition);
             this.Controls.Add(this.btnServoMove);
@@ -316,5 +373,50 @@ namespace MaintainanceMode{
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MaintainanceForm());
          }
+
+        private void btnReadDistance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblServoOps_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudServoAngle_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblServoMove2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudServoNo_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblServoMove1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblReadPosition_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSensorOps_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnColour_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

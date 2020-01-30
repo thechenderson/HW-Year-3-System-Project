@@ -32,6 +32,8 @@ namespace MaintainanceMode{
         private Label lblServoMove2;
         private NumericUpDown nudServoAngle;
         private Button btnServoMove;
+        private Label lblReadPosition;
+        private Button btnServoRead;
 
         //Variables
         int global_error;
@@ -77,13 +79,15 @@ namespace MaintainanceMode{
             this.lblServoMove2 = new System.Windows.Forms.Label();
             this.nudServoAngle = new System.Windows.Forms.NumericUpDown();
             this.btnServoMove = new System.Windows.Forms.Button();
+            this.lblReadPosition = new System.Windows.Forms.Label();
+            this.btnServoRead = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoAngle)).BeginInit();
             this.SuspendLayout();
             // 
             // tbDisplay
             // 
-            this.tbDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbDisplay.Location = new System.Drawing.Point(12, 650);
@@ -197,10 +201,31 @@ namespace MaintainanceMode{
             this.btnServoMove.UseVisualStyleBackColor = true;
             this.btnServoMove.Click += new System.EventHandler(this.btnServoMove_Click);
             // 
+            // lblReadPosition
+            // 
+            this.lblReadPosition.AutoSize = true;
+            this.lblReadPosition.Location = new System.Drawing.Point(22, 195);
+            this.lblReadPosition.Name = "lblReadPosition";
+            this.lblReadPosition.Size = new System.Drawing.Size(423, 22);
+            this.lblReadPosition.TabIndex = 10;
+            this.lblReadPosition.Text = "Read the position of the most recently moved Servo:";
+            // 
+            // btnServoRead
+            // 
+            this.btnServoRead.Location = new System.Drawing.Point(26, 220);
+            this.btnServoRead.Name = "btnServoRead";
+            this.btnServoRead.Size = new System.Drawing.Size(93, 31);
+            this.btnServoRead.TabIndex = 11;
+            this.btnServoRead.Text = "Read";
+            this.btnServoRead.UseVisualStyleBackColor = true;
+            this.btnServoRead.Click += new System.EventHandler(this.btnServoRead_Click);
+            // 
             // MaintainanceForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(488, 853);
+            this.Controls.Add(this.btnServoRead);
+            this.Controls.Add(this.lblReadPosition);
             this.Controls.Add(this.btnServoMove);
             this.Controls.Add(this.nudServoAngle);
             this.Controls.Add(this.lblServoMove2);
@@ -223,12 +248,7 @@ namespace MaintainanceMode{
             this.PerformLayout();
 
         }
-        static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MaintainanceForm());
-        }
+
 
         private void MaintainanceForm_Load(object sender, EventArgs e)
         {
@@ -273,7 +293,28 @@ namespace MaintainanceMode{
             int status = CheckConnect();
         }
 
-
+        private void btnServoRead_Click(object sender, EventArgs e)
+        {
+            String command = "r";
+            tbDisplay.AppendText(command + Environment.NewLine);
+            serialPort1.WriteLine(command);
+            tbDisplay.AppendText("Reading reply" + Environment.NewLine);
+            int status = CheckConnect();
+            //
+            // only read data if status reply was 0 (i.e. was successful)
+            //
+            if (status == 0)
+            {
+                tbDisplay.AppendText("reading data" + Environment.NewLine);
+                string data = serialPort1.ReadLine();
+                tbDisplay.AppendText("Data = " + data + Environment.NewLine);
+            }
+        }
+        static void Main()
+        {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new MaintainanceForm());
+         }
     }
-
 }

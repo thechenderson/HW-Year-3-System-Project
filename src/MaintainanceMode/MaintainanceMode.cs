@@ -145,7 +145,6 @@ namespace MaintainanceMode{
             this.lblServoOps.Size = new System.Drawing.Size(244, 35);
             this.lblServoOps.TabIndex = 4;
             this.lblServoOps.Text = "Servo Operations:";
-            this.lblServoOps.Click += new System.EventHandler(this.lblServoOps_Click);
             // 
             // lblServoMove1
             // 
@@ -156,7 +155,6 @@ namespace MaintainanceMode{
             this.lblServoMove1.Size = new System.Drawing.Size(108, 22);
             this.lblServoMove1.TabIndex = 5;
             this.lblServoMove1.Text = "Move Servo";
-            this.lblServoMove1.Click += new System.EventHandler(this.lblServoMove1_Click);
             // 
             // nudServoNo
             // 
@@ -170,7 +168,6 @@ namespace MaintainanceMode{
             this.nudServoNo.Name = "nudServoNo";
             this.nudServoNo.Size = new System.Drawing.Size(57, 30);
             this.nudServoNo.TabIndex = 6;
-            this.nudServoNo.ValueChanged += new System.EventHandler(this.nudServoNo_ValueChanged);
             // 
             // lblServoMove2
             // 
@@ -181,7 +178,6 @@ namespace MaintainanceMode{
             this.lblServoMove2.Size = new System.Drawing.Size(29, 22);
             this.lblServoMove2.TabIndex = 7;
             this.lblServoMove2.Text = "by";
-            this.lblServoMove2.Click += new System.EventHandler(this.lblServoMove2_Click);
             // 
             // nudServoAngle
             // 
@@ -205,7 +201,6 @@ namespace MaintainanceMode{
             this.nudServoAngle.Name = "nudServoAngle";
             this.nudServoAngle.Size = new System.Drawing.Size(54, 30);
             this.nudServoAngle.TabIndex = 8;
-            this.nudServoAngle.ValueChanged += new System.EventHandler(this.nudServoAngle_ValueChanged);
             // 
             // btnServoMove
             // 
@@ -227,7 +222,6 @@ namespace MaintainanceMode{
             this.lblReadPosition.Size = new System.Drawing.Size(423, 22);
             this.lblReadPosition.TabIndex = 10;
             this.lblReadPosition.Text = "Read the position of the most recently moved Servo:";
-            this.lblReadPosition.Click += new System.EventHandler(this.lblReadPosition_Click);
             // 
             // btnServoRead
             // 
@@ -250,7 +244,6 @@ namespace MaintainanceMode{
             this.lblSensorOps.Size = new System.Drawing.Size(257, 35);
             this.lblSensorOps.TabIndex = 12;
             this.lblSensorOps.Text = "Sensor Operations:";
-            this.lblSensorOps.Click += new System.EventHandler(this.lblSensorOps_Click);
             // 
             // btnReadDistance
             // 
@@ -272,7 +265,6 @@ namespace MaintainanceMode{
             this.btnColour.TabIndex = 14;
             this.btnColour.Text = "Get Colour";
             this.btnColour.UseVisualStyleBackColor = true;
-            this.btnColour.Click += new System.EventHandler(this.btnColour_Click);
             // 
             // MaintainanceForm
             // 
@@ -375,46 +367,6 @@ namespace MaintainanceMode{
          }
 
         private void btnReadDistance_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblServoOps_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nudServoAngle_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblServoMove2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nudServoNo_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblServoMove1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblReadPosition_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSensorOps_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnColour_Click(object sender, EventArgs e)
         {
 
         }

@@ -370,12 +370,15 @@ namespace MaintainanceMode{
             /*
                 Only check for reply if status = 0 (was successful)
             */
+
+            /*
             if (status == 0)
             {
                 tbDisplay.AppendText("Reading data: " + Environment.NewLine);
                 string data = serialPort1.ReadLine();
                 tbDisplay.AppendText("Data received: " + data + Environment.NewLine);
             }
+            */
         }
 
 
@@ -390,7 +393,10 @@ private void btnReadColour_Click(object sender, EventArgs e)
             /*
                 Only check for reply if status = 0 (was successful)
             */
+            
+            /*
             if (status == 0)
+            
             {
                 tbDisplay.AppendText("Reading data: " + Environment.NewLine);
                 
@@ -408,6 +414,7 @@ private void btnReadColour_Click(object sender, EventArgs e)
                 tbDisplay.AppendText("Blue Value: " + colourArray[3] + Environment.NewLine);
                 
             }
+        */
         }
 
 

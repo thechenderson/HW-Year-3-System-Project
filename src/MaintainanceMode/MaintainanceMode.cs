@@ -347,11 +347,11 @@ namespace MaintainanceMode{
             String command = "r";
             tbDisplay.AppendText(command + Environment.NewLine);
             serialPort1.WriteLine(command);
-            tbDisplay.AppendText("Reading reply" + Environment.NewLine);
+            tbDisplay.AppendText("Reading reply: " + Environment.NewLine);
             int status = CheckConnect();
-            //
+            /*
             // only read data if status reply was 0 (i.e. was successful)
-            //
+            */
             if (status == 0)
             {
                 tbDisplay.AppendText("reading data" + Environment.NewLine);
@@ -359,16 +359,68 @@ namespace MaintainanceMode{
                 tbDisplay.AppendText("Data = " + data + Environment.NewLine);
             }
         }
+
+      private void btnReadDistance_Click(object sender, EventArgs e)
+        {
+            String command = "d";
+            tbDisplay.AppendText(command + Environment.NewLine);
+            serialPort1.WriteLine(command);
+            tbDisplay.AppendText("Reading reply: " + Environment.NewLine);
+            int status = CheckConnect();
+            /*
+                Only check for reply if status = 0 (was successful)
+            */
+            if (status == 0)
+            {
+                tbDisplay.AppendText("Reading data: " + Environment.NewLine);
+                string data = serialPort1.ReadLine();
+                tbDisplay.AppendText("Data received: " + data + Environment.NewLine);
+            }
+        }
+
+
+
+private void btnReadColour_Click(object sender, EventArgs e)
+        {
+            String command = "c";
+            tbDisplay.AppendText(command + Environment.NewLine);
+            serialPort1.WriteLine(command);
+            tbDisplay.AppendText("Reading reply: " + Environment.NewLine);
+            int status = CheckConnect();
+            /*
+                Only check for reply if status = 0 (was successful)
+            */
+            if (status == 0)
+            {
+                tbDisplay.AppendText("Reading data: " + Environment.NewLine);
+                
+                string[] colourArray = new string[3];
+                colourArray[0] = serialPort1.ReadLine();
+                tbDisplay.AppendText("Clear Value: " + colourArray[0] + Environment.NewLine);
+
+                colourArray[1] = serialPort1.ReadLine();
+                tbDisplay.AppendText("Red Value: " + colourArray[1] + Environment.NewLine);
+                
+                colourArray[2] = serialPort1.ReadLine();
+                tbDisplay.AppendText("Green Value: " + colourArray[2] + Environment.NewLine);
+                
+                colourArray[3] = serialPort1.ReadLine();
+                tbDisplay.AppendText("Blue Value: " + colourArray[3] + Environment.NewLine);
+                
+            }
+        }
+
+
+
+
+
+
         static void Main()
         {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MaintainanceForm());
          }
-
-        private void btnReadDistance_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+  

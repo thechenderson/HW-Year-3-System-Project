@@ -154,7 +154,8 @@ namespace MaintainanceMode{
             this.lblServoMove1.Name = "lblServoMove1";
             this.lblServoMove1.Size = new System.Drawing.Size(108, 22);
             this.lblServoMove1.TabIndex = 5;
-            this.lblServoMove1.Text = "Move Servo";
+            this.lblServoMove1.Text = "Move Servo"; // Showing how to use github
+
             // 
             // nudServoNo
             // 

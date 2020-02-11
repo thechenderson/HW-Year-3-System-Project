@@ -36,7 +36,7 @@ namespace MaintainanceMode{
         private Button btnServoRead;
         private Label lblSensorOps;
         private Button btnReadDistance;
-        private Button btnColour;
+        private Button btnReadColour;
 
         //Variables
         int global_error;
@@ -86,7 +86,7 @@ namespace MaintainanceMode{
             this.btnServoRead = new System.Windows.Forms.Button();
             this.lblSensorOps = new System.Windows.Forms.Label();
             this.btnReadDistance = new System.Windows.Forms.Button();
-            this.btnColour = new System.Windows.Forms.Button();
+            this.btnReadColour = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoAngle)).BeginInit();
             this.SuspendLayout();
@@ -256,21 +256,22 @@ namespace MaintainanceMode{
             this.btnReadDistance.UseVisualStyleBackColor = true;
             this.btnReadDistance.Click += new System.EventHandler(this.btnReadDistance_Click);
             // 
-            // btnColour
+            // btnReadColour
             // 
-            this.btnColour.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnColour.Location = new System.Drawing.Point(280, 417);
-            this.btnColour.Name = "btnColour";
-            this.btnColour.Size = new System.Drawing.Size(168, 52);
-            this.btnColour.TabIndex = 14;
-            this.btnColour.Text = "Get Colour";
-            this.btnColour.UseVisualStyleBackColor = true;
+            this.btnReadColour.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReadColour.Location = new System.Drawing.Point(280, 417);
+            this.btnReadColour.Name = "btnReadColour";
+            this.btnReadColour.Size = new System.Drawing.Size(168, 52);
+            this.btnReadColour.TabIndex = 14;
+            this.btnReadColour.Text = "Get Colour";
+            this.btnReadColour.UseVisualStyleBackColor = true;
+            this.btnReadColour.Click += new System.EventHandler(this.btnReadColour_Click);
             // 
             // MaintainanceForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(488, 853);
-            this.Controls.Add(this.btnColour);
+            this.Controls.Add(this.btnReadColour);
             this.Controls.Add(this.btnReadDistance);
             this.Controls.Add(this.lblSensorOps);
             this.Controls.Add(this.btnServoRead);
@@ -360,7 +361,7 @@ namespace MaintainanceMode{
             }
         }
 
-      private void btnReadDistance_Click(object sender, EventArgs e)
+        private void btnReadDistance_Click(object sender, EventArgs e)
         {
             String command = "d";
             tbDisplay.AppendText(command + Environment.NewLine);
@@ -383,7 +384,7 @@ namespace MaintainanceMode{
 
 
 
-private void btnReadColour_Click(object sender, EventArgs e)
+        private void btnReadColour_Click(object sender, EventArgs e)
         {
             String command = "c";
             tbDisplay.AppendText(command + Environment.NewLine);
@@ -394,12 +395,12 @@ private void btnReadColour_Click(object sender, EventArgs e)
                 Only check for reply if status = 0 (was successful)
             */
             
-            /*
+            
             if (status == 0)
             
             {
                 tbDisplay.AppendText("Reading data: " + Environment.NewLine);
-                
+                /*
                 string[] colourArray = new string[3];
                 colourArray[0] = serialPort1.ReadLine();
                 tbDisplay.AppendText("Clear Value: " + colourArray[0] + Environment.NewLine);
@@ -412,9 +413,9 @@ private void btnReadColour_Click(object sender, EventArgs e)
                 
                 colourArray[3] = serialPort1.ReadLine();
                 tbDisplay.AppendText("Blue Value: " + colourArray[3] + Environment.NewLine);
-                
+                */
             }
-        */
+        
         }
 
 

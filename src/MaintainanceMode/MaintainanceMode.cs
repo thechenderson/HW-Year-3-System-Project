@@ -67,7 +67,23 @@ namespace MaintainanceMode{
             tbDisplay.AppendText("Status = " + Response + Environment.NewLine);
             return Status;
         }
-
+        public string ReadData()//Checking if there is a connection between the PC and an MBED
+        {
+            string Response;
+            serialPort1.DiscardInBuffer();
+            serialPort1.ReadTimeout = READ_TIMEOUT;
+            try
+            {
+                Response = serialPort1.ReadLine();
+                
+            }
+            catch (TimeoutException)
+            {
+                tbDisplay.AppendText("Readline timeout fail" + Environment.NewLine);
+                return "";
+            }
+            return Response;
+        }
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -154,8 +170,7 @@ namespace MaintainanceMode{
             this.lblServoMove1.Name = "lblServoMove1";
             this.lblServoMove1.Size = new System.Drawing.Size(108, 22);
             this.lblServoMove1.TabIndex = 5;
-            this.lblServoMove1.Text = "Move Servo"; // Showing how to use github
-
+            this.lblServoMove1.Text = "Move Servo";
             // 
             // nudServoNo
             // 
@@ -178,7 +193,7 @@ namespace MaintainanceMode{
             this.lblServoMove2.Name = "lblServoMove2";
             this.lblServoMove2.Size = new System.Drawing.Size(29, 22);
             this.lblServoMove2.TabIndex = 7;
-            this.lblServoMove2.Text = "by";
+            this.lblServoMove2.Text = "to";
             // 
             // nudServoAngle
             // 
@@ -391,45 +406,24 @@ namespace MaintainanceMode{
             tbDisplay.AppendText(command + Environment.NewLine);
             serialPort1.WriteLine(command);
             tbDisplay.AppendText("Reading reply: " + Environment.NewLine);
+            string clear = ReadData();
+            tbDisplay.AppendText("Clear Value: "+ clear + Environment.NewLine);
+            string red = ReadData();
+            tbDisplay.AppendText("Red Value: " + red + Environment.NewLine);
+            string green = ReadData();
+            tbDisplay.AppendText("Green Value: " + green + Environment.NewLine);
+            string blue = ReadData();
+            tbDisplay.AppendText("Blue Value: " + blue + Environment.NewLine);
             int status = CheckConnect();
-            /*
-                Only check for reply if status = 0 (was successful)
-            */
-            
-            
-            if (status == 0)
-            
-            {
-                tbDisplay.AppendText("Reading data: " + Environment.NewLine);
-                /*
-                string[] colourArray = new string[3];
-                colourArray[0] = serialPort1.ReadLine();
-                tbDisplay.AppendText("Clear Value: " + colourArray[0] + Environment.NewLine);
 
-                colourArray[1] = serialPort1.ReadLine();
-                tbDisplay.AppendText("Red Value: " + colourArray[1] + Environment.NewLine);
-                
-                colourArray[2] = serialPort1.ReadLine();
-                tbDisplay.AppendText("Green Value: " + colourArray[2] + Environment.NewLine);
-                
-                colourArray[3] = serialPort1.ReadLine();
-                tbDisplay.AppendText("Blue Value: " + colourArray[3] + Environment.NewLine);
-                */
-            }
-        
         }
-
-
-
-
-
-
         static void Main()
         {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MaintainanceForm());
          }
+
     }
 }
   

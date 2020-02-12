@@ -37,6 +37,7 @@ namespace MaintainanceMode{
         private Label lblSensorOps;
         private Button btnReadDistance;
         private Button btnReadColour;
+        private PictureBox pbColour;
 
         //Variables
         int global_error;
@@ -103,8 +104,10 @@ namespace MaintainanceMode{
             this.lblSensorOps = new System.Windows.Forms.Label();
             this.btnReadDistance = new System.Windows.Forms.Button();
             this.btnReadColour = new System.Windows.Forms.Button();
+            this.pbColour = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoAngle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbColour)).BeginInit();
             this.SuspendLayout();
             // 
             // tbDisplay
@@ -191,7 +194,7 @@ namespace MaintainanceMode{
             this.lblServoMove2.AutoSize = true;
             this.lblServoMove2.Location = new System.Drawing.Point(207, 131);
             this.lblServoMove2.Name = "lblServoMove2";
-            this.lblServoMove2.Size = new System.Drawing.Size(29, 22);
+            this.lblServoMove2.Size = new System.Drawing.Size(25, 22);
             this.lblServoMove2.TabIndex = 7;
             this.lblServoMove2.Text = "to";
             // 
@@ -283,10 +286,20 @@ namespace MaintainanceMode{
             this.btnReadColour.UseVisualStyleBackColor = true;
             this.btnReadColour.Click += new System.EventHandler(this.btnReadColour_Click);
             // 
+            // pbColour
+            // 
+            this.pbColour.BackColor = System.Drawing.Color.Black;
+            this.pbColour.Location = new System.Drawing.Point(316, 492);
+            this.pbColour.Name = "pbColour";
+            this.pbColour.Size = new System.Drawing.Size(100, 50);
+            this.pbColour.TabIndex = 15;
+            this.pbColour.TabStop = false;
+            // 
             // MaintainanceForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(488, 853);
+            this.Controls.Add(this.pbColour);
             this.Controls.Add(this.btnReadColour);
             this.Controls.Add(this.btnReadDistance);
             this.Controls.Add(this.lblSensorOps);
@@ -310,6 +323,7 @@ namespace MaintainanceMode{
             this.Load += new System.EventHandler(this.MaintainanceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudServoNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoAngle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbColour)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,6 +428,7 @@ namespace MaintainanceMode{
             tbDisplay.AppendText("Green Value: " + green + Environment.NewLine);
             string blue = ReadData();
             tbDisplay.AppendText("Blue Value: " + blue + Environment.NewLine);
+            this.pbColour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(Convert.ToInt32(red))))), ((int)(((byte)(Convert.ToInt32(green))))), ((int)(((byte)(Convert.ToInt32(blue))))));
             int status = CheckConnect();
 
         }

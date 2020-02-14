@@ -14,7 +14,7 @@ namespace UI
         const int GREEN = 0;
         const int RED = 1;
         const int PURPLE = 2;
-        const int BLUE = 3;
+        const int BLUE = 3; //test git
 
         /*Declaration Timer*/
         static Timer timer = new Timer();

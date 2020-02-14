@@ -19,7 +19,7 @@ namespace UI
 
             bool maintenance_mode = false;
             OFF off = new OFF();
-            MAIN_MENU main_M = new MAIN_MENU(); //hop hop kflr
+            MAIN_MENU main_M = new MAIN_MENU();
             ADVERTISE advertising = new ADVERTISE();
             WARNING warning = new WARNING();
             CTRL_PANEL control_panel = new CTRL_PANEL(maintenance_mode, off, main_M, warning, advertising);
@@ -27,6 +27,7 @@ namespace UI
 
             if (maintenance_mode)
             {
+                auto_ctrl.timer_stop();
                 off.Show();
                 Application.Run(control_panel);
             }

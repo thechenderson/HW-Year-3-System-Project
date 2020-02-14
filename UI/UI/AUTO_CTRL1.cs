@@ -24,8 +24,7 @@ namespace UI
         static bool card_reader = false;
         static bool presence_detected = false;
         static int color = NO_COLOR;
-        static bool last_cr = false;
-        static bool last_pd = false;
+        static bool maintenance = false;
 
         /*Declaration of the attached class for the control*/
         static OFF off;
@@ -49,13 +48,14 @@ namespace UI
 
         static void timer_tick(object sender, EventArgs e)
         {
-            last_cr = card_reader;
-            card_reader = ctrl_panel.get_cardreader();
+            /*Here we uses the get of ctrl_panel because we simulate the MBED with it
+             but in the near futur we have to get them from the MBED with its method*/
 
-            last_pd = presence_detected;
+            card_reader = ctrl_panel.get_cardreader();
             presence_detected = ctrl_panel.get_presence();
             color = ctrl_panel.get_color();
 
+            /*Set the colors of the advertising mode*/
             switch (color)
             {
                 case NO_COLOR :
@@ -73,15 +73,19 @@ namespace UI
                 case BLUE:
                     advertising.set_color(BLUE);
                     break;
-                default: break;
+                default:
+                    advertising.set_color(GREEN);
+                    break;
             }
 
+            /*FSM for the UI*/
             if (!card_reader && !presence_detected)
             {
                 off.Show();
                 advertising.Hide();
                 main_menu.Hide();
                 warning.Hide();
+                //get_maintenance() MBED
             }
             else if (!card_reader && presence_detected)
             {
@@ -89,6 +93,7 @@ namespace UI
                 main_menu.Hide();
                 warning.Hide();
                 off.Hide();
+                //get_maintenance() MBED
             }
             else if (card_reader && !presence_detected)
             {

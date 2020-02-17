@@ -52,9 +52,9 @@ namespace AlienSays
         {
             colourList.Add(generateColour.Next(0, 4)); //Add a new colour to the sequence
 
-            foreach (int colour in colourList) //For each of the items in the colour list flash the corresponding colour button
+            for(int i = 0; i<=colourList.Count; i++) //For each of the items in the colour list flash the corresponding colour button
             {
-                switch (colourList[colour])
+                switch (colourList[i])
                 {
                     case 0:
                         redButton.BackColor = Color.Red;

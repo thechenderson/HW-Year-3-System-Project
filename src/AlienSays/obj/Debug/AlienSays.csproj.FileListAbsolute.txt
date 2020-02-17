@@ -1,0 +1,9 @@
+C:\Users\chris\source\repos\AlienSays\bin\Debug\AlienSays.exe.config
+C:\Users\chris\source\repos\AlienSays\bin\Debug\AlienSays.exe
+C:\Users\chris\source\repos\AlienSays\bin\Debug\AlienSays.pdb
+C:\Users\chris\source\repos\AlienSays\obj\Debug\AlienSays.csprojAssemblyReference.cache
+C:\Users\chris\source\repos\AlienSays\obj\Debug\AlienSays.Properties.Resources.resources
+C:\Users\chris\source\repos\AlienSays\obj\Debug\AlienSays.csproj.GenerateResource.cache
+C:\Users\chris\source\repos\AlienSays\obj\Debug\AlienSays.exe
+C:\Users\chris\source\repos\AlienSays\obj\Debug\AlienSays.pdb
+C:\Users\chris\source\repos\AlienSays\obj\Debug\AlienSays.alienSaysForm.resources

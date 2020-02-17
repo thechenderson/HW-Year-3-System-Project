@@ -65,30 +65,34 @@ namespace AlienSays
                 {
                     case 0:
                         redButton.BackColor = Color.Red;
-                        Thread.Sleep(200);
+                        redButton.Update();
+                        Thread.Sleep(500);
                         redButton.BackColor = Color.Maroon;
-                        MessageBox.Show("Red");
+                        redButton.Update();
                         break;
 
                     case 1:
                         yellowButton.BackColor = Color.Yellow;
-                        Thread.Sleep(200);
+                        yellowButton.Update();
+                        Thread.Sleep(500);
                         yellowButton.BackColor = Color.DarkGoldenrod;
-                        MessageBox.Show("Yellow");
+                        yellowButton.Update();
                         break;
 
                     case 2:
                         greenButton.BackColor = Color.Green;
-                        Thread.Sleep(200);
+                        greenButton.Update();
+                        Thread.Sleep(500);
                         greenButton.BackColor = Color.DarkGreen;
-                        MessageBox.Show("Green");
+                        greenButton.Update();
                         break;
 
                     case 3:
                         blueButton.BackColor = Color.Blue;
-                        Thread.Sleep(200);
+                        blueButton.Update();
+                        Thread.Sleep(500);
                         blueButton.BackColor = Color.MidnightBlue;
-                        MessageBox.Show("Blue");
+                        blueButton.Update();
                         break;
                 }
             }

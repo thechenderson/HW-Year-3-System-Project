@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 
 namespace AlienSays
@@ -25,6 +26,7 @@ namespace AlienSays
         Random generateColour = new Random(); //Used to generate a random int that represents the colour in the sequence.
         List<int> userGuess = new List<int>(); //Used to store each of users guesses as to what the pattern was.
         int score = 0; //Stores the current score
+        int highScore;
 
         private void alienSaysForm_Load(object sender, EventArgs e)
         {
@@ -38,26 +40,12 @@ namespace AlienSays
             scoreLabel.Text = "Score: " + score;
             colourList.Clear();
             displaySequence();
-
-            /*if (gameInProgress == true) //If game is already running start doesnt do anything
-                return;
-            else
-            {
-                gameInProgress = true;
-                while (gameInProgress == true)
-                {
-                    displaySequence(); //Display the sequence of colours
-                    checkCorrect(); //Compare the users guess to the correct pattern
-                }
-                MessageBox.Show("YOU FAILED!");
-
-            }*/
         }
 
         private void displaySequence()
         {
             colourList.Add(generateColour.Next(0, 4)); //Add a new colour to the sequence
-            userGuess.Clear();
+            userGuess.Clear(); //Clear the users guess
 
             for (int i = 0; i <= (colourList.Count - 1); i++) //For each of the items in the colour list flash the corresponding colour button
             {
@@ -98,13 +86,21 @@ namespace AlienSays
             }
         }
 
+        //Compares the users sequence to the correct sequence
         private void checkCorrect()
         {
             for(int i = 0; i <= (userGuess.Count - 1); i++)
             {
-                if (userGuess[i] != colourList[i])
+                if (userGuess[i] != colourList[i]) //Check if pattern list matches users pattern list.
                 {
-                    gameInProgress = false;
+                    gameInProgress = false; //User has got the sequence wrong so game end
+
+                    if (userGuess.Count>highScore) //check to see if the highscore was beaten
+                    {
+                        highScore = userGuess.Count(); //Set the new highscore
+                        highScoreLabel.Text = $"Highscore: {highScore}"; //Display the highest score in the label.
+                    }
+
                     MessageBox.Show("YOU FAIL!");
                 break;
                 }
@@ -130,6 +126,8 @@ namespace AlienSays
                 redButton.BackColor = Color.Red;
                 Thread.Sleep(200);
                 redButton.BackColor = Color.Maroon;
+                Thread.Sleep(200);
+
             }
             if (userGuess.Count == colourList.Count)
             {
@@ -151,6 +149,8 @@ namespace AlienSays
                 yellowButton.BackColor = Color.Yellow;
                 Thread.Sleep(200);
                 yellowButton.BackColor = Color.DarkGoldenrod;
+                Thread.Sleep(200);
+
             }
             if (userGuess.Count == colourList.Count)
             {
@@ -173,6 +173,8 @@ namespace AlienSays
                 greenButton.BackColor = Color.Green;
                 Thread.Sleep(200);
                 greenButton.BackColor = Color.DarkGreen;
+                Thread.Sleep(200);
+
             }
             if (userGuess.Count == colourList.Count)
             {
@@ -194,6 +196,7 @@ namespace AlienSays
                 blueButton.BackColor = Color.Blue;
                 Thread.Sleep(200);
                 blueButton.BackColor = Color.MidnightBlue;
+                Thread.Sleep(200);
             }
             if(userGuess.Count == colourList.Count)
             {

@@ -92,7 +92,7 @@ namespace AlienSays
         //Compares the users sequence to the correct sequence
         private void checkCorrect()
         {
-            for(int i = 0; i <= (userGuess.Count - 1); i++)
+            for(int i = 0; i < (userGuess.Count); i++)
             {
                 if (userGuess[i] != colourList[i]) //Check if pattern list matches users pattern list.
                 {
@@ -217,11 +217,12 @@ namespace AlienSays
             }
             else
             {
-                this.Close();
                 th = new Thread(openForm);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
                 (new Leaderboards()).Show();
+                Thread.Sleep(1500);
+                this.Hide();
             }
         }
 

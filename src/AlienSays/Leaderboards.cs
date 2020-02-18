@@ -30,11 +30,12 @@ namespace AlienSays
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            this.Close();
             th = new Thread(openForm);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
-            (new alienSaysForm()).Show();
+            alienSaysForm.Show();
+            Thread.Sleep(1500);
+            this.Hide();
         }
 
         private void openForm(object obj)

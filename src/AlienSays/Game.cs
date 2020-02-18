@@ -27,10 +27,13 @@ namespace AlienSays
         List<int> userGuess = new List<int>(); //Used to store each of users guesses as to what the pattern was.
         int score = 0; //Stores the current score
         int highScore;
+        Thread th;
 
         private void alienSaysForm_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
+            this.ControlBox = false;
+            this.Text = String.Empty;
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -205,5 +208,27 @@ namespace AlienSays
             
 
         }
+
+        private void leaderboardsButton_Click(object sender, EventArgs e)
+        {
+            if(gameInProgress == true)
+            {
+                return;
+            }
+            else
+            {
+                this.Close();
+                th = new Thread(openForm);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
+                (new Leaderboards()).Show();
+            }
+        }
+
+        private void openForm(object obj)
+        {
+            Application.Run(new Leaderboards());
+        }
+
     }
 }

@@ -33,7 +33,7 @@ namespace AlienSays
             th = new Thread(openForm);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
-            alienSaysForm.Show();
+            (new Leaderboards()).Show();
             Thread.Sleep(1500);
             this.Hide();
         }

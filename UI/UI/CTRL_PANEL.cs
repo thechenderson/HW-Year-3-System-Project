@@ -19,7 +19,7 @@ namespace UI
         const int PURPLE = 2;
         const int BLUE = 3;
 
-        /*Variable for transmission of the forms 
+        /*Variables for transmission of the forms 
          * done in the constructor*/
 
         OFF off;

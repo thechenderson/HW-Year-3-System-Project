@@ -16,12 +16,17 @@ namespace UI
         bool french = false;
         bool maintenance = false;
 
-        public MAIN_MENU()
+        TRANSLATION translation;
+
+        public MAIN_MENU(TRANSLATION translation, int Scr)
         {
             InitializeComponent();
-            int h = Screen.PrimaryScreen.Bounds.Height;
-            int w = Screen.PrimaryScreen.Bounds.Width;
+            StartPosition = FormStartPosition.Manual;
+            this.Location = Screen.AllScreens[Scr].WorkingArea.Location;
+            int h = Screen.AllScreens[Scr].Bounds.Height;
+            int w = Screen.AllScreens[Scr].Bounds.Width;
             this.Size = new Size(w, h);
+            this.translation = translation;
         }
 
         private void fr_button_Click(object sender, EventArgs e)
@@ -43,6 +48,11 @@ namespace UI
         public void set_maintenance(bool maintenance)
         {
             this.maintenance = maintenance;
+        }
+
+        private void translate_button_Click(object sender, EventArgs e)
+        {
+            translation.Show();
         }
     }
 }

@@ -96,6 +96,7 @@
             this.Controls.Add(this.pictureGreen);
             this.Controls.Add(this.pictureBlue);
             this.Controls.Add(this.picturePurple);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ADVERTISE";
             this.Text = "Advertising";
             ((System.ComponentModel.ISupportInitialize)(this.pictureRed)).EndInit();

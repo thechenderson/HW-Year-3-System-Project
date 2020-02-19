@@ -78,6 +78,7 @@
             this.translate_button.TabIndex = 4;
             this.translate_button.Text = "Translate";
             this.translate_button.UseVisualStyleBackColor = true;
+            this.translate_button.Click += new System.EventHandler(this.translate_button_Click);
             // 
             // button_game2
             // 
@@ -99,6 +100,7 @@
             this.Controls.Add(this.button_game1);
             this.Controls.Add(this.fr_button);
             this.Controls.Add(this.eng_buttton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MAIN_MENU";
             this.Text = "Main Menu";
             this.ResumeLayout(false);

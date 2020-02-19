@@ -28,69 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Translate = new System.Windows.Forms.Button();
-            this.Texttotrans = new System.Windows.Forms.TextBox();
-            this.Texttranslate = new System.Windows.Forms.Label();
             this.backtomm = new System.Windows.Forms.Button();
+            this.sentence1 = new System.Windows.Forms.Button();
+            this.sentence2 = new System.Windows.Forms.Button();
+            this.sentence4 = new System.Windows.Forms.Button();
+            this.fr_button = new System.Windows.Forms.Button();
+            this.eng_buttton = new System.Windows.Forms.Button();
+            this.sentence3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // Translate
-            // 
-            this.Translate.Location = new System.Drawing.Point(320, 284);
-            this.Translate.Name = "Translate";
-            this.Translate.Size = new System.Drawing.Size(94, 23);
-            this.Translate.TabIndex = 0;
-            this.Translate.Text = "Translate";
-            this.Translate.UseVisualStyleBackColor = true;
-            this.Translate.Click += new System.EventHandler(this.Translate_Click);
-            // 
-            // Texttotrans
-            // 
-            this.Texttotrans.Location = new System.Drawing.Point(106, 178);
-            this.Texttotrans.Name = "Texttotrans";
-            this.Texttotrans.Size = new System.Drawing.Size(152, 22);
-            this.Texttotrans.TabIndex = 1;
-            // 
-            // Texttranslate
-            // 
-            this.Texttranslate.AutoSize = true;
-            this.Texttranslate.Location = new System.Drawing.Point(463, 182);
-            this.Texttranslate.Name = "Texttranslate";
-            this.Texttranslate.Size = new System.Drawing.Size(48, 17);
-            this.Texttranslate.TabIndex = 2;
-            this.Texttranslate.Text = "Result";
             // 
             // backtomm
             // 
-            this.backtomm.Location = new System.Drawing.Point(554, 378);
+            this.backtomm.Location = new System.Drawing.Point(831, 1276);
             this.backtomm.Name = "backtomm";
-            this.backtomm.Size = new System.Drawing.Size(208, 23);
+            this.backtomm.Size = new System.Drawing.Size(208, 71);
             this.backtomm.TabIndex = 3;
             this.backtomm.Text = "Back to main menu";
             this.backtomm.UseVisualStyleBackColor = true;
             this.backtomm.Click += new System.EventHandler(this.backtomm_Click);
             // 
+            // sentence1
+            // 
+            this.sentence1.Location = new System.Drawing.Point(48, 115);
+            this.sentence1.Name = "sentence1";
+            this.sentence1.Size = new System.Drawing.Size(311, 364);
+            this.sentence1.TabIndex = 4;
+            this.sentence1.Text = "I am an alien robot";
+            this.sentence1.UseVisualStyleBackColor = true;
+            this.sentence1.Click += new System.EventHandler(this.sentence1_Click);
+            // 
+            // sentence2
+            // 
+            this.sentence2.Location = new System.Drawing.Point(491, 115);
+            this.sentence2.Name = "sentence2";
+            this.sentence2.Size = new System.Drawing.Size(311, 364);
+            this.sentence2.TabIndex = 6;
+            this.sentence2.Text = "I like Haggis pizza";
+            this.sentence2.UseVisualStyleBackColor = true;
+            this.sentence2.Click += new System.EventHandler(this.sentence2_Click);
+            // 
+            // sentence4
+            // 
+            this.sentence4.Location = new System.Drawing.Point(491, 603);
+            this.sentence4.Name = "sentence4";
+            this.sentence4.Size = new System.Drawing.Size(311, 364);
+            this.sentence4.TabIndex = 7;
+            this.sentence4.Text = "Come play with me!";
+            this.sentence4.UseVisualStyleBackColor = true;
+            this.sentence4.Click += new System.EventHandler(this.sentence4_Click);
+            // 
+            // fr_button
+            // 
+            this.fr_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fr_button.BackgroundImage = global::UI.Properties.Resources.FR;
+            this.fr_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fr_button.Location = new System.Drawing.Point(813, 12);
+            this.fr_button.Name = "fr_button";
+            this.fr_button.Size = new System.Drawing.Size(124, 76);
+            this.fr_button.TabIndex = 9;
+            this.fr_button.UseVisualStyleBackColor = true;
+            this.fr_button.Click += new System.EventHandler(this.fr_button_Click);
+            // 
+            // eng_buttton
+            // 
+            this.eng_buttton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.eng_buttton.BackgroundImage = global::UI.Properties.Resources.ENG;
+            this.eng_buttton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eng_buttton.Location = new System.Drawing.Point(943, 12);
+            this.eng_buttton.Name = "eng_buttton";
+            this.eng_buttton.Size = new System.Drawing.Size(124, 76);
+            this.eng_buttton.TabIndex = 8;
+            this.eng_buttton.UseVisualStyleBackColor = true;
+            this.eng_buttton.Click += new System.EventHandler(this.eng_buttton_Click);
+            // 
+            // sentence3
+            // 
+            this.sentence3.Location = new System.Drawing.Point(48, 603);
+            this.sentence3.Name = "sentence3";
+            this.sentence3.Size = new System.Drawing.Size(311, 364);
+            this.sentence3.TabIndex = 10;
+            this.sentence3.Text = "I was created by ArBots";
+            this.sentence3.UseVisualStyleBackColor = true;
+            this.sentence3.Click += new System.EventHandler(this.sentence3_Click);
+            // 
             // TRANSLATION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1080, 1388);
+            this.Controls.Add(this.sentence3);
+            this.Controls.Add(this.fr_button);
+            this.Controls.Add(this.eng_buttton);
+            this.Controls.Add(this.sentence4);
+            this.Controls.Add(this.sentence2);
+            this.Controls.Add(this.sentence1);
             this.Controls.Add(this.backtomm);
-            this.Controls.Add(this.Texttranslate);
-            this.Controls.Add(this.Texttotrans);
-            this.Controls.Add(this.Translate);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TRANSLATION";
             this.Text = "TRANSLATION";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Translate;
-        private System.Windows.Forms.TextBox Texttotrans;
-        private System.Windows.Forms.Label Texttranslate;
         private System.Windows.Forms.Button backtomm;
+        private System.Windows.Forms.Button sentence1;
+        private System.Windows.Forms.Button sentence2;
+        private System.Windows.Forms.Button sentence4;
+        private System.Windows.Forms.Button fr_button;
+        private System.Windows.Forms.Button eng_buttton;
+        private System.Windows.Forms.Button sentence3;
     }
 }

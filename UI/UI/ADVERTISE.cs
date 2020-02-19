@@ -20,11 +20,13 @@ namespace UI
 
         int color_num;
 
-        public ADVERTISE()
+        public ADVERTISE(int Scr)
         {
             InitializeComponent();
-            int h = Screen.PrimaryScreen.Bounds.Height;
-            int w = Screen.PrimaryScreen.Bounds.Width;
+            StartPosition = FormStartPosition.Manual;
+            this.Location = Screen.AllScreens[Scr].WorkingArea.Location;
+            int h = Screen.AllScreens[Scr].Bounds.Height;
+            int w = Screen.AllScreens[Scr].Bounds.Width;
             this.Size = new Size(w, h);
         }
 

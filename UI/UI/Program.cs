@@ -18,12 +18,18 @@ namespace UI
             Application.SetCompatibleTextRenderingDefault(false);
 
             bool maintenance_mode = false;
-            OFF off = new OFF();
-            MAIN_MENU main_M = new MAIN_MENU();
-            ADVERTISE advertising = new ADVERTISE();
-            WARNING warning = new WARNING();
+
+            // Working on the PC only : Scr = 0 OR working on the PC + Robot's screen : Scr = 1
+            int Scr = 1;
+
+            TRANSLATION translation = new TRANSLATION(Scr);
+            OFF off = new OFF(Scr);
+            MAIN_MENU main_M = new MAIN_MENU(translation, Scr);
+            ADVERTISE advertising = new ADVERTISE(Scr);
+            WARNING warning = new WARNING(Scr);
             CTRL_PANEL control_panel = new CTRL_PANEL(maintenance_mode, off, main_M, warning, advertising);
             AUTO_CTRL auto_ctrl = new AUTO_CTRL(control_panel, off, main_M, warning, advertising);
+
 
             if (maintenance_mode)
             {

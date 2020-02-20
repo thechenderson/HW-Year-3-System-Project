@@ -82,6 +82,8 @@ namespace UI
             if (!card_reader && !presence_detected)
             {
                 off.Show();
+                //ctrl_panel.Activate();
+
                 advertising.Hide();
                 main_menu.Hide();
                 warning.Hide();
@@ -90,6 +92,8 @@ namespace UI
             else if (!card_reader && presence_detected)
             {
                 advertising.Show();
+               // ctrl_panel.Activate();
+
                 main_menu.Hide();
                 warning.Hide();
                 off.Hide();
@@ -98,6 +102,7 @@ namespace UI
             else if (card_reader && !presence_detected)
             {
                 warning.Show();
+                //ctrl_panel.Activate();
                 off.Hide();
                 main_menu.Hide();
                 advertising.Hide();
@@ -105,6 +110,7 @@ namespace UI
             else
             {
                 main_menu.Show();
+                //ctrl_panel.Activate();
                 advertising.Hide();
                 off.Hide();
                 warning.Hide();

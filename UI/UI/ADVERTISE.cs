@@ -20,11 +20,13 @@ namespace UI
 
         int color_num;
 
-        public ADVERTISE()
+        public ADVERTISE(int Scr)
         {
             InitializeComponent();
-            int h = Screen.PrimaryScreen.Bounds.Height;
-            int w = Screen.PrimaryScreen.Bounds.Width;
+            StartPosition = FormStartPosition.Manual;
+            this.Location = Screen.AllScreens[Scr].WorkingArea.Location;
+            int h = Screen.AllScreens[Scr].Bounds.Height;
+            int w = Screen.AllScreens[Scr].Bounds.Width;
             this.Size = new Size(w, h);
         }
 
@@ -36,6 +38,7 @@ namespace UI
 
             if (color_num == GREEN)
             {
+                advertise_name.Text = "Green Alien Quality";
                 pictureGreen.Visible = true;
                 pictureBlue.Visible = false;
                 picturePurple.Visible = false;
@@ -44,6 +47,7 @@ namespace UI
 
             if (color_num == RED)
             {
+                advertise_name.Text = "Doggylon";
                 pictureRed.Visible = true;
                 pictureGreen.Visible = false;
                 pictureBlue.Visible = false;
@@ -52,6 +56,7 @@ namespace UI
 
             if (color_num == PURPLE)
             {
+                advertise_name.Text = "DPurple";
                 picturePurple.Visible = true;
                 pictureGreen.Visible = false;
                 pictureBlue.Visible = false;
@@ -60,6 +65,7 @@ namespace UI
 
             if (color_num == BLUE)
             {
+                advertise_name.Text = "Blue Store";
                 pictureBlue.Visible = true;
                 pictureGreen.Visible = false;
                 picturePurple.Visible = false;

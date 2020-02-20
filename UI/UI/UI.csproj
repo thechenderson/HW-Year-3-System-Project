@@ -34,7 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +73,12 @@
     <Compile Include="ADVERTISE.Designer.cs">
       <DependentUpon>ADVERTISE.cs</DependentUpon>
     </Compile>
+    <Compile Include="TRANSLATION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRANSLATION.Designer.cs">
+      <DependentUpon>TRANSLATION.cs</DependentUpon>
+    </Compile>
     <Compile Include="WARNING.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +109,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TRANSLATION.resx">
+      <DependentUpon>TRANSLATION.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WARNING.resx">
       <DependentUpon>WARNING.cs</DependentUpon>
     </EmbeddedResource>

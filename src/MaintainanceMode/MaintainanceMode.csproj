@@ -55,6 +55,12 @@
       <DependentUpon>MaintainanceMode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlienSays\AlienSays.csproj">
+      <Project>{65600957-b8a3-496b-8090-3ca1bead6e1c}</Project>
+      <Name>AlienSays</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />

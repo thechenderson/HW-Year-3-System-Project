@@ -21,7 +21,7 @@ namespace UI
 
             // Working on the PC only : Scr = 0 OR working on the PC + Robot's screen : Scr = 1
             int Scr = 1;
-
+            
             TRANSLATION translation = new TRANSLATION(Scr);
             OFF off = new OFF(Scr);
             MAIN_MENU main_M = new MAIN_MENU(translation, Scr);

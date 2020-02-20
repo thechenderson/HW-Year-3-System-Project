@@ -73,6 +73,7 @@
     <Compile Include="ADVERTISE.Designer.cs">
       <DependentUpon>ADVERTISE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="TRANSLATION.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +151,10 @@
     <None Include="Resources\RED.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Maintenance mode\Maintenance mode\Maintenance mode.csproj">
+      <Project>{faaec780-4912-4a20-b713-d60cbd610d23}</Project>
+      <Name>Maintenance mode</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\AlienSays\AlienSays.csproj">
       <Project>{65600957-b8a3-496b-8090-3ca1bead6e1c}</Project>
       <Name>AlienSays</Name>

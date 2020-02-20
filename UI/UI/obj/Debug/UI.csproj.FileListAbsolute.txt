@@ -69,3 +69,6 @@ C:\Users\Admin\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.p
 C:\Users\Admin\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.exe.config
 C:\Users\Admin\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.TRANSLATION.resources
 C:\Users\Admin\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csproj.CopyComplete
+C:\Users\Admin\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.exe
+C:\Users\Admin\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.pdb
+C:\Users\Admin\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.exe.config

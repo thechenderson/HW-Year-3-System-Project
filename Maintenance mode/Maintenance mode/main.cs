@@ -12,11 +12,6 @@ namespace Maintenance_mode
         /// Point d'entrée principal de l'application.
         /// </summary>
         [STAThread]
-        static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MAINT_MODE());
-        }
+        static void Main(){}
     }
 }

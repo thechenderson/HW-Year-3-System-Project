@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Maintenance_mode
 {
-    static class main_maintmode
+    static class main
     {
         /// <summary>
         /// Point d'entrée principal de l'application.

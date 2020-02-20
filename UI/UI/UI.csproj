@@ -85,7 +85,6 @@
     <Compile Include="WARNING.Designer.cs">
       <DependentUpon>WARNING.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ADVERTISE.resx">
       <DependentUpon>ADVERTISE.cs</DependentUpon>

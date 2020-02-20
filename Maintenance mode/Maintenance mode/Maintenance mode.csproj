@@ -52,7 +52,7 @@
     <Compile Include="MAINT_MODE.Designer.cs">
       <DependentUpon>MAINT_MODE.cs</DependentUpon>
     </Compile>
-    <Compile Include="main_maintmode.cs" />
+    <Compile Include="main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MAINT_MODE.resx">
       <DependentUpon>MAINT_MODE.cs</DependentUpon>

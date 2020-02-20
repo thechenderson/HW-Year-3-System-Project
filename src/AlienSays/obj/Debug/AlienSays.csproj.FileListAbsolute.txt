@@ -47,3 +47,4 @@ C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\src\AlienSays\bin\
 C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\src\AlienSays\bin\Debug\AlienSays.exe
 C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\src\AlienSays\bin\Debug\AlienSays.pdb
 C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.exe
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.Leaderboards.resources

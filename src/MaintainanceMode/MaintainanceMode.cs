@@ -252,6 +252,7 @@ namespace MaintainanceMode{
             // 
             // pbColour
             // 
+            this.pbColour.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbColour.BackColor = System.Drawing.Color.Black;
             this.pbColour.Location = new System.Drawing.Point(316, 492);
             this.pbColour.Name = "pbColour";
@@ -261,6 +262,7 @@ namespace MaintainanceMode{
             // 
             // tbDistance
             // 
+            this.tbDistance.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbDistance.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDistance.Location = new System.Drawing.Point(72, 492);
             this.tbDistance.Name = "tbDistance";
@@ -397,13 +399,15 @@ namespace MaintainanceMode{
 
             tbDisplay.AppendText("Reading reply: " + Environment.NewLine);
 
-            string data = ReadData();//Getting the value from the MBED
+            string servo = ReadData();//Getting the value from the MBED
+            string pos = ReadData();
             int status = CheckConnect();//Getting the status from the MBED
 
             if (status == 0)//Running if the MBED program ran correctly
             {
                 tbDisplay.AppendText("reading data" + Environment.NewLine);
-                tbDisplay.AppendText("Data = " + data + Environment.NewLine);
+                tbDisplay.AppendText("Servo = " + servo + Environment.NewLine);
+                tbDisplay.AppendText("Position = " + pos + Environment.NewLine);
             }
             else //Displaying if there was an error when the MBED operated
             {
@@ -421,19 +425,7 @@ namespace MaintainanceMode{
             string distance = ReadData();
             int status = CheckConnect();
 
-            /*
-                Only check for reply if status = 0 (was successful)
-            */
-
-            /*
-            if (status == 0)
-            {
-                tbDisplay.AppendText("Reading data: " + Environment.NewLine);
-                string data = serialPort1.ReadLine();
-                tbDisplay.AppendText("Data received: " + data + Environment.NewLine);
-            }
-            */
-            tbDistance.Text = distance;
+            tbDistance.Text = distance + " mm";
         }
 
 

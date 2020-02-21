@@ -33,6 +33,9 @@ namespace Maintenance_mode
 
         private void MaintainanceForm_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
+            ControlBox = false;
+            Text = String.Empty;
             cbPort.Items.Clear();
             foreach (string s in SerialPort.GetPortNames())
             {

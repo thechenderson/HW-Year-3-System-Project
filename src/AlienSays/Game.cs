@@ -26,13 +26,44 @@ namespace AlienSays
         Random generateColour = new Random(); //Used to generate a random int that represents the colour in the sequence.
         List<int> userGuess = new List<int>(); //Used to store each of users guesses as to what the pattern was.
         int score = 0; //Stores the current score
-        int highScore;
+        int[] highScores = new int[4]; //Array to store top 5 high scores
+        string[] highScoreNames = new string[4];
+
         private void alienSaysForm_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.ControlBox = false;
             this.Text = String.Empty;
+
+            string fileRead;
+
+            System.IO.StreamReader scoreFile = new System.IO.StreamReader(@"..\\Resources\\highScoresValue.txt");
+            System.IO.StreamReader nameFile = new System.IO.StreamReader(@"..\\Resources\\highScoresName.txt");
+
+            int fileReadToInt;
+
+
+            for (int i = 0; i <= highScores.Count(); i++) //For each item in the high scores array (5 items) populate with high scores from the text file on game start
+            {
+                while ((fileRead = scoreFile.ReadLine()) != null) //While there is still a line in the scores file
+                {
+                    Int32.TryParse(fileRead, out fileReadToInt);
+                    highScores[i] = fileReadToInt; //Populate the scores array
+                }
+                while ((fileRead = nameFile.ReadLine()) != null) //While there is still a line in the names file
+                {
+                    highScoreNames[i] = fileRead; //Populate the names array
+                }
+            }
         }
+
+
+        public class Player
+        {
+            string userName;
+            string score;
+        }
+
 
         private void startButton_Click(object sender, EventArgs e)
         {
@@ -94,17 +125,24 @@ namespace AlienSays
         //Compares the users sequence to the correct sequence
         private void checkCorrect()
         {
-            for(int i = 0; i < (userGuess.Count); i++)
+            for(int i = 0; i < (userGuess.Count); i++) //For each guess the user has made so far
             {
                 if (userGuess[i] != colourList[i]) //Check if pattern list matches users pattern list.
                 {
                     gameInProgress = false; //User has got the sequence wrong so game end
 
-                    if (userGuess.Count>highScore) //check to see if the highscore was beaten
+
+                    for (int j = 4; j <= highScores.Count(); j--) //For each of the currently available high scores
                     {
-                        highScore = userGuess.Count(); //Set the new highscore
-                        highScoreLabel.Text = $"Highscore: {highScore}"; //Display the highest score in the label.
+                        if(userGuess.Count() > highScores[j]) //If current score is greater than the current high score in the array add new high score to the array 
+                        {
+                            highScores[j] = userGuess.Count();
+                            highScoreNames[j] = 
+                        }
                     }
+                    
+
+
 
                     MessageBox.Show("YOU FAIL!");
                 break;

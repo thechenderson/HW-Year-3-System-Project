@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions.cs" />
     <Compile Include="MAINT_MODE.cs">
       <SubType>Form</SubType>
     </Compile>

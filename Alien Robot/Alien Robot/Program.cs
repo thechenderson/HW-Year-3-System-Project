@@ -21,13 +21,13 @@ namespace Alien_Robot
             /* Set the screen
              * Working on the PC only : 
              * Scr = 0 OR working on the PC + Robot's screen : Scr = 1*/
-            int Scr = 0;
+            int Scr = 1;
 
             MAINT_MODE maint_mode = new MAINT_MODE();
             TRANSLATION translation = new TRANSLATION(Scr);
             OFF off = new OFF(Scr);
-            Leaderboards leaderboardsScreen = new Leaderboards();
-            alienSaysForm aliensays_game = new alienSaysForm(leaderboardsScreen);
+            Leaderboards leaderboardsScreen = new Leaderboards(Scr);
+            alienSaysForm aliensays_game = new alienSaysForm(leaderboardsScreen, Scr);
             MAIN_MENU main_M = new MAIN_MENU(maint_mode, aliensays_game ,translation, Scr);
             ADVERTISE advertising = new ADVERTISE(Scr);
             WARNING warning = new WARNING(Scr);

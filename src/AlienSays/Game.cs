@@ -18,9 +18,14 @@ namespace AlienSays
 
         Leaderboards leaderboard;
 
-        public alienSaysForm(Leaderboards leaderboard)
+        public alienSaysForm(Leaderboards leaderboard, int Scr)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.Manual;
+            this.Location = Screen.AllScreens[Scr].WorkingArea.Location;
+            int h = Screen.AllScreens[Scr].Bounds.Height;
+            int w = Screen.AllScreens[Scr].Bounds.Width;
+            this.Size = new Size(w, h);
             this.leaderboard = leaderboard;
 
         }
@@ -40,7 +45,7 @@ namespace AlienSays
 
         private void alienSaysForm_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
             this.ControlBox = false;
             this.Text = String.Empty;
 

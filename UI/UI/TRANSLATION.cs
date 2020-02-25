@@ -29,8 +29,6 @@ namespace UI
             int h = Screen.AllScreens[Scr].Bounds.Height;
             int w = Screen.AllScreens[Scr].Bounds.Width;
             this.Size = new Size(w, h);
-            Console.WriteLine(w);
-            Console.WriteLine(h);
         }
 
        

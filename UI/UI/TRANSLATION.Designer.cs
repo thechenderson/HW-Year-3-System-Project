@@ -59,7 +59,7 @@
             this.sentence1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sentence1.BackColor = System.Drawing.Color.Maroon;
             this.sentence1.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentence1.Location = new System.Drawing.Point(68, 198);
+            this.sentence1.Location = new System.Drawing.Point(63, 208);
             this.sentence1.Margin = new System.Windows.Forms.Padding(2);
             this.sentence1.Name = "sentence1";
             this.sentence1.Size = new System.Drawing.Size(291, 357);
@@ -73,7 +73,7 @@
             this.sentence2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sentence2.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.sentence2.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentence2.Location = new System.Drawing.Point(414, 200);
+            this.sentence2.Location = new System.Drawing.Point(409, 210);
             this.sentence2.Margin = new System.Windows.Forms.Padding(2);
             this.sentence2.Name = "sentence2";
             this.sentence2.Size = new System.Drawing.Size(291, 357);
@@ -87,7 +87,7 @@
             this.sentence4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sentence4.BackColor = System.Drawing.Color.MidnightBlue;
             this.sentence4.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentence4.Location = new System.Drawing.Point(414, 608);
+            this.sentence4.Location = new System.Drawing.Point(409, 618);
             this.sentence4.Margin = new System.Windows.Forms.Padding(2);
             this.sentence4.Name = "sentence4";
             this.sentence4.Size = new System.Drawing.Size(291, 357);
@@ -101,7 +101,7 @@
             this.fr_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fr_button.BackgroundImage = global::UI.Properties.Resources.FR;
             this.fr_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.fr_button.Location = new System.Drawing.Point(613, 11);
+            this.fr_button.Location = new System.Drawing.Point(596, 11);
             this.fr_button.Margin = new System.Windows.Forms.Padding(2);
             this.fr_button.Name = "fr_button";
             this.fr_button.Size = new System.Drawing.Size(70, 43);
@@ -114,7 +114,7 @@
             this.eng_buttton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.eng_buttton.BackgroundImage = global::UI.Properties.Resources.ENG;
             this.eng_buttton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.eng_buttton.Location = new System.Drawing.Point(687, 11);
+            this.eng_buttton.Location = new System.Drawing.Point(670, 11);
             this.eng_buttton.Margin = new System.Windows.Forms.Padding(2);
             this.eng_buttton.Name = "eng_buttton";
             this.eng_buttton.Size = new System.Drawing.Size(70, 43);
@@ -127,7 +127,7 @@
             this.sentence3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sentence3.BackColor = System.Drawing.Color.DarkGreen;
             this.sentence3.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentence3.Location = new System.Drawing.Point(68, 608);
+            this.sentence3.Location = new System.Drawing.Point(63, 618);
             this.sentence3.Margin = new System.Windows.Forms.Padding(2);
             this.sentence3.Name = "sentence3";
             this.sentence3.Size = new System.Drawing.Size(291, 357);
@@ -138,20 +138,22 @@
             // 
             // Translate_sentence
             // 
+            this.Translate_sentence.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Translate_sentence.AutoSize = true;
             this.Translate_sentence.Font = new System.Drawing.Font("Constantia", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Translate_sentence.Location = new System.Drawing.Point(338, 1056);
+            this.Translate_sentence.Location = new System.Drawing.Point(374, 1057);
             this.Translate_sentence.Name = "Translate_sentence";
-            this.Translate_sentence.Size = new System.Drawing.Size(0, 42);
+            this.Translate_sentence.Size = new System.Drawing.Size(0, 54);
             this.Translate_sentence.TabIndex = 11;
+            this.Translate_sentence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 82);
+            this.label1.Location = new System.Drawing.Point(-17, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(632, 79);
+            this.label1.Size = new System.Drawing.Size(794, 97);
             this.label1.TabIndex = 12;
             this.label1.Text = "I can speak any language !";
             // 
@@ -159,16 +161,15 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(65, 1030);
+            this.label2.Location = new System.Drawing.Point(46, 1026);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(258, 79);
+            this.label2.Size = new System.Drawing.Size(322, 97);
             this.label2.TabIndex = 13;
             this.label2.Text = "Too easy :";
             // 
             // TRANSLATION
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.YellowGreen;
             this.ClientSize = new System.Drawing.Size(768, 1366);
             this.Controls.Add(this.label2);

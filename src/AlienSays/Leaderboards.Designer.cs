@@ -30,14 +30,17 @@
         {
             this.backToGameButton = new System.Windows.Forms.Button();
             this.highScoreLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // backToGameButton
             // 
-            this.backToGameButton.BackColor = System.Drawing.Color.SlateGray;
-            this.backToGameButton.Location = new System.Drawing.Point(12, 12);
+            this.backToGameButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.backToGameButton.BackColor = System.Drawing.Color.OliveDrab;
+            this.backToGameButton.Location = new System.Drawing.Point(13, 1159);
+            this.backToGameButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backToGameButton.Name = "backToGameButton";
-            this.backToGameButton.Size = new System.Drawing.Size(124, 394);
+            this.backToGameButton.Size = new System.Drawing.Size(724, 147);
             this.backToGameButton.TabIndex = 7;
             this.backToGameButton.Text = "<---BACK TO GAME";
             this.backToGameButton.UseVisualStyleBackColor = false;
@@ -46,20 +49,35 @@
             // highScoreLabel
             // 
             this.highScoreLabel.AutoSize = true;
-            this.highScoreLabel.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.highScoreLabel.Location = new System.Drawing.Point(142, 12);
+            this.highScoreLabel.Font = new System.Drawing.Font("Monotype Corsiva", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highScoreLabel.Location = new System.Drawing.Point(98, 238);
+            this.highScoreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.highScoreLabel.Name = "highScoreLabel";
-            this.highScoreLabel.Size = new System.Drawing.Size(916, 42);
+            this.highScoreLabel.Size = new System.Drawing.Size(639, 72);
             this.highScoreLabel.TabIndex = 8;
-            this.highScoreLabel.Text = "Rank                              Score                             Name";
+            this.highScoreLabel.Text = "Rank          Score          Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 72F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(131, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(590, 147);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Leaderboard";
             // 
             // Leaderboards
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 418);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.YellowGreen;
+            this.ClientSize = new System.Drawing.Size(768, 1366);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.highScoreLabel);
             this.Controls.Add(this.backToGameButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Leaderboards";
             this.Text = "Leaderboard";
             this.Load += new System.EventHandler(this.Leaderboards_Load);
@@ -72,5 +90,6 @@
 
         private System.Windows.Forms.Button backToGameButton;
         private System.Windows.Forms.Label highScoreLabel;
+        private System.Windows.Forms.Label label1;
     }
 }

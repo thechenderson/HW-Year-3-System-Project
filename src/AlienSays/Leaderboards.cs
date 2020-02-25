@@ -14,15 +14,22 @@ namespace AlienSays
 {
     public partial class Leaderboards : Form
     {
-        public Leaderboards()
+        public Leaderboards(int Scr)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.Manual;
+            this.Location = Screen.AllScreens[Scr].WorkingArea.Location;
+            int h = Screen.AllScreens[Scr].Bounds.Height;
+            int w = Screen.AllScreens[Scr].Bounds.Width;
+            this.Size = new Size(w, h);
+            Console.WriteLine(w);
+            Console.WriteLine(h);
         }
 
 
         private void Leaderboards_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
             this.ControlBox = false;
             this.Text = String.Empty;
         }

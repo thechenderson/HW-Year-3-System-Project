@@ -72,3 +72,42 @@ C:\Users\Admin\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csproj.C
 C:\Users\Admin\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.exe
 C:\Users\Admin\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.pdb
 C:\Users\Admin\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.exe.config
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\UI.exe.config
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\UI.exe
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\UI.pdb
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.exe
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.exe
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.pdb
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.exe.config
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.pdb
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.exe.config
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csprojAssemblyReference.cache
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.ADVERTISE.resources
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.CTRL_PANEL.resources
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.MAIN_MENU.resources
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.OFF.resources
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.TRANSLATION.resources
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.WARNING.resources
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csproj.GenerateResource.cache
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csproj.CopyComplete
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.exe
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.ADVERTISE.resources
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.CTRL_PANEL.resources
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.MAIN_MENU.resources
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.OFF.resources
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.TRANSLATION.resources
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.WARNING.resources
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\UI.exe.config
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\UI.exe
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\UI.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.exe
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.exe
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.exe

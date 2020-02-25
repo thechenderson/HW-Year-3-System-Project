@@ -54,6 +54,7 @@
             // 
             // tbDistance
             // 
+            this.tbDistance.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbDistance.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDistance.Location = new System.Drawing.Point(72, 500);
             this.tbDistance.Name = "tbDistance";
@@ -64,6 +65,7 @@
             // 
             // pbColour
             // 
+            this.pbColour.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbColour.BackColor = System.Drawing.Color.Black;
             this.pbColour.Location = new System.Drawing.Point(316, 500);
             this.pbColour.Name = "pbColour";
@@ -270,15 +272,13 @@
             this.Controls.Add(this.lblPort);
             this.Controls.Add(this.tbDisplay);
             this.Name = "MAINT_MODE";
-            this.Text = "Form1";
+            this.Text = "Maintenance Mode";
             this.Load += new System.EventHandler(this.MaintainanceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbColour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoAngle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoNo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            
 
         }
 

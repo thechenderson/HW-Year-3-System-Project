@@ -51,11 +51,11 @@ namespace Maintenance_mode
             int status = function.MBEDConnect(com_port, serialPort1);
             if (status == 0)
             {
-                tbDisplay.AppendText("MBED Connected");
+                tbDisplay.AppendText("MBED Connected" + Environment.NewLine);
             }
             else
             {
-                tbDisplay.AppendText("Could Not Connect to the MBED");
+                tbDisplay.AppendText("Could Not Connect to the MBED" + Environment.NewLine);
             }
         }
 
@@ -85,7 +85,7 @@ namespace Maintenance_mode
 
             string data = function.ServoRead(serialPort1);//Getting the status from the MBED
 
-            tbDisplay.AppendText("Data = " + data + Environment.NewLine);
+            tbDisplay.AppendText(data + Environment.NewLine);
         }
 
         private void btnReadDistance_Click(object sender, EventArgs e)

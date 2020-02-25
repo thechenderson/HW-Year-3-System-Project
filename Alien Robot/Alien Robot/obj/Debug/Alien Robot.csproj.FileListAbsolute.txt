@@ -34,3 +34,21 @@ C:\Users\jorda\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj
 C:\Users\jorda\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.csproj.CopyComplete
 C:\Users\jorda\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.exe
 C:\Users\jorda\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.pdb
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Alien Robot.exe.config
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Alien Robot.exe
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Alien Robot.pdb
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\AlienSays.exe
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Maintenance mode.exe
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\UI.exe
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Maintenance mode.pdb
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Maintenance mode.exe.config
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\AlienSays.pdb
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\AlienSays.exe.config
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\UI.pdb
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\UI.exe.config
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.csprojAssemblyReference.cache
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien_Robot.Properties.Resources.resources
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.csproj.GenerateResource.cache
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.csproj.CopyComplete
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.exe
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.pdb

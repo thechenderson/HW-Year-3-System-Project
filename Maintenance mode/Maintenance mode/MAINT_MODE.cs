@@ -67,17 +67,17 @@ namespace Maintenance_mode
             string Servo = Convert.ToString(nudServoNo.Value);
             string Pos = Convert.ToString(nudServoAngle.Value);
 
-            tbDisplay.AppendText("Moving Servo " + Servo + " to position " + Pos);
+            tbDisplay.AppendText("Moving Servo " + Servo + " to position " + Pos + Environment.NewLine);
 
             int status = function.ServoMove(Servo, Pos, serialPort1);
 
             if (status == 0)
             {
-                tbDisplay.AppendText("Servo Moved Successfully");
+                tbDisplay.AppendText("Servo Moved Successfully" + Environment.NewLine);
             }
             else 
             {
-                tbDisplay.AppendText("Error: Check the Servo");
+                tbDisplay.AppendText("Error: Check the Servo" + Environment.NewLine);
             }
         }
 

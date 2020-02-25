@@ -16,18 +16,27 @@ namespace AlienSays
     public partial class alienSaysForm : Form
     {
 
-        public alienSaysForm()
+        Leaderboards leaderboard;
+
+        public alienSaysForm(Leaderboards leaderboard)
         {
             InitializeComponent();
+            this.leaderboard = leaderboard;
+
         }
+
+
 
         bool gameInProgress = false; //If game is runnning = true
         List<int> colourList = new List<int>(); //Stores the pattern of colours generated
         Random generateColour = new Random(); //Used to generate a random int that represents the colour in the sequence.
         List<int> userGuess = new List<int>(); //Used to store each of users guesses as to what the pattern was.
         int score = 0; //Stores the current score
+
         int[] highScores = new int[4]; //Array to store top 5 high scores
-        string[] highScoreNames = new string[4];
+        string[] highScoreNames = new string[4]; //Array to store names of highest scorers.
+
+
 
         private void alienSaysForm_Load(object sender, EventArgs e)
         {
@@ -37,8 +46,8 @@ namespace AlienSays
 
             string fileRead;
 
-            System.IO.StreamReader scoreFile = new System.IO.StreamReader(@"..\\Resources\\highScoresValue.txt");
-            System.IO.StreamReader nameFile = new System.IO.StreamReader(@"..\\Resources\\highScoresName.txt");
+            System.IO.StreamReader scoreFile = new System.IO.StreamReader(@"..\..\..\..\src\AlienSays\Resources\highScoresValue.txt");
+            System.IO.StreamReader nameFile = new System.IO.StreamReader(@"..\..\..\..\src\AlienSays\Resources\highScoresName.txt");
 
             int fileReadToInt;
 
@@ -55,13 +64,7 @@ namespace AlienSays
                     highScoreNames[i] = fileRead; //Populate the names array
                 }
             }
-        }
 
-
-        public class Player
-        {
-            string userName;
-            string score;
         }
 
 
@@ -132,12 +135,15 @@ namespace AlienSays
                     gameInProgress = false; //User has got the sequence wrong so game end
 
 
-                    for (int j = 4; j <= highScores.Count(); j--) //For each of the currently available high scores
+                    for (int j = 3; j < highScores.Count(); j--) //For each of the currently available high scores
                     {
                         if(userGuess.Count() > highScores[j]) //If current score is greater than the current high score in the array add new high score to the array 
                         {
                             highScores[j] = userGuess.Count();
-                            highScoreNames[j] = 
+                           // highScoreNames[j] = 
+                            /*
+                             *How are names to be set using card reader or user enters name.
+                            */
                         }
                     }
                     
@@ -262,6 +268,10 @@ namespace AlienSays
             if (gameInProgress == true)
             {
                 return;
+            }
+            else
+            {
+                leaderboard.Show();
             }
         }
 

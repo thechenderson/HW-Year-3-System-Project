@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.startButton = new System.Windows.Forms.Button();
+            this.backToGameButton = new System.Windows.Forms.Button();
             this.highScoreLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // startButton
+            // backToGameButton
             // 
-            this.startButton.BackColor = System.Drawing.Color.SlateGray;
-            this.startButton.Location = new System.Drawing.Point(12, 12);
-            this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(124, 394);
-            this.startButton.TabIndex = 7;
-            this.startButton.Text = "<---BACK TO GAME";
-            this.startButton.UseVisualStyleBackColor = false;
-            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            this.backToGameButton.BackColor = System.Drawing.Color.SlateGray;
+            this.backToGameButton.Location = new System.Drawing.Point(12, 12);
+            this.backToGameButton.Name = "backToGameButton";
+            this.backToGameButton.Size = new System.Drawing.Size(124, 394);
+            this.backToGameButton.TabIndex = 7;
+            this.backToGameButton.Text = "<---BACK TO GAME";
+            this.backToGameButton.UseVisualStyleBackColor = false;
+            this.backToGameButton.Click += new System.EventHandler(this.backToGameButton_Click);
             // 
             // highScoreLabel
             // 
@@ -59,7 +59,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 418);
             this.Controls.Add(this.highScoreLabel);
-            this.Controls.Add(this.startButton);
+            this.Controls.Add(this.backToGameButton);
             this.Name = "Leaderboards";
             this.Text = "Leaderboard";
             this.Load += new System.EventHandler(this.Leaderboards_Load);
@@ -70,7 +70,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Button backToGameButton;
         private System.Windows.Forms.Label highScoreLabel;
     }
 }

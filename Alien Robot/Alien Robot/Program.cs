@@ -26,7 +26,8 @@ namespace Alien_Robot
             MAINT_MODE maint_mode = new MAINT_MODE();
             TRANSLATION translation = new TRANSLATION(Scr);
             OFF off = new OFF(Scr);
-            alienSaysForm aliensays_game = new alienSaysForm();
+            Leaderboards leaderboardsScreen = new Leaderboards();
+            alienSaysForm aliensays_game = new alienSaysForm(leaderboardsScreen);
             MAIN_MENU main_M = new MAIN_MENU(maint_mode, aliensays_game ,translation, Scr);
             ADVERTISE advertising = new ADVERTISE(Scr);
             WARNING warning = new WARNING(Scr);

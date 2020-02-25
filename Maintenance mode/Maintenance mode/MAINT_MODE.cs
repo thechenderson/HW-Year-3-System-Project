@@ -20,15 +20,17 @@ namespace Maintenance_mode
         const int FORMAT_ERROR = -1;
         const int COM_BAUD = 115200;
         const int READ_TIMEOUT = 10000;
-        Functions function = new Functions();
+        Functions function;
 
         //Variables
         int global_error;
+        bool initialised = false;
 
-        public MAINT_MODE()
+        public MAINT_MODE(Functions func)
         {
   
             InitializeComponent();
+            function = func;
         }
 
         private void MaintainanceForm_Load(object sender, EventArgs e)
@@ -52,6 +54,7 @@ namespace Maintenance_mode
             if (status == 0)
             {
                 tbDisplay.AppendText("MBED Connected");
+                initialised = true;
             }
             else
             {
@@ -131,6 +134,10 @@ namespace Maintenance_mode
             {
                 tbDisplay.AppendText("Error reading the colours");
             }
+        }
+        public bool get_initialised()
+        {
+            return initialised;
         }
     }
 }

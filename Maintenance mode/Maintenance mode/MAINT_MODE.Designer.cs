@@ -303,6 +303,6 @@
         private System.Windows.Forms.ComboBox cbPort;
         private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.TextBox tbDisplay;
-        private System.IO.Ports.SerialPort serialPort1;
+        public System.IO.Ports.SerialPort serialPort1;
     }
 }

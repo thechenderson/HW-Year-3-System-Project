@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 using Maintenance_mode;
 
+using System.IO.Ports;     // added to use serial port features
+using System.Threading;    // added to use sleep feature
+
 namespace UI
 {
     public class AUTO_CTRL
@@ -19,7 +22,7 @@ namespace UI
         const int BLUE = 3; //test git
 
         /*Declaration Timer*/
-        static Timer timer = new Timer();
+        static System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         
 
         /*Declaration bits of the FSM*/
@@ -27,6 +30,10 @@ namespace UI
         static bool presence_detected = false;
         static int color = NO_COLOR;
         static bool maintenance = false;
+        static bool once = true;
+        static int u = 0;
+        static int dist = -1;
+
 
         /*Declaration of the attached class for the control*/
         static OFF off;
@@ -36,9 +43,12 @@ namespace UI
         static CTRL_PANEL ctrl_panel;
         static SIM_SENSORS sensors;
         static MAINT_MODE maint_mode;
+        static Functions function;
+        static SerialPort SerialPort;
 
         public AUTO_CTRL(SIM_SENSORS sensor, OFF off_given, MAIN_MENU main_men, 
-                         WARNING warn, ADVERTISE advertise, CTRL_PANEL ctrl_pan, MAINT_MODE maint)
+                         WARNING warn, ADVERTISE advertise, CTRL_PANEL ctrl_pan,
+                         MAINT_MODE maint, Functions func)
         {
             timer.Tick += new EventHandler(timer_tick);
             timer.Interval = 25;
@@ -50,6 +60,7 @@ namespace UI
             advertising = advertise;
             sensors = sensor;
             maint_mode = maint;
+            function = func;
         }
 
         static void timer_tick(object sender, EventArgs e)
@@ -63,6 +74,29 @@ namespace UI
             maintenance = sensors.get_maintenance();
             ctrl_panel.set_maintenance(maintenance);
             main_menu.set_maintenance(maintenance);
+            
+            // To do later in order to make the UI working with the presence detector
+
+            /*
+            u = u + 1;
+            //Console.WriteLine(u);
+
+            if (maint_mode.get_initialised() && u>=400)
+            {
+                if (once)
+                {
+                    SerialPort = maint_mode.serialPort1;
+                    once = false;
+                }
+              dist = function.GetDistance(SerialPort);
+              u = 0;
+              Console.WriteLine(dist);
+            }
+            
+            if (0 < dist && dist < 200) presence_detected = true;
+            else presence_detected = false;
+            */
+
 
             if (!maintenance)
             {

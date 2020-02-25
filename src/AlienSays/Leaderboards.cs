@@ -19,7 +19,6 @@ namespace AlienSays
             InitializeComponent();
         }
 
-        Thread th;
 
         private void Leaderboards_Load(object sender, EventArgs e)
         {
@@ -28,20 +27,9 @@ namespace AlienSays
             this.Text = String.Empty;
         }
 
-        private void startButton_Click(object sender, EventArgs e)
+        private void backToGameButton_Click(object sender, EventArgs e)
         {
-            th = new Thread(openForm);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-            (new Leaderboards()).Show();
-            Thread.Sleep(1500);
             this.Hide();
         }
-
-        private void openForm(object obj)
-        {
-            Application.Run(new alienSaysForm());
-        }
-
     }
 }

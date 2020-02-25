@@ -32,7 +32,7 @@
             this.eng_buttton = new System.Windows.Forms.Button();
             this.button_game1 = new System.Windows.Forms.Button();
             this.translate_button = new System.Windows.Forms.Button();
-            this.button_game2 = new System.Windows.Forms.Button();
+            this.button_maintMode = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // fr_button
@@ -68,6 +68,7 @@
             this.button_game1.TabIndex = 3;
             this.button_game1.Text = "Game 1";
             this.button_game1.UseVisualStyleBackColor = true;
+            this.button_game1.Click += new System.EventHandler(this.button_game1_Click);
             // 
             // translate_button
             // 
@@ -80,22 +81,23 @@
             this.translate_button.UseVisualStyleBackColor = true;
             this.translate_button.Click += new System.EventHandler(this.translate_button_Click);
             // 
-            // button_game2
+            // button_maintMode
             // 
-            this.button_game2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_game2.Location = new System.Drawing.Point(726, 168);
-            this.button_game2.Name = "button_game2";
-            this.button_game2.Size = new System.Drawing.Size(130, 66);
-            this.button_game2.TabIndex = 5;
-            this.button_game2.Text = "Game 2";
-            this.button_game2.UseVisualStyleBackColor = true;
+            this.button_maintMode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button_maintMode.Location = new System.Drawing.Point(726, 168);
+            this.button_maintMode.Name = "button_maintMode";
+            this.button_maintMode.Size = new System.Drawing.Size(130, 66);
+            this.button_maintMode.TabIndex = 5;
+            this.button_maintMode.Text = "Maintenance";
+            this.button_maintMode.UseVisualStyleBackColor = true;
+            this.button_maintMode.Click += new System.EventHandler(this.button_maintMode_Click);
             // 
             // MAIN_MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 609);
-            this.Controls.Add(this.button_game2);
+            this.Controls.Add(this.button_maintMode);
             this.Controls.Add(this.translate_button);
             this.Controls.Add(this.button_game1);
             this.Controls.Add(this.fr_button);
@@ -113,6 +115,6 @@
         private System.Windows.Forms.Button fr_button;
         private System.Windows.Forms.Button button_game1;
         private System.Windows.Forms.Button translate_button;
-        private System.Windows.Forms.Button button_game2;
+        private System.Windows.Forms.Button button_maintMode;
     }
 }

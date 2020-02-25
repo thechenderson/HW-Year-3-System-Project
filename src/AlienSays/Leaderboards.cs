@@ -36,7 +36,7 @@ namespace AlienSays
 
         private void backToGameButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
         }
     }
 }

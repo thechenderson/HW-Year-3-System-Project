@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Maintenance_mode;
+
 namespace UI
 {
     public class AUTO_CTRL
@@ -32,9 +34,11 @@ namespace UI
         static WARNING warning;
         static ADVERTISE advertising;
         static CTRL_PANEL ctrl_panel;
+        static SIM_SENSORS sensors;
+        static MAINT_MODE maint_mode;
 
-        public AUTO_CTRL(CTRL_PANEL ctrl_pan, OFF off_given, MAIN_MENU main_men, 
-                         WARNING warn, ADVERTISE advertise)
+        public AUTO_CTRL(SIM_SENSORS sensor, OFF off_given, MAIN_MENU main_men, 
+                         WARNING warn, ADVERTISE advertise, CTRL_PANEL ctrl_pan, MAINT_MODE maint)
         {
             timer.Tick += new EventHandler(timer_tick);
             timer.Interval = 25;
@@ -44,6 +48,8 @@ namespace UI
             main_menu = main_men;
             warning = warn;
             advertising = advertise;
+            sensors = sensor;
+            maint_mode = maint;
         }
 
         static void timer_tick(object sender, EventArgs e)
@@ -51,71 +57,85 @@ namespace UI
             /*Here we uses the get of ctrl_panel because we simulate the MBED with it
              but in the near futur we have to get them from the MBED with its method*/
 
-            card_reader = ctrl_panel.get_cardreader();
-            presence_detected = ctrl_panel.get_presence();
-            color = ctrl_panel.get_color();
+            card_reader = sensors.get_cardreader();
+            presence_detected = sensors.get_presence();
+            color = sensors.get_color();
+            maintenance = sensors.get_maintenance();
+            ctrl_panel.set_maintenance(maintenance);
+            main_menu.set_maintenance(maintenance);
 
-            /*Set the colors of the advertising mode*/
-            switch (color)
+            if (!maintenance)
             {
-                case NO_COLOR :
-                    advertising.set_color(GREEN);
-                    break;
-                case GREEN :
-                    advertising.set_color(GREEN);
-                    break;
-                case RED : 
-                    advertising.set_color(RED);
-                    break;
-                case PURPLE :
-                    advertising.set_color(PURPLE);
-                    break;
-                case BLUE:
-                    advertising.set_color(BLUE);
-                    break;
-                default:
-                    advertising.set_color(GREEN);
-                    break;
-            }
+                ctrl_panel.Hide();
+                advertising.set_color(sensors.get_color());
+                maint_mode.Hide();
 
-            /*FSM for the UI*/
-            if (!card_reader && !presence_detected)
-            {
-                off.Show();
-                //ctrl_panel.Activate();
+                /*Set the colors of the advertising mode*/
+                switch (color)
+                {
+                    case NO_COLOR:
+                        advertising.set_color(GREEN);
+                        break;
+                    case GREEN:
+                        advertising.set_color(GREEN);
+                        break;
+                    case RED:
+                        advertising.set_color(RED);
+                        break;
+                    case PURPLE:
+                        advertising.set_color(PURPLE);
+                        break;
+                    case BLUE:
+                        advertising.set_color(BLUE);
+                        break;
+                    default:
+                        advertising.set_color(GREEN);
+                        break;
+                }
 
-                advertising.Hide();
-                main_menu.Hide();
-                warning.Hide();
-                //get_maintenance() MBED
-            }
-            else if (!card_reader && presence_detected)
-            {
-                advertising.Show();
-               // ctrl_panel.Activate();
+                /*FSM for the UI in auto mode*/
 
-                main_menu.Hide();
-                warning.Hide();
-                off.Hide();
-                //get_maintenance() MBED
-            }
-            else if (card_reader && !presence_detected)
-            {
-                warning.Show();
-                //ctrl_panel.Activate();
-                off.Hide();
-                main_menu.Hide();
-                advertising.Hide();
+                if (!card_reader && !presence_detected)
+                {
+                    off.Show();
+                    //ctrl_panel.Activate();
+
+                    advertising.Hide();
+                    main_menu.Hide();
+                    warning.Hide();
+                    //get_maintenance() MBED
+                }
+                else if (!card_reader && presence_detected)
+                {
+                    advertising.Show();
+                    // ctrl_panel.Activate();
+
+                    main_menu.Hide();
+                    warning.Hide();
+                    off.Hide();
+                    //get_maintenance() MBED
+                }
+                else if (card_reader && !presence_detected)
+                {
+                    warning.Show();
+                    //ctrl_panel.Activate();
+                    off.Hide();
+                    main_menu.Hide();
+                    advertising.Hide();
+                }
+                else
+                {
+                    main_menu.Show();
+                    //ctrl_panel.Activate();
+                    advertising.Hide();
+                    off.Hide();
+                    warning.Hide();
+                }
             }
             else
             {
-                main_menu.Show();
-                //ctrl_panel.Activate();
-                advertising.Hide();
-                off.Hide();
-                warning.Hide();
+                ctrl_panel.Show();
             }
-
         }
         public void timer_initialise()
         {

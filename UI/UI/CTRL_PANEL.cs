@@ -33,7 +33,7 @@ namespace UI
         bool presence_detected = false;
         bool maintenance = false;
 
-        public CTRL_PANEL(bool maintenance, OFF off, MAIN_MENU main_menu, WARNING warning, ADVERTISE advertising)
+        public CTRL_PANEL(OFF off, MAIN_MENU main_menu, WARNING warning, ADVERTISE advertising, int Scr)
         {
             InitializeComponent();
             this.off = off;
@@ -41,7 +41,9 @@ namespace UI
             this.warning = warning;
             this.advertising = advertising;
             this.TopMost = true;
-            this.maintenance = maintenance;
+
+            StartPosition = FormStartPosition.Manual;
+            this.Location = Screen.AllScreens[Scr].WorkingArea.Location;
         }
 
         private void cb_cardread_CheckedChanged(object sender, EventArgs e)
@@ -169,6 +171,22 @@ namespace UI
             if (purple.Checked) return PURPLE;
             if (red.Checked)    return RED;
             else return NO_COLOR;
+        }
+
+        public void set_maintenance(bool maintenance)
+        {
+            this.maintenance = maintenance;
+        }
+
+        private void maint_card_CheckedChanged(object sender, EventArgs e)
+        {
+            if (maint_card.Checked) maintenance = true;
+            else maintenance = false;
+        }
+
+        public bool get_maintenance()
+        {
+            return maintenance;
         }
     }
 }

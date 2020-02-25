@@ -8,7 +8,8 @@ namespace Maintenance_mode
     {
         //Constants
         const int READ_TIMEOUT = 10000;
-
+        const int ERROR = -1;
+        const string STR_ERROR = "";
 
         public int CheckConnect(SerialPort serialPort)//Checking if there is a connection between the PC and an MBED
         {
@@ -23,7 +24,7 @@ namespace Maintenance_mode
             }
             catch (TimeoutException)//If there is an error recieving data
             {
-                return -1;
+                return ERROR;
             }
             Status = Convert.ToInt32(Response);
             return Status;
@@ -42,7 +43,7 @@ namespace Maintenance_mode
             }
             catch (TimeoutException)//If there is an error reading the data
             {
-                return "";//returns a blank string to stop the program from crashing
+                return STR_ERROR;//returns a blank string to stop the program from crashing
             }
             return Response;
         }
@@ -63,7 +64,7 @@ namespace Maintenance_mode
             }
             catch //If no connection could be made
             {
-                return -1;
+                return ERROR;
             }
             return 0;
         }
@@ -93,7 +94,7 @@ namespace Maintenance_mode
 
             if (status != 0)
             {
-                return -1;
+                return ERROR;
             }
 
             return Convert.ToInt32(distance);
@@ -111,10 +112,6 @@ namespace Maintenance_mode
             string blue = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the blue value
 
             return Tuple.Create(clear, red, green, blue);
-        }
-
-
-
-        
+        } 
     }
 }

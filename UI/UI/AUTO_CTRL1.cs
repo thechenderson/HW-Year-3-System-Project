@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Maintenance_mode;
+using AlienSays;
+using UI;
 
 using System.IO.Ports;     // added to use serial port features
 using System.Threading;    // added to use sleep feature
@@ -30,8 +32,6 @@ namespace UI
         static bool presence_detected = false;
         static int color = NO_COLOR;
         static bool maintenance = false;
-        static bool once = true;
-        static int u = 0;
         static int dist = -1;
 
 
@@ -44,14 +44,17 @@ namespace UI
         static SIM_SENSORS sensors;
         static MAINT_MODE maint_mode;
         static Functions function;
+        static alienSaysForm aliensays;
+        static TRANSLATION translation;
         static SerialPort SerialPort;
 
-        public AUTO_CTRL(SIM_SENSORS sensor, OFF off_given, MAIN_MENU main_men, 
+        public AUTO_CTRL(SIM_SENSORS sensor, OFF off_given, MAIN_MENU main_men,
                          WARNING warn, ADVERTISE advertise, CTRL_PANEL ctrl_pan,
-                         MAINT_MODE maint, Functions func)
+                         MAINT_MODE maint, Functions func, alienSaysForm game, 
+                         TRANSLATION translate)
         {
             timer.Tick += new EventHandler(timer_tick);
-            timer.Interval = 25;
+            timer.Interval = 500;
             timer.Start();
             ctrl_panel = ctrl_pan;
             off = off_given;
@@ -61,110 +64,45 @@ namespace UI
             sensors = sensor;
             maint_mode = maint;
             function = func;
+            translation = translate;
+            aliensays = game;
         }
 
-        static void timer_tick(object sender, EventArgs e)
+        void timer_tick(object sender, EventArgs e)
         {
-            /*Here we uses the get of ctrl_panel because we simulate the MBED with it
+            /*Here we uses the get of sensors because we simulate the MBED with it
              but in the near futur we have to get them from the MBED with its method*/
 
             card_reader = sensors.get_cardreader();
-            presence_detected = sensors.get_presence();
+            //presence_detected = sensors.get_presence();
             color = sensors.get_color();
             maintenance = sensors.get_maintenance();
             ctrl_panel.set_maintenance(maintenance);
             main_menu.set_maintenance(maintenance);
-            
-            // To do later in order to make the UI working with the presence detector
 
-            /*
-            u = u + 1;
-            //Console.WriteLine(u);
-
-            if (maint_mode.get_initialised() && u>=400)
+            //Check if we've initialised the robot (connection w/ MBED)
+            if (maint_mode.get_initialised()) 
             {
-                if (once)
-                {
-                    SerialPort = maint_mode.serialPort1;
-                    once = false;
-                }
-              dist = function.GetDistance(SerialPort);
-              u = 0;
-              Console.WriteLine(dist);
+                SerialPort = maint_mode.serialPort1;
+
+                //Get from the MBED all the values of the sensors
+                get_sensors_values();
             }
-            
-            if (0 < dist && dist < 200) presence_detected = true;
-            else presence_detected = false;
-            */
+
+            // Set all the bool as card_reader, presence_detected ...
+            set_bool();
 
 
             if (!maintenance)
             {
                 ctrl_panel.Hide();
-                advertising.set_color(sensors.get_color());
                 maint_mode.Hide();
 
                 /*Set the colors of the advertising mode*/
-                switch (color)
-                {
-                    case NO_COLOR:
-                        advertising.set_color(GREEN);
-                        break;
-                    case GREEN:
-                        advertising.set_color(GREEN);
-                        break;
-                    case RED:
-                        advertising.set_color(RED);
-                        break;
-                    case PURPLE:
-                        advertising.set_color(PURPLE);
-                        break;
-                    case BLUE:
-                        advertising.set_color(BLUE);
-                        break;
-                    default:
-                        advertising.set_color(GREEN);
-                        break;
-                }
+                set_color_advertising();
 
                 /*FSM for the UI in auto mode*/
-
-                if (!card_reader && !presence_detected)
-                {
-                    off.Show();
-                    //ctrl_panel.Activate();
-
-                    advertising.Hide();
-                    main_menu.Hide();
-                    warning.Hide();
-                    //get_maintenance() MBED
-                }
-                else if (!card_reader && presence_detected)
-                {
-                    advertising.Show();
-                    // ctrl_panel.Activate();
-
-                    main_menu.Hide();
-                    warning.Hide();
-                    off.Hide();
-                    //get_maintenance() MBED
-                }
-                else if (card_reader && !presence_detected)
-                {
-                    warning.Show();
-                    //ctrl_panel.Activate();
-                    off.Hide();
-                    main_menu.Hide();
-                    advertising.Hide();
-                }
-                else
-                {
-                    main_menu.Show();
-                    //ctrl_panel.Activate();
-                    advertising.Hide();
-                    off.Hide();
-                    warning.Hide();
-                }
+                auto_fsm();
             }
             else
             {
@@ -174,7 +112,7 @@ namespace UI
         public void timer_initialise()
         {
             timer.Tick += new EventHandler(timer_tick);
-            timer.Interval = 25;
+            timer.Interval = 500;
         }
         public void timer_start()
         {
@@ -183,6 +121,75 @@ namespace UI
         public void timer_stop()
         {
             timer.Stop();
+        }
+
+        private void auto_fsm()
+        {
+            if (!card_reader && !presence_detected)
+            {
+                off.Show();
+                advertising.Hide();
+                main_menu.Hide();
+                warning.Hide();
+            }
+            else if (!card_reader && presence_detected)
+            {
+                advertising.Show();
+                main_menu.Hide();
+                warning.Hide();
+                off.Hide();
+            }
+            else if (card_reader && !presence_detected)
+            {
+                warning.Show();
+                off.Hide();
+                main_menu.Hide();
+                advertising.Hide();
+            }
+            else
+            {
+                if (aliensays.get_inGame()) aliensays.Show();
+                if (translation.get_inTranslation()) translation.Show();
+                if (!aliensays.get_inGame() && !translation.get_inTranslation()) main_menu.Show();
+
+                advertising.Hide();
+                off.Hide();
+                warning.Hide();
+            }
+        }
+        private void set_color_advertising()
+        {
+            switch (color)
+            {
+                case NO_COLOR:
+                    advertising.set_color(GREEN);
+                    break;
+                case GREEN:
+                    advertising.set_color(GREEN);
+                    break;
+                case RED:
+                    advertising.set_color(RED);
+                    break;
+                case PURPLE:
+                    advertising.set_color(PURPLE);
+                    break;
+                case BLUE:
+                    advertising.set_color(BLUE);
+                    break;
+                default:
+                    advertising.set_color(GREEN);
+                    break;
+            }
+        }
+        private void get_sensors_values()
+        {
+            dist = function.GetDistance(SerialPort);
+            Console.WriteLine(dist);
+        }
+        private void set_bool()
+        {
+            if (0 < dist && dist < 200) presence_detected = true;
+            else presence_detected = false;
         }
     }
 }

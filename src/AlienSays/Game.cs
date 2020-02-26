@@ -17,6 +17,7 @@ namespace AlienSays
     {
 
         Leaderboards leaderboard;
+        bool inGame = false;
 
         public alienSaysForm(Leaderboards leaderboard, int Scr)
         {
@@ -280,5 +281,20 @@ namespace AlienSays
             }
         }
 
+        public void set_inGame(bool inGame)
+        {
+            this.inGame = inGame;
+        }
+
+        public bool get_inGame()
+        {
+            return inGame;
+        }
+
+        private void exit_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            inGame = false;
+        }
     }
 }

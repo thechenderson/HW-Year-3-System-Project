@@ -26,7 +26,9 @@ namespace Maintenance_mode
             {
                 return ERROR;
             }
+
             Status = Convert.ToInt32(Response);
+           
             return Status;
         }
 

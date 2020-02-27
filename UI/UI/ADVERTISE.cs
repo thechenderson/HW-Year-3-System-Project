@@ -72,5 +72,10 @@ namespace UI
                 pictureRed.Visible = false;
             }
         }
+
+        private void ADVERTISE_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

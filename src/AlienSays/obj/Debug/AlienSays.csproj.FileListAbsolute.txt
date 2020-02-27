@@ -35,9 +35,7 @@ C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\Alie
 C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.Properties.Resources.resources
 C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.csproj.GenerateResource.Cache
 C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.exe
-C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.Form1.resources
 C:\Users\Patrick Geiger\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.csprojAssemblyReference.cache
-C:\Users\Patrick Geiger\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.Form1.resources
 C:\Users\Patrick Geiger\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.alienSaysForm.resources
 C:\Users\Patrick Geiger\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.Leaderboards.resources
 C:\Users\Patrick Geiger\Source\Repos\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.Properties.Resources.resources
@@ -54,3 +52,13 @@ C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\
 C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.csproj.GenerateResource.cache
 C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.exe
 C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.pdb
+C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\bin\Debug\AlienSays.exe.config
+C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\bin\Debug\AlienSays.exe
+C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\bin\Debug\AlienSays.pdb
+C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.csprojAssemblyReference.cache
+C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.alienSaysForm.resources
+C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.Leaderboards.resources
+C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.Properties.Resources.resources
+C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.csproj.GenerateResource.cache
+C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.exe
+C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\src\AlienSays\obj\Debug\AlienSays.pdb

@@ -61,11 +61,15 @@ namespace UI
         private void translate_button_Click(object sender, EventArgs e)
         {
             translation.Show();
+            translation.set_inTranslation(true);
+
         }
 
         private void button_game1_Click(object sender, EventArgs e)
         {
             aliensays.Show();
+            aliensays.set_inGame(true);
+            translation.set_inTranslation(false);
         }
 
         private void button_maintMode_Click(object sender, EventArgs e)

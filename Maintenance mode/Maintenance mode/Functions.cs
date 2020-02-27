@@ -114,6 +114,28 @@ namespace Maintenance_mode
             string blue = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the blue value
 
             return Tuple.Create(clear, red, green, blue);
-        } 
+        }
+
+
+        public string CardCheck(SerialPort serialPort)
+        {
+
+            String command = "i"; 
+            serialPort.WriteLine(command);
+            string cardinserted = ReadData(serialPort);
+
+            return cardinserted;
+        }
+
+        public string CardIDRead(SerialPort serialPort)
+        {
+
+            String command = "u";
+            serialPort.WriteLine(command);
+            string cardID = ReadData(serialPort);
+
+            return cardID;
+        }
+
     }
 }

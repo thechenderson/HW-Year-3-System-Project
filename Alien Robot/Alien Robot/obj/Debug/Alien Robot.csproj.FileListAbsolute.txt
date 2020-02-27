@@ -70,3 +70,17 @@ C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Al
 C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.csproj.CopyComplete
 C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.exe
 C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Alien Robot.exe.config
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.exe
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Alien Robot.exe
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Alien Robot.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\AlienSays.exe
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Maintenance mode.exe
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\UI.exe
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\Maintenance mode.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\AlienSays.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\bin\Debug\UI.pdb
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.csprojResolveAssemblyReference.cache
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien_Robot.Properties.Resources.resources
+C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Alien Robot\Alien Robot\obj\Debug\Alien Robot.csproj.GenerateResource.Cache

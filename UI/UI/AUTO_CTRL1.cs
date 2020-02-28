@@ -71,28 +71,28 @@ namespace UI
         void timer_tick(object sender, EventArgs e)
         {
             /*Here we uses the get of sensors because we simulate the MBED with it
-             but in the near futur we have to get them from the MBED with its method*/
-
+             *but in the near futur we have to get them from the MBED with its method*/
+            maintenance = sensors.get_maintenance();
             card_reader = sensors.get_cardreader();
             presence_detected = sensors.get_presence();
             color = sensors.get_color();
-            maintenance = sensors.get_maintenance();
             ctrl_panel.set_maintenance(maintenance);
             main_menu.set_maintenance(maintenance);
 
-            //Check if we've initialised the robot (connection w/ MBED)
-            if (maint_mode.get_initialised() && maintenance) 
-            {
-                //Get from the MBED all the values of the sensors
-                get_sensors_values();
-            }
-
-            // Set all the bool as card_reader, presence_detected ...
-            set_bool();
-
-
             if (!maintenance)
             {
+                //Check if we've initialised the robot (connection w/ MBED)
+                if (maint_mode.get_initialised())
+                {
+                    //Get from the MBED all the values of the sensors
+                    get_sensors_values();
+                }
+
+                // Set all the bool as card_reader, presence_detected ...
+                set_bool();
+
+
+
                 ctrl_panel.Hide();
                 maint_mode.Hide();
 
@@ -106,6 +106,7 @@ namespace UI
             {
                 ctrl_panel.Show();
             }
+            
         }
         public void timer_initialise()
         {

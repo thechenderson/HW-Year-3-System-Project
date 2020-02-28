@@ -77,12 +77,14 @@ namespace Maintenance_mode
             String command = "r";
             serialPort.WriteLine(command);
 
-            string data = ReadData(serialPort);//Getting the value from the MBED
+            string Servo = ReadData(serialPort);//Getting the value from the MBED
+            string Pos = ReadData(serialPort);//Getting the value from the MBED
             int status = CheckConnect(serialPort);//Getting the status from the MBED
 
+            string data = "Servo " + Servo + " was moved to position " + Pos;
             if (status != 0)
             {
-                return "Error when reading Data";
+                return status.ToString();
             }
             return data;
         }
@@ -114,6 +116,28 @@ namespace Maintenance_mode
             string blue = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the blue value
 
             return Tuple.Create(clear, red, green, blue);
-        } 
+        }
+
+
+        public string CardCheck(SerialPort serialPort)
+        {
+
+            String command = "i"; 
+            serialPort.WriteLine(command);
+            string cardinserted = ReadData(serialPort);
+
+            return cardinserted;
+        }
+
+        public string CardIDRead(SerialPort serialPort)
+        {
+
+            String command = "u";
+            serialPort.WriteLine(command);
+            string cardID = ReadData(serialPort);
+
+            return cardID;
+        }
+
     }
 }

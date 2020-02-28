@@ -135,9 +135,61 @@ namespace Maintenance_mode
                 tbDisplay.AppendText("Error reading the colours");
             }
         }
+
+
+
+
+        private void btnCheckCard_Click(object sender, EventArgs e)
+        {
+
+            tbDisplay.AppendText("Checking card is inserted..." + Environment.NewLine);
+
+            var CheckCard = function.CardCheck(serialPort1);
+
+            int status = function.CheckConnect(serialPort1);//Getting the status
+
+
+            if (status == 0)//If there was no errors
+            {
+                tbDisplay.AppendText("Card Check Result: " + CheckCard + Environment.NewLine);
+            }
+            else
+            {
+                tbDisplay.AppendText("Error reading the card");
+            }
+
+
+        }
+
+        private void btnCardRead_Click(object sender, EventArgs e)
+        {
+
+            tbDisplay.AppendText("Reading card value..." + Environment.NewLine);
+
+            var CardValue = function.CardIDRead(serialPort1);
+
+            int status = function.CheckConnect(serialPort1);//Getting the status
+
+
+            if (status == 0)//If there was no errors
+            {
+                tbDisplay.AppendText("Card ID: " + CardValue + Environment.NewLine);
+            }
+            else
+            {
+                tbDisplay.AppendText("Error reading the card ID");
+            }
+
+        }
+
+
+
+
         public bool get_initialised()
         {
             return initialised;
         }
+
+       
     }
 }

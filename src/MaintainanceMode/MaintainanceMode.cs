@@ -39,6 +39,8 @@ namespace MaintainanceMode{
         private Button btnReadColour;
         private PictureBox pbColour;
         private TextBox tbDistance;
+        private System.Windows.Forms.Button checkCard;
+        private System.Windows.Forms.Button btnCardRead;
 
         //Variables
         int global_error;
@@ -69,6 +71,8 @@ namespace MaintainanceMode{
             this.btnReadColour = new System.Windows.Forms.Button();
             this.pbColour = new System.Windows.Forms.PictureBox();
             this.tbDistance = new System.Windows.Forms.TextBox();
+            this.checkCard = new System.Windows.Forms.Button();
+            this.btnCardRead = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudServoAngle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbColour)).BeginInit();
@@ -271,10 +275,36 @@ namespace MaintainanceMode{
             this.tbDistance.TabIndex = 16;
             this.tbDistance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // checkCard
+            // 
+            this.checkCard.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.checkCard.Location = new System.Drawing.Point(29, 437);
+            this.checkCard.Margin = new System.Windows.Forms.Padding(2);
+            this.checkCard.Name = "checkCard";
+            this.checkCard.Size = new System.Drawing.Size(126, 42);
+            this.checkCard.TabIndex = 34;
+            this.checkCard.Text = "Check Card";
+            this.checkCard.UseVisualStyleBackColor = true;
+            this.checkCard.Click += new System.EventHandler(this.btnCheckCard_Click);
+            // 
+            // btnCardRead
+            // 
+            this.btnCardRead.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCardRead.Location = new System.Drawing.Point(210, 437);
+            this.btnCardRead.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCardRead.Name = "btnCardRead";
+            this.btnCardRead.Size = new System.Drawing.Size(126, 42);
+            this.btnCardRead.TabIndex = 35;
+            this.btnCardRead.Text = "Read Card ID";
+            this.btnCardRead.UseVisualStyleBackColor = true;
+            this.btnCardRead.Click += new System.EventHandler(this.btnCardRead_Click);
+            // 
             // MaintainanceForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(488, 853);
+            this.Controls.Add(this.btnCardRead);
+            this.Controls.Add(this.checkCard);
             this.Controls.Add(this.tbDistance);
             this.Controls.Add(this.pbColour);
             this.Controls.Add(this.btnReadColour);
@@ -456,6 +486,54 @@ namespace MaintainanceMode{
             int status = CheckConnect();
 
         }
+
+        private void btnCheckCard_Click(object sender, EventArgs e)
+        {
+
+            tbDisplay.AppendText("Checking card is inserted..." + Environment.NewLine);
+
+            String command = "i";
+            serialPort1.WriteLine(command);
+            string CheckCard = ReadData();
+
+            int status = CheckConnect();//Getting the status
+
+
+            if (status == 0)//If there was no errors
+            {
+                tbDisplay.AppendText("Card Check Result: " + CheckCard + Environment.NewLine);
+            }
+            else
+            {
+                tbDisplay.AppendText("Error reading the card");
+            }
+
+
+        }
+
+        private void btnCardRead_Click(object sender, EventArgs e)
+        {
+
+            tbDisplay.AppendText("Reading card value..." + Environment.NewLine);
+
+            String command = "u";
+            serialPort1.WriteLine(command);
+            string cardValue = ReadData();
+
+            int status = CheckConnect();//Getting the status
+
+
+            if (status == 0)//If there was no errors
+            {
+                tbDisplay.AppendText("Card ID: " + cardValue + Environment.NewLine);
+            }
+            else
+            {
+                tbDisplay.AppendText("Error reading the card ID");
+            }
+
+        }
+
         static void Main()//Starts the program and sets up the form
         {
                 Application.EnableVisualStyles();

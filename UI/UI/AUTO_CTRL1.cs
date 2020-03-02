@@ -71,30 +71,28 @@ namespace UI
         void timer_tick(object sender, EventArgs e)
         {
             /*Here we uses the get of sensors because we simulate the MBED with it
-             but in the near futur we have to get them from the MBED with its method*/
-
-            card_reader = sensors.get_cardreader();
-            //presence_detected = sensors.get_presence();
-            color = sensors.get_color();
+             *but in the near futur we have to get them from the MBED with its method*/
             maintenance = sensors.get_maintenance();
+            card_reader = sensors.get_cardreader();
+            presence_detected = sensors.get_presence();
+            color = sensors.get_color();
             ctrl_panel.set_maintenance(maintenance);
             main_menu.set_maintenance(maintenance);
 
-            //Check if we've initialised the robot (connection w/ MBED)
-            if (maint_mode.get_initialised()) 
-            {
-                SerialPort = maint_mode.serialPort1;
-
-                //Get from the MBED all the values of the sensors
-                get_sensors_values();
-            }
-
-            // Set all the bool as card_reader, presence_detected ...
-            set_bool();
-
-
             if (!maintenance)
             {
+                //Check if we've initialised the robot (connection w/ MBED)
+                if (maint_mode.get_initialised())
+                {
+                    //Get from the MBED all the values of the sensors
+                    get_sensors_values();
+                }
+
+                // Set all the bool as card_reader, presence_detected ...
+                set_bool();
+
+
+
                 ctrl_panel.Hide();
                 maint_mode.Hide();
 
@@ -108,6 +106,7 @@ namespace UI
             {
                 ctrl_panel.Show();
             }
+            
         }
         public void timer_initialise()
         {
@@ -125,14 +124,14 @@ namespace UI
 
         private void auto_fsm()
         {
-            if (!card_reader && !presence_detected)
+            if (!card_reader && presence_detected)
             {
                 off.Show();
                 advertising.Hide();
                 main_menu.Hide();
                 warning.Hide();
             }
-            else if (!card_reader && presence_detected)
+            else if (!card_reader && !presence_detected)
             {
                 advertising.Show();
                 main_menu.Hide();
@@ -183,13 +182,13 @@ namespace UI
         }
         private void get_sensors_values()
         {
-            dist = function.GetDistance(SerialPort);
-            Console.WriteLine(dist);
+            //dist = function.GetDistance(maint_mode.serialPort1);
+            //Console.WriteLine(dist);
         }
         private void set_bool()
         {
-            if (0 < dist && dist < 200) presence_detected = true;
-            else presence_detected = false;
+            //if (0 < dist && dist < 200) presence_detected = true;
+            //else presence_detected = false;
         }
     }
 }

@@ -110,11 +110,20 @@ namespace Maintenance_mode
             String command = "c";
             serialPort.WriteLine(command);
 
-            string clear = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the clear value
-            string red = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the red value
-            string green = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the green value
-            string blue = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the blue value
+            /*Calling ReadData to get the 4 values frome the MBED*/
+            string clear, red, green, blue;
 
+            string line = ReadData(serialPort);
+            string[] values = line.Split('\t');
+
+            clear = values[0];
+            Console.WriteLine("clear " + clear);
+            red = values[1];
+            Console.WriteLine("red " + red);
+            green = values[2];
+            Console.WriteLine("green " + green);
+            blue = values[3];
+            Console.WriteLine("blue " + blue);
             return Tuple.Create(clear, red, green, blue);
         }
 

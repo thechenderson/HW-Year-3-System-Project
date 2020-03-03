@@ -128,24 +128,23 @@ namespace Maintenance_mode
         }
 
 
-        public string CardCheck(SerialPort serialPort)
+        public bool CardCheck(SerialPort serialPort)
         {
-
             String command = "i"; 
             serialPort.WriteLine(command);
             string cardinserted = ReadData(serialPort);
 
-            return cardinserted;
+            return Convert.ToBoolean(Convert.ToInt32(cardinserted));
         }
 
-        public string CardIDRead(SerialPort serialPort)
+        public int CardIDRead(SerialPort serialPort)
         {
 
             String command = "u";
             serialPort.WriteLine(command);
             string cardID = ReadData(serialPort);
 
-            return cardID;
+            return Convert.ToInt32(cardID);
         }
 
     }

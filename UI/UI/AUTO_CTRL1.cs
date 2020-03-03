@@ -29,11 +29,12 @@ namespace UI
         
 
         /*Declaration bits of the FSM*/
-        static bool card_reader = false;
+        static bool card_reader = false;  //card inserted
         static bool presence_detected = false;
         static int color = NO_COLOR;
-        static bool maintenance = false;
+        static bool maintenance = false; // THE USER 0 IS THE MAINTENANCE GUY
         static int dist = -1;
+        static int user_id = -1;
         static int R = 0, G = 0, B = 0;
         static int[] minmaxR = new int[] { 150, 255, 0, 40, 40, 80 }; //For RED {minR, maxR, minG, maxG, minB, maxB}
         static int[] minmaxG = new int[] { 80, 120, 150, 255, 0, 40 }; //For GREEN {minR, maxR, minG, maxG, minB, maxB}
@@ -94,7 +95,7 @@ namespace UI
                 if (maint_mode.get_initialised() || true)
                 {
                     //Get from the MBED all the values of the sensors
-                    get_sensors_values();
+                    get_sensors_values(); // how does the auto control know when we take back the main card ????
                 }
 
                 // Set all the bool as card_reader, presence_detected ...
@@ -113,7 +114,8 @@ namespace UI
             }
             else
             {
-                ctrl_panel.Show();
+                ctrl_panel.Show(); //if we close the control panel after use, error here. If we just minimize it, it's okay.
+                                   // but if we take back the maint card it's okay.Dont forget to set crtlpan non sizable at the end !
             }
             
         }
@@ -192,47 +194,94 @@ namespace UI
         private void get_sensors_values()
         {
             //------------------------------Distance-------------------------------------------------
+
             //dist = function.GetDistance(maint_mode.serialPort1);
             //Console.WriteLine(dist);
+
             //---------------------------------------------------------------------------------------
 
 
 
             //----------------------------------Colors-----------------------------------------------
-            long_tick++;
-           
-            if (long_tick % 4 == 0) // ask the color each 2s
-            {
-                //var Colours = function.GetColour(maint_mode.serialPort1);// get color sensor values
 
-                //int C = Convert.ToInt32(Colours.Item1);
+            //long_tick++;
 
-                //if (C != 0)
-                //{
-                //    R = Convert.ToInt32(Colours.Item2) * RGB_CONST / C;
-                //    G = Convert.ToInt32(Colours.Item3) * RGB_CONST / C;
-                //    B = Convert.ToInt32(Colours.Item4) * RGB_CONST / C;
-                //}
+            //if (long_tick % 4 == 0) // ask the color each 2s
+            // {
+            //var Colours = function.GetColour(maint_mode.serialPort1);// get color sensor values
 
-                //int status = function.CheckConnect(maint_mode.serialPort1);//Getting the status
+            //int C = Convert.ToInt32(Colours.Item1);
 
-                //if (status != 0)//If there was errors
-                //{
-                //    Console.WriteLine("Error reading the colours" + Environment.NewLine);
-                //}
-            }
+            //if (C != 0)
+            //{
+            //    R = Convert.ToInt32(Colours.Item2) * RGB_CONST / C;
+            //    G = Convert.ToInt32(Colours.Item3) * RGB_CONST / C;
+            //    B = Convert.ToInt32(Colours.Item4) * RGB_CONST / C;
+            //}
 
-            if (long_tick == 5) //raz of long_tick
-            {
-                long_tick = 1 ;
-            }
-            
-            //if(minmaxR[0] < R && R < minmaxR[1] && minmaxR[2] < G && G < minmaxR[3] && minmaxR[4] < B && B < minmaxR[5])
+            //int statusColor = function.CheckConnect(maint_mode.serialPort1);//Getting the status
+
+            //if (statusColor != 0)//If there was errors
+            //{
+            //    Console.WriteLine("Error reading the colours" + Environment.NewLine);
+            //}
+            // }
+
+            //if (long_tick == 5) //raz of long_tick
+            // {
+            //long_tick = 1 ;
+            // }
+
+            //---------------------------------------------------------------------------------------
+
+
+            //-----------------Card User ID---------------------------------------------------------
+
+            // user_id = function.CardIDRead(maint_mode.serialPort1);
+
+            //int statusID = function.CheckConnect(maint_mode.serialPort1);//Getting the status
+
+
+            //if (statusID == 0)//If there was no errors
+            //{
+            //    Console.WriteLine("Error reading the card ID");
+            //}
+
+            //---------------------------------------------------------------------------------------
+
+
+            //-----------------Card inserted---------------------------------------------------------
+
+            //card_reader = function.CardCheck(maint_mode.serialPort1);
+
+            //int statusCardIn = function.CheckConnect(maint_mode.serialPort1);//Getting the status
+
+
+            //if (statusCardIn != 0)//If there was errors
+            //{
+            //    Console.WriteLine("Error reading the card");
+            //}
+
+            //---------------------------------------------------------------------------------------
+        }
+        private void set_bool()
+        {
+            //------------------------------Distance-------------------------------------------------
+
+            //if (0 < dist && dist < 200) presence_detected = true;
+            //else presence_detected = false;
+
+            //---------------------------------------------------------------------------------------
+
+
+            //----------------------------------Colors-----------------------------------------------
+
+            //if (minmaxR[0] < R && R < minmaxR[1] && minmaxR[2] < G && G < minmaxR[3] && minmaxR[4] < B && B < minmaxR[5])
             //{
             //    color = RED;
             //}
             //else
-            //if(minmaxG[0] < R && R < minmaxG[1] && minmaxG[2] < G && G < minmaxG[3] && minmaxG[4] < B && B < minmaxG[5])
+            //if (minmaxG[0] < R && R < minmaxG[1] && minmaxG[2] < G && G < minmaxG[3] && minmaxG[4] < B && B < minmaxG[5])
             //{
             //    color = GREEN;
             //}
@@ -252,11 +301,24 @@ namespace UI
             //}
 
             //---------------------------------------------------------------------------------------
-        }
-        private void set_bool()
-        {
-            if (0 < dist && dist < 200) presence_detected = true;
-            else presence_detected = false;
+
+
+            //-----------------Card User ID---------------------------------------------------------
+
+            //if(user_id == 0)
+            //{
+            //    maintenance = true;
+            //}
+            //else
+            //{
+            //    maintenance = false; //HOW DOES AUTOCTRL KNOW WHEN THE MAIN CARD IS TAKEN OFF ????
+            //    //set the user id to the game
+            //}
+
+            //ctrl_panel.set_maintenance(maintenance);
+            //main_menu.set_maintenance(maintenance);
+
+            //---------------------------------------------------------------------------------------
         }
     }
 }

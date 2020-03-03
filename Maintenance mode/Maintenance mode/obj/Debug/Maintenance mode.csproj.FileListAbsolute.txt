@@ -43,3 +43,12 @@ C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Maintenance mode\Maintenance
 C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\obj\Debug\Maintenance mode.csproj.GenerateResource.Cache
 C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\obj\Debug\Maintenance mode.exe
 C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\obj\Debug\Maintenance mode.pdb
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\bin\Debug\Maintenance mode.exe.config
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\bin\Debug\Maintenance mode.exe
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\bin\Debug\Maintenance mode.pdb
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\obj\Debug\Maintenance mode.csprojAssemblyReference.cache
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\obj\Debug\Maintenance_mode.MAINT_MODE.resources
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\obj\Debug\Maintenance_mode.Properties.Resources.resources
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\obj\Debug\Maintenance mode.csproj.GenerateResource.cache
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\obj\Debug\Maintenance mode.exe
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\Maintenance mode\Maintenance mode\obj\Debug\Maintenance mode.pdb

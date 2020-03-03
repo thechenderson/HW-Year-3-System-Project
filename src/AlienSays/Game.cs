@@ -16,9 +16,9 @@ namespace AlienSays
     public partial class alienSaysForm : Form
     {
 
-        Leaderboards leaderboard;
+        bool inGame = false;
 
-        public alienSaysForm(Leaderboards leaderboard, int Scr)
+        public alienSaysForm(int Scr)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
@@ -26,7 +26,6 @@ namespace AlienSays
             int h = Screen.AllScreens[Scr].Bounds.Height;
             int w = Screen.AllScreens[Scr].Bounds.Width;
             this.Size = new Size(w, h);
-            this.leaderboard = leaderboard;
 
         }
 
@@ -63,12 +62,45 @@ namespace AlienSays
                 {
                     Int32.TryParse(fileRead, out fileReadToInt);
                     highScores[i] = fileReadToInt; //Populate the scores array
+                    Console.WriteLine(highScores[i]); //Print the value of the high scores array to console
+
+                    switch (highScores[i])
+                    {
+                        case 4:
+                            score1Label.Text = highScores[i].ToString();
+                            break;
+
+                        case 3:
+                            score2Label.Text = highScores[i].ToString();
+                            break;
+                        case 2:
+                            score3Label.Text = highScores[i].ToString();
+                            break;
+                        case 1:
+                            score4Label.Text = highScores[i].ToString();
+                            break;
+                        case 0:
+                            score5Label.Text = highScores[i].ToString();
+                            break;
+                        default:
+                            Console.WriteLine("Error");
+                            break;
+                    }
                 }
                 while ((fileRead = nameFile.ReadLine()) != null) //While there is still a line in the names file
                 {
                     highScoreNames[i] = fileRead; //Populate the names array
+                    Console.WriteLine(highScoreNames[i]); //Print the value of the high scores array to console
+
                 }
+
+
+
             }
+
+
+
+
 
         }
 
@@ -77,7 +109,7 @@ namespace AlienSays
         {
             gameInProgress = true;
             score = 0;
-            scoreLabel.Text = "Score: " + score;
+            currentScoreLabel.Text = "Score: " + score;
             colourList.Clear();
             displaySequence();
         }
@@ -133,22 +165,21 @@ namespace AlienSays
         //Compares the users sequence to the correct sequence
         private void checkCorrect()
         {
-            for(int i = 0; i < (userGuess.Count); i++) //For each guess the user has made so far
+            for(int i = 0; i < (userGuess.Count()); i++) //For each guess the user has made so far
             {
                 if (userGuess[i] != colourList[i]) //Check if pattern list matches users pattern list.
                 {
                     gameInProgress = false; //User has got the sequence wrong so game end
 
 
-                    for (int j = 3; j < highScores.Count(); j--) //For each of the currently available high scores
+                    for (int j = 4; j < highScores.Count(); j--) //For each of the currently available high scores
                     {
                         if(userGuess.Count() > highScores[j]) //If current score is greater than the current high score in the array add new high score to the array 
                         {
                             highScores[j] = userGuess.Count();
-                           // highScoreNames[j] = 
-                            /*
-                             *How are names to be set using card reader or user enters name.
-                            */
+                           
+                            
+                        
                         }
                     }
                     
@@ -156,13 +187,20 @@ namespace AlienSays
 
 
                     MessageBox.Show("YOU FAIL!");
-                break;
+                  
+
+
+
+
+
+
+                    break;
                 }
             }
             if (gameInProgress)
             {
                 score += 1;
-                scoreLabel.Text = "Score: " + score;
+                currentScoreLabel.Text = "Score: " + score;
 
                 displaySequence();
             }
@@ -268,17 +306,23 @@ namespace AlienSays
 
         }
 
-        private void leaderboardsButton_Click(object sender, EventArgs e)
+
+        public void set_inGame(bool inGame)
         {
-            if (gameInProgress == true)
-            {
-                return;
-            }
-            else
-            {
-                leaderboard.Show();
-            }
+            this.inGame = inGame;
         }
 
+        public bool get_inGame()
+        {
+            return inGame;
+        }
+
+        private void exit_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            inGame = false;
+        }
+
+   
     }
 }

@@ -20,15 +20,19 @@ namespace Maintenance_mode
         const int FORMAT_ERROR = -1;
         const int COM_BAUD = 115200;
         const int READ_TIMEOUT = 10000;
-        Functions function = new Functions();
+        const int RGB_CONST = 256;
+        Functions function;
 
         //Variables
         int global_error;
+        bool initialised = false;
 
-        public MAINT_MODE()
+        int R = 0, G = 0, B = 0;
+
+        public MAINT_MODE(Functions func)
         {
-  
             InitializeComponent();
+            function = func;
         }
 
         private void MaintainanceForm_Load(object sender, EventArgs e)
@@ -51,11 +55,12 @@ namespace Maintenance_mode
             int status = function.MBEDConnect(com_port, serialPort1);
             if (status == 0)
             {
-                tbDisplay.AppendText("MBED Connected");
+                tbDisplay.AppendText("MBED Connected" + Environment.NewLine);
+                initialised = true;
             }
             else
             {
-                tbDisplay.AppendText("Could Not Connect to the MBED");
+                tbDisplay.AppendText("Could Not Connect to the MBED" + Environment.NewLine);
             }
         }
 
@@ -98,7 +103,7 @@ namespace Maintenance_mode
             }
             else 
             {
-                tbDistance.Text = "Error reading the distance";
+                tbDistance.Text = "Error reading the distance" + Environment.NewLine;
             }
         }
 
@@ -114,6 +119,15 @@ namespace Maintenance_mode
             string green = Colours.Item3;//Assigning the third value in Colours as green
             string blue = Colours.Item4;//Assigning the fourth value in Colours as blue
 
+            int C = Convert.ToInt32(clear);
+
+            if (C != 0)
+            {
+                R = Convert.ToInt32(red) * RGB_CONST / C;
+                G = Convert.ToInt32(green) * RGB_CONST / C;
+                B = Convert.ToInt32(blue) * RGB_CONST / C;
+            }
+
             int status = function.CheckConnect(serialPort1);//Getting the status
 
             if (status == 0)//If there was no errors
@@ -123,14 +137,70 @@ namespace Maintenance_mode
                 tbDisplay.AppendText("Red Value: " + red + Environment.NewLine);//Printing the red value on the display
                 tbDisplay.AppendText("Green Value: " + green + Environment.NewLine);//Printing the green value on the display
                 tbDisplay.AppendText("Blue Value: " + blue + Environment.NewLine);//Printing the blue value on the display
-
+                tbDisplay.AppendText("RGB Value: " + R + " " + G + " " + B + " " + Environment.NewLine);
                 //Changing the colour box on the form to the colour from the sensor using the values obtained
-                pbColour.BackColor = Color.FromArgb(((int)(((byte)(Convert.ToInt32(clear))))), ((int)(((byte)(Convert.ToInt32(red))))), ((int)(((byte)(Convert.ToInt32(green))))), ((int)(((byte)(Convert.ToInt32(blue))))));
+                pbColour.BackColor = Color.FromArgb((byte)R, (byte)G, (byte)B);
             }
             else
             {
-                tbDisplay.AppendText("Error reading the colours");
+                tbDisplay.AppendText("Error reading the colours" + Environment.NewLine);
             }
         }
+
+
+
+
+        private void btnCheckCard_Click(object sender, EventArgs e)
+        {
+
+            tbDisplay.AppendText("Checking card is inserted..." + Environment.NewLine);
+
+            var CheckCard = function.CardCheck(serialPort1);
+
+            int status = function.CheckConnect(serialPort1);//Getting the status
+
+
+            if (status == 0)//If there was no errors
+            {
+                tbDisplay.AppendText("Card Check Result: " + CheckCard + Environment.NewLine);
+            }
+            else
+            {
+                tbDisplay.AppendText("Error reading the card");
+            }
+
+
+        }
+
+        private void btnCardRead_Click(object sender, EventArgs e)
+        {
+
+            tbDisplay.AppendText("Reading card value..." + Environment.NewLine);
+
+            var CardValue = function.CardIDRead(serialPort1);
+
+            int status = function.CheckConnect(serialPort1);//Getting the status
+
+
+            if (status == 0)//If there was no errors
+            {
+                tbDisplay.AppendText("Card ID: " + CardValue + Environment.NewLine);
+            }
+            else
+            {
+                tbDisplay.AppendText("Error reading the card ID");
+            }
+
+        }
+
+
+
+
+        public bool get_initialised()
+        {
+            return initialised;
+        }
+
+       
     }
 }

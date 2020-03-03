@@ -20,6 +20,7 @@ namespace UI
         /*Select fr/en*/
         bool fr = false;
         bool en = true;
+        bool inTranslation = false;
 
         public TRANSLATION(int Scr)
         {
@@ -36,6 +37,7 @@ namespace UI
         private void backtomm_Click(object sender, EventArgs e)
         {
             this.Hide();
+            inTranslation = false;
         }
 
         private void sentence1_Click(object sender, EventArgs e)
@@ -109,6 +111,15 @@ namespace UI
             sentence4.Text = "Viens jouer avec moi !";
         }
 
- 
+        public bool get_inTranslation()
+        {
+            return inTranslation;
+        }
+
+        public void set_inTranslation(bool inTranslation)
+        {
+            this.inTranslation = inTranslation;
+        }
+
     }
 }

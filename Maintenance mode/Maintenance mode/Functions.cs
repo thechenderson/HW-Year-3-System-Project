@@ -8,7 +8,8 @@ namespace Maintenance_mode
     {
         //Constants
         const int READ_TIMEOUT = 10000;
-
+        const int ERROR = -1;
+        const string STR_ERROR = "";
 
         public int CheckConnect(SerialPort serialPort)//Checking if there is a connection between the PC and an MBED
         {
@@ -23,9 +24,11 @@ namespace Maintenance_mode
             }
             catch (TimeoutException)//If there is an error recieving data
             {
-                return -1;
+                return ERROR;
             }
+
             Status = Convert.ToInt32(Response);
+           
             return Status;
         }
 
@@ -42,7 +45,7 @@ namespace Maintenance_mode
             }
             catch (TimeoutException)//If there is an error reading the data
             {
-                return "";//returns a blank string to stop the program from crashing
+                return STR_ERROR;//returns a blank string to stop the program from crashing
             }
             return Response;
         }
@@ -63,7 +66,7 @@ namespace Maintenance_mode
             }
             catch //If no connection could be made
             {
-                return -1;
+                return ERROR;
             }
             return 0;
         }
@@ -74,12 +77,14 @@ namespace Maintenance_mode
             String command = "r";
             serialPort.WriteLine(command);
 
-            string data = ReadData(serialPort);//Getting the value from the MBED
+            string Servo = ReadData(serialPort);//Getting the value from the MBED
+            string Pos = ReadData(serialPort);//Getting the value from the MBED
             int status = CheckConnect(serialPort);//Getting the status from the MBED
 
+            string data = "Servo " + Servo + " was moved to position " + Pos;
             if (status != 0)
             {
-                return "Error when reading Data";
+                return status.ToString();
             }
             return data;
         }
@@ -93,7 +98,7 @@ namespace Maintenance_mode
 
             if (status != 0)
             {
-                return -1;
+                return ERROR;
             }
 
             return Convert.ToInt32(distance);
@@ -105,16 +110,43 @@ namespace Maintenance_mode
             String command = "c";
             serialPort.WriteLine(command);
 
-            string clear = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the clear value
-            string red = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the red value
-            string green = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the green value
-            string blue = ReadData(serialPort);//Calling the ReadData function to get the response from the MBED which will be the blue value
+            /*Calling ReadData to get the 4 values frome the MBED*/
+            string clear, red, green, blue;
 
+            string line = ReadData(serialPort);
+            string[] values = line.Split('\t');
+
+            clear = values[0];
+            Console.WriteLine("clear " + clear);
+            red = values[1];
+            Console.WriteLine("red " + red);
+            green = values[2];
+            Console.WriteLine("green " + green);
+            blue = values[3];
+            Console.WriteLine("blue " + blue);
             return Tuple.Create(clear, red, green, blue);
         }
 
 
+        public string CardCheck(SerialPort serialPort)
+        {
 
-        
+            String command = "i"; 
+            serialPort.WriteLine(command);
+            string cardinserted = ReadData(serialPort);
+
+            return cardinserted;
+        }
+
+        public string CardIDRead(SerialPort serialPort)
+        {
+
+            String command = "u";
+            serialPort.WriteLine(command);
+            string cardID = ReadData(serialPort);
+
+            return cardID;
+        }
+
     }
 }

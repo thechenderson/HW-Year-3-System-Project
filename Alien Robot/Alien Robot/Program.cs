@@ -19,15 +19,14 @@ namespace Alien_Robot
             /* Set the screen
              * Working on the PC only : 
              * Scr = 0 OR working on the PC + Robot's screen : Scr = 1*/
-            int Scr = 1;
+            int Scr = 0;
 
             Functions functions = new Functions();
             SIM_SENSORS sensors = new SIM_SENSORS();
             MAINT_MODE maint_mode = new MAINT_MODE(functions);
             TRANSLATION translation = new TRANSLATION(Scr);
             OFF off = new OFF(Scr);
-            Leaderboards leaderboardsScreen = new Leaderboards(Scr);
-            alienSaysForm aliensays_game = new alienSaysForm(leaderboardsScreen, Scr);
+            alienSaysForm aliensays_game = new alienSaysForm(Scr);
             MAIN_MENU main_M = new MAIN_MENU(maint_mode, aliensays_game ,translation, Scr);
             ADVERTISE advertising = new ADVERTISE(Scr);
             WARNING warning = new WARNING(Scr);

@@ -158,7 +158,7 @@ namespace UI
             }
             else
             {
-                if (aliensays.get_inGame()) aliensays.Show();
+                if (aliensays.get_inGame())aliensays.Show();
                 if (translation.get_inTranslation()) translation.Show();
                 if (!aliensays.get_inGame() && !translation.get_inTranslation()) main_menu.Show();
 

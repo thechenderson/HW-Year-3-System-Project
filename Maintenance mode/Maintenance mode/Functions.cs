@@ -49,9 +49,10 @@ namespace Maintenance_mode
             }
             return Response;
         }
-        public int ServoMove(string Servo, string Pos, SerialPort serialPort)
+
+        public int ServoMove(string state, SerialPort serialPort)
         {
-            string command = "s "+ Servo+ " "+ Pos;
+            string command = "F " + state;
             serialPort.WriteLine(command);//Send the command to the MBED
             int status = CheckConnect(serialPort);//Get the status from the MBED
             return status;

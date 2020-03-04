@@ -43,7 +43,7 @@ namespace UI
             this.TopMost = true;
 
             StartPosition = FormStartPosition.Manual;
-            this.Location = Screen.AllScreens[Scr].WorkingArea.Location;
+            this.Location = Screen.AllScreens[0].WorkingArea.Location;
         }
 
         private void cb_cardread_CheckedChanged(object sender, EventArgs e)

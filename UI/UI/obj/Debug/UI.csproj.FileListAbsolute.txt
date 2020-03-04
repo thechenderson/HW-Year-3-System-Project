@@ -156,3 +156,30 @@ C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csproj.Ge
 C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.exe
 C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.pdb
 C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.SIM_SENSORS.resources
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\UI.exe.config
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\UI.exe
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\UI.pdb
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.exe
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.exe
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.pdb
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.pdb
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.ADVERTISE.resources
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.CTRL_PANEL.resources
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.MAIN_MENU.resources
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.OFF.resources
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.SIM_SENSORS.resources
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.TRANSLATION.resources
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.WARNING.resources
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.exe
+C:\Users\jl117\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.pdb
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.exe
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.exe
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.pdb
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\Maintenance mode.exe.config
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.pdb
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\UI\UI\bin\Debug\AlienSays.exe.config
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.SIM_SENSORS.resources
+C:\Users\Patrick Geiger\source\repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csproj.CopyComplete

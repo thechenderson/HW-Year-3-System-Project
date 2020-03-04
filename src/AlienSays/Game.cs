@@ -16,10 +16,9 @@ namespace AlienSays
     public partial class alienSaysForm : Form
     {
 
-        Leaderboards leaderboard;
         bool inGame = false;
 
-        public alienSaysForm(Leaderboards leaderboard, int Scr)
+        public alienSaysForm(int Scr)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
@@ -27,7 +26,6 @@ namespace AlienSays
             int h = Screen.AllScreens[Scr].Bounds.Height;
             int w = Screen.AllScreens[Scr].Bounds.Width;
             this.Size = new Size(w, h);
-            this.leaderboard = leaderboard;
 
         }
 
@@ -39,13 +37,13 @@ namespace AlienSays
         List<int> userGuess = new List<int>(); //Used to store each of users guesses as to what the pattern was.
         int score = 0; //Stores the current score
 
-        int[] highScores = new int[4]; //Array to store top 5 high scores
-        string[] highScoreNames = new string[4]; //Array to store names of highest scorers.
-
-
+        List<int> highScores = new List<int>();
+        List<string> highScoreNames = new List<string>();
 
         private void alienSaysForm_Load(object sender, EventArgs e)
         {
+            highScores.Clear();
+            highScoreNames.Clear();
             //this.WindowState = FormWindowState.Maximized;
             this.ControlBox = false;
             this.Text = String.Empty;
@@ -63,13 +61,33 @@ namespace AlienSays
                 while ((fileRead = scoreFile.ReadLine()) != null) //While there is still a line in the scores file
                 {
                     Int32.TryParse(fileRead, out fileReadToInt);
-                    highScores[i] = fileReadToInt; //Populate the scores array
+                    highScores.Add(fileReadToInt); //Populate the scores array
+                    
                 }
+
+
+
                 while ((fileRead = nameFile.ReadLine()) != null) //While there is still a line in the names file
                 {
-                    highScoreNames[i] = fileRead; //Populate the names array
+                    highScoreNames.Add(fileRead); //Populate the names array
+
                 }
             }
+
+            score1Label.Text = highScores[0].ToString();
+            score2Label.Text = highScores[1].ToString();
+            score3Label.Text = highScores[2].ToString();
+            score4Label.Text = highScores[3].ToString();
+            score5Label.Text = highScores[4].ToString();
+
+            name1Label.Text = highScoreNames[0];
+            name2Label.Text = highScoreNames[1];
+            name3Label.Text = highScoreNames[2];
+            name4Label.Text = highScoreNames[3];
+            name5Label.Text = highScoreNames[4];
+
+
+
 
         }
 
@@ -78,7 +96,7 @@ namespace AlienSays
         {
             gameInProgress = true;
             score = 0;
-            scoreLabel.Text = "Score: " + score;
+            currentScoreLabel.Text = "Score: " + score;
             colourList.Clear();
             displaySequence();
         }
@@ -134,40 +152,76 @@ namespace AlienSays
         //Compares the users sequence to the correct sequence
         private void checkCorrect()
         {
-            for(int i = 0; i < (userGuess.Count); i++) //For each guess the user has made so far
+            for(int i = 0; i < (userGuess.Count()); i++) //For each guess the user has made so far
             {
                 if (userGuess[i] != colourList[i]) //Check if pattern list matches users pattern list.
                 {
-                    gameInProgress = false; //User has got the sequence wrong so game end
+                    gameInProgress = false; //User has got the sequence wrong so game ends
 
 
-                    for (int j = 3; j < highScores.Count(); j--) //For each of the currently available high scores
-                    {
-                        if(userGuess.Count() > highScores[j]) //If current score is greater than the current high score in the array add new high score to the array 
-                        {
-                            highScores[j] = userGuess.Count();
-                           // highScoreNames[j] = 
-                            /*
-                             *How are names to be set using card reader or user enters name.
-                            */
-                        }
-                    }
-                    
+                    updateHighScores(highScores, highScoreNames, (userGuess.Count()));
 
+                    MessageBox.Show("YOU FAIL!");    
 
-
-                    MessageBox.Show("YOU FAIL!");
-                break;
+                    break;
                 }
             }
             if (gameInProgress)
             {
                 score += 1;
-                scoreLabel.Text = "Score: " + score;
+                currentScoreLabel.Text = "Score: " + score;
 
                 displaySequence();
             }
         }
+
+
+        private void updateHighScores(List<int> scoreList, List<string> nameList, int currentScore)
+        {
+
+            for (int i = 0; i <=4; i++)
+            {
+                if (currentScore > scoreList[i])
+                {
+
+                    if (i == 0)
+                    {
+                       scoreList.Insert(i, currentScore - 1);
+                        nameList.Insert(i, "Insert Name Here");/////////////////////////////////////////////////////////
+                    }
+                    else
+                    {
+                        scoreList.Insert(i + 1, currentScore - 1);
+                        nameList.Insert(i + 1, "Insert name Here");/////////////////////////////////////////////////////
+                    }
+
+
+
+                    score1Label.Text = highScores[0].ToString();
+                    score2Label.Text = highScores[1].ToString();
+                    score3Label.Text = highScores[2].ToString();
+                    score4Label.Text = highScores[3].ToString();
+                    score5Label.Text = highScores[4].ToString();
+
+                    name1Label.Text = highScoreNames[0];
+                    name2Label.Text = highScoreNames[1];
+                    name3Label.Text = highScoreNames[2];
+                    name4Label.Text = highScoreNames[3];
+                    name5Label.Text = highScoreNames[4];
+
+                    break;
+                }
+            }
+
+
+
+
+            Console.WriteLine("**********************************************************************");
+            scoreList.ForEach(Console.WriteLine);
+
+        }
+
+
 
         private void redButton_Click(object sender, EventArgs e)
         {
@@ -269,17 +323,6 @@ namespace AlienSays
 
         }
 
-        private void leaderboardsButton_Click(object sender, EventArgs e)
-        {
-            if (gameInProgress == true)
-            {
-                return;
-            }
-            else
-            {
-                leaderboard.Show();
-            }
-        }
 
         public void set_inGame(bool inGame)
         {
@@ -296,5 +339,7 @@ namespace AlienSays
             this.Hide();
             inGame = false;
         }
+
+   
     }
 }

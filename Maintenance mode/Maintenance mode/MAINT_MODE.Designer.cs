@@ -47,6 +47,7 @@
             this.checkCard = new System.Windows.Forms.Button();
             this.btnCardRead = new System.Windows.Forms.Button();
             this.cbServoState = new System.Windows.Forms.ComboBox();
+            this.btnButtonRead = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbColour)).BeginInit();
             this.SuspendLayout();
             // 
@@ -249,11 +250,22 @@
             this.cbServoState.Size = new System.Drawing.Size(121, 24);
             this.cbServoState.TabIndex = 36;
             // 
+            // btnButtonRead
+            // 
+            this.btnButtonRead.Location = new System.Drawing.Point(189, 609);
+            this.btnButtonRead.Name = "btnButtonRead";
+            this.btnButtonRead.Size = new System.Drawing.Size(116, 23);
+            this.btnButtonRead.TabIndex = 37;
+            this.btnButtonRead.Text = "Button Read";
+            this.btnButtonRead.UseVisualStyleBackColor = true;
+            this.btnButtonRead.Click += new System.EventHandler(this.btnButtonRead_Click);
+            // 
             // MAINT_MODE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 853);
+            this.Controls.Add(this.btnButtonRead);
             this.Controls.Add(this.cbServoState);
             this.Controls.Add(this.btnCardRead);
             this.Controls.Add(this.checkCard);
@@ -303,5 +315,6 @@
         private System.Windows.Forms.Button checkCard;
         private System.Windows.Forms.Button btnCardRead;
         private System.Windows.Forms.ComboBox cbServoState;
+        private System.Windows.Forms.Button btnButtonRead;
     }
 }

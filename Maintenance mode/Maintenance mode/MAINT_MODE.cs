@@ -170,6 +170,12 @@ namespace Maintenance_mode
 
         }
 
+        private void btnButtonRead_Click(object sender, EventArgs e)
+        {
+            function.ButtonRead(serialPort1);
+
+        }
+
         private void btnCardRead_Click(object sender, EventArgs e)
         {
 

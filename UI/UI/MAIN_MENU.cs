@@ -38,17 +38,17 @@ namespace UI
         private void fr_button_Click(object sender, EventArgs e)
         {
             french = true;
-            button_game1.Text = "Jeu 1";
-            button_maintMode.Text = "Jeu 2";
-            translate_button.Text = "Traduction";
+            button_game1.Text = "ALIEN DIT";
+            button_maintMode.Text = "ENTRETIEN";
+            translate_button.Text = "TRADUCTION";
         }
 
         private void eng_buttton_Click(object sender, EventArgs e)
         {
             french = false;
-            button_game1.Text = "Game 1";
-            button_maintMode.Text = "Game 2";
-            translate_button.Text = "Translate";
+            button_game1.Text = "ALIEN SAYS";
+            button_maintMode.Text = "MAINTENANCE";
+            translate_button.Text = "TRANSLATE";
         }
 
         public void set_maintenance(bool maintenance)
@@ -75,6 +75,11 @@ namespace UI
         private void button_maintMode_Click(object sender, EventArgs e)
         {
             maint_mode.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

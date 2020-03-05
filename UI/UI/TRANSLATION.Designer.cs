@@ -38,17 +38,21 @@
             this.Translate_sentence = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // backtomm
             // 
-            this.backtomm.BackColor = System.Drawing.Color.OliveDrab;
+            this.backtomm.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.backtomm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.backtomm.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backtomm.Location = new System.Drawing.Point(0, 1194);
+            this.backtomm.FlatAppearance.BorderSize = 0;
+            this.backtomm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backtomm.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backtomm.Location = new System.Drawing.Point(0, 1209);
             this.backtomm.Margin = new System.Windows.Forms.Padding(2);
             this.backtomm.Name = "backtomm";
-            this.backtomm.Size = new System.Drawing.Size(768, 172);
+            this.backtomm.Size = new System.Drawing.Size(768, 157);
             this.backtomm.TabIndex = 3;
             this.backtomm.Text = "Main Menu";
             this.backtomm.UseVisualStyleBackColor = false;
@@ -58,11 +62,13 @@
             // 
             this.sentence1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sentence1.BackColor = System.Drawing.Color.Maroon;
+            this.sentence1.FlatAppearance.BorderSize = 0;
+            this.sentence1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sentence1.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentence1.Location = new System.Drawing.Point(63, 208);
+            this.sentence1.Location = new System.Drawing.Point(450, 477);
             this.sentence1.Margin = new System.Windows.Forms.Padding(2);
             this.sentence1.Name = "sentence1";
-            this.sentence1.Size = new System.Drawing.Size(291, 357);
+            this.sentence1.Size = new System.Drawing.Size(291, 236);
             this.sentence1.TabIndex = 4;
             this.sentence1.Text = "I am an alien robot";
             this.sentence1.UseVisualStyleBackColor = false;
@@ -72,11 +78,13 @@
             // 
             this.sentence2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sentence2.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.sentence2.FlatAppearance.BorderSize = 0;
+            this.sentence2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sentence2.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentence2.Location = new System.Drawing.Point(409, 210);
+            this.sentence2.Location = new System.Drawing.Point(245, 235);
             this.sentence2.Margin = new System.Windows.Forms.Padding(2);
             this.sentence2.Name = "sentence2";
-            this.sentence2.Size = new System.Drawing.Size(291, 357);
+            this.sentence2.Size = new System.Drawing.Size(291, 238);
             this.sentence2.TabIndex = 6;
             this.sentence2.Text = "I like Haggis pizza";
             this.sentence2.UseVisualStyleBackColor = false;
@@ -86,11 +94,13 @@
             // 
             this.sentence4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sentence4.BackColor = System.Drawing.Color.MidnightBlue;
+            this.sentence4.FlatAppearance.BorderSize = 0;
+            this.sentence4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sentence4.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentence4.Location = new System.Drawing.Point(409, 618);
+            this.sentence4.Location = new System.Drawing.Point(37, 477);
             this.sentence4.Margin = new System.Windows.Forms.Padding(2);
             this.sentence4.Name = "sentence4";
-            this.sentence4.Size = new System.Drawing.Size(291, 357);
+            this.sentence4.Size = new System.Drawing.Size(291, 233);
             this.sentence4.TabIndex = 7;
             this.sentence4.Text = "Come play with me!";
             this.sentence4.UseVisualStyleBackColor = false;
@@ -126,11 +136,13 @@
             // 
             this.sentence3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sentence3.BackColor = System.Drawing.Color.DarkGreen;
+            this.sentence3.FlatAppearance.BorderSize = 0;
+            this.sentence3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sentence3.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sentence3.Location = new System.Drawing.Point(63, 618);
+            this.sentence3.Location = new System.Drawing.Point(245, 717);
             this.sentence3.Margin = new System.Windows.Forms.Padding(2);
             this.sentence3.Name = "sentence3";
-            this.sentence3.Size = new System.Drawing.Size(291, 357);
+            this.sentence3.Size = new System.Drawing.Size(291, 236);
             this.sentence3.TabIndex = 10;
             this.sentence3.Text = "I was created by ArBots";
             this.sentence3.UseVisualStyleBackColor = false;
@@ -141,7 +153,7 @@
             this.Translate_sentence.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Translate_sentence.AutoSize = true;
             this.Translate_sentence.Font = new System.Drawing.Font("Constantia", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Translate_sentence.Location = new System.Drawing.Point(374, 1057);
+            this.Translate_sentence.Location = new System.Drawing.Point(374, 1190);
             this.Translate_sentence.Name = "Translate_sentence";
             this.Translate_sentence.Size = new System.Drawing.Size(0, 54);
             this.Translate_sentence.TabIndex = 11;
@@ -149,11 +161,13 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-17, 86);
+            this.label1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(794, 97);
+            this.label1.Size = new System.Drawing.Size(740, 69);
             this.label1.TabIndex = 12;
             this.label1.Text = "I can speak any language !";
             // 
@@ -161,31 +175,43 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 1026);
+            this.label2.Location = new System.Drawing.Point(12, 1032);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(322, 97);
             this.label2.TabIndex = 13;
             this.label2.Text = "Too easy :";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 216);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(744, 749);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // TRANSLATION
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.YellowGreen;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(768, 1366);
+            this.Controls.Add(this.sentence4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Translate_sentence);
             this.Controls.Add(this.sentence3);
             this.Controls.Add(this.fr_button);
             this.Controls.Add(this.eng_buttton);
-            this.Controls.Add(this.sentence4);
             this.Controls.Add(this.sentence2);
             this.Controls.Add(this.sentence1);
             this.Controls.Add(this.backtomm);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TRANSLATION";
             this.Text = "TRANSLATION";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +228,6 @@
         private System.Windows.Forms.Label Translate_sentence;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

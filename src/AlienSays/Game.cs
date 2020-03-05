@@ -369,5 +369,10 @@ namespace AlienSays
             this.Hide();
             inGame = false;
         }
+
+        private void scoreLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

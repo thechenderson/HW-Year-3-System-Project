@@ -66,12 +66,9 @@ namespace Maintenance_mode
 
         private void btnServoMove_Click(object sender, EventArgs e)
         {
-            string Servo = Convert.ToString(nudServoNo.Value);
-            string Pos = Convert.ToString(nudServoAngle.Value);
-
-            tbDisplay.AppendText("Moving Servo " + Servo + " to position " + Pos + Environment.NewLine);
-
-            int status = function.ServoMove(Servo, Pos, serialPort1);
+            string State = Convert.ToString(cbServoState.SelectedIndex);
+            
+            int status = function.ServoMove(State, serialPort1);
 
             if (status == 0)
             {
@@ -81,6 +78,7 @@ namespace Maintenance_mode
             {
                 tbDisplay.AppendText("Error: Check the Servo" + Environment.NewLine);
             }
+
         }
 
         private void btnServoRead_Click(object sender, EventArgs e)

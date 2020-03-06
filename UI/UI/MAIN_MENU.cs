@@ -16,7 +16,7 @@ namespace UI
     {
         /*Variable for the language selection*/
         bool french = false;
-        bool maintenance = false;
+        bool maintenance = true;
 
         TRANSLATION translation;
         alienSaysForm aliensays;

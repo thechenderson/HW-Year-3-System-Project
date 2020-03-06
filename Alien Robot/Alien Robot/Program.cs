@@ -25,7 +25,7 @@ namespace Alien_Robot
             SIM_SENSORS sensors = new SIM_SENSORS();
             MAINT_MODE maint_mode = new MAINT_MODE(functions);
             TRANSLATION translation = new TRANSLATION(Scr);
-            OFF off = new OFF(Scr);
+            WLC off = new WLC(Scr);
             alienSaysForm aliensays_game = new alienSaysForm(Scr);
             MAIN_MENU main_M = new MAIN_MENU(maint_mode, aliensays_game ,translation, Scr);
             ADVERTISE advertising = new ADVERTISE(Scr);
@@ -34,8 +34,8 @@ namespace Alien_Robot
             AUTO_CTRL auto_ctrl = new AUTO_CTRL(sensors, off, main_M, warning, advertising, control_panel,
                                                 maint_mode, functions, aliensays_game, translation);
 
-            auto_ctrl.timer_initialise();
-            auto_ctrl.timer_start();
+           //auto_ctrl.timer_initialise();
+           // auto_ctrl.timer_start();
             off.Show();
             Application.Run(sensors);
           

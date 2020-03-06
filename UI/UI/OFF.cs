@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class OFF : Form
+    public partial class WLC : Form
     {
-        public OFF(int Scr)
+        public WLC(int Scr)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;

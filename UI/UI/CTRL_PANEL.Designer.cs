@@ -35,7 +35,7 @@
             this.green = new System.Windows.Forms.RadioButton();
             this.cb_cardread = new System.Windows.Forms.CheckBox();
             this.cb_presence = new System.Windows.Forms.CheckBox();
-            this.maint_card = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.color_sensor.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,24 +123,22 @@
             this.cb_presence.UseVisualStyleBackColor = true;
             this.cb_presence.CheckedChanged += new System.EventHandler(this.cb_presence_CheckedChanged);
             // 
-            // maint_card
+            // button1
             // 
-            this.maint_card.AutoSize = true;
-            this.maint_card.Location = new System.Drawing.Point(179, 174);
-            this.maint_card.Name = "maint_card";
-            this.maint_card.Size = new System.Drawing.Size(145, 21);
-            this.maint_card.TabIndex = 3;
-            this.maint_card.Text = "Maintenance Card";
-            this.maint_card.UseVisualStyleBackColor = true;
-            this.maint_card.Visible = false;
-            this.maint_card.CheckedChanged += new System.EventHandler(this.maint_card_CheckedChanged);
+            this.button1.Location = new System.Drawing.Point(164, 330);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 40);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "log off";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CTRL_PANEL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.maint_card);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cb_presence);
             this.Controls.Add(this.cb_cardread);
             this.Controls.Add(this.color_sensor);
@@ -162,6 +160,6 @@
         private System.Windows.Forms.RadioButton green;
         private System.Windows.Forms.CheckBox cb_cardread;
         private System.Windows.Forms.CheckBox cb_presence;
-        private System.Windows.Forms.CheckBox maint_card;
+        private System.Windows.Forms.Button button1;
     }
 }

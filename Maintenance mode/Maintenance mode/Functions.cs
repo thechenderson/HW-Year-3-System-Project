@@ -126,13 +126,13 @@ namespace Maintenance_mode
             string[] values = line.Split('\t');
 
             clear = values[0];
-            Console.WriteLine("clear " + clear);
+            //Console.WriteLine("clear " + clear);
             red = values[1];
-            Console.WriteLine("red " + red);
+            //Console.WriteLine("red " + red);
             green = values[2];
-            Console.WriteLine("green " + green);
+            //Console.WriteLine("green " + green);
             blue = values[3];
-            Console.WriteLine("blue " + blue);
+            //Console.WriteLine("blue " + blue);
             return Tuple.Create(clear, red, green, blue);
         }
 

@@ -174,7 +174,7 @@ namespace Maintenance_mode
         {
             while (checkButton.Checked)
             {
-                string button = function.ButtonRead(serialPort1);
+                int button = function.ButtonRead(serialPort1);
                 tbDisplay.AppendText(button + Environment.NewLine);
 
             }

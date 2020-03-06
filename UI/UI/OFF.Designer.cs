@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class OFF
+    partial class WLC
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -54,7 +54,7 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Please insert a card.";
             // 
-            // OFF
+            // WLC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -63,9 +63,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "OFF";
+            this.Name = "WLC";
             this.ShowIcon = false;
-            this.Text = "OFF";
+            this.Text = "WLC";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

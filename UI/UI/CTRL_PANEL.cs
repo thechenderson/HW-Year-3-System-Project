@@ -23,7 +23,7 @@ namespace UI
         /*Variables for transmission of the forms 
          * done in the constructor*/
 
-        OFF off;
+        WLC off;
         MAIN_MENU main_menu;
         WARNING warning;
         ADVERTISE advertising;
@@ -31,9 +31,9 @@ namespace UI
         /*Boolean for the detectors state*/
         bool card_reader = false;
         bool presence_detected = false;
-        bool maintenance = false;
+        bool maintenance = true;
 
-        public CTRL_PANEL(OFF off, MAIN_MENU main_menu, WARNING warning, ADVERTISE advertising, int Scr)
+        public CTRL_PANEL(WLC off, MAIN_MENU main_menu, WARNING warning, ADVERTISE advertising, int Scr)
         {
             InitializeComponent();
             this.off = off;
@@ -178,15 +178,15 @@ namespace UI
             this.maintenance = maintenance;
         }
 
-        private void maint_card_CheckedChanged(object sender, EventArgs e)
-        {
-            if (maint_card.Checked) maintenance = true;
-            else maintenance = false;
-        }
-
         public bool get_maintenance()
         {
             return maintenance;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            maintenance = false;
+            main_menu.set_maintenance(maintenance);
         }
     }
 }

@@ -148,7 +148,7 @@ namespace Maintenance_mode
 
 
 
-        private void btnCheckCard_Click(object sender, EventArgs e)
+        private void btncheckCard_Click(object sender, EventArgs e)
         {
 
             tbDisplay.AppendText("Checking card is inserted..." + Environment.NewLine);
@@ -168,6 +168,40 @@ namespace Maintenance_mode
             }
 
 
+        }
+
+        private void btnButtonRead_Click(object sender, EventArgs e)
+        {
+            while (checkButton.Checked)
+            {
+                string button = function.ButtonRead(serialPort1);
+                tbDisplay.AppendText(button + Environment.NewLine);
+
+            }
+        }
+
+        private void btnServoEnable_Click(object sender, EventArgs e)
+        {
+            string command = "E 1";
+            serialPort1.WriteLine(command);//Send the command to the MBED
+        }
+
+        private void btnServoDisable_Click(object sender, EventArgs e)
+        {
+            string command = "E 0";
+            serialPort1.WriteLine(command);//Send the command to the MBED
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string command = "L 0";
+            serialPort1.WriteLine(command);//Send the command to the MBED
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string command = "L 1";
+            serialPort1.WriteLine(command);//Send the command to the MBED
         }
 
         private void btnCardRead_Click(object sender, EventArgs e)

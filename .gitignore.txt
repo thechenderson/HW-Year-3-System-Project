@@ -1,5 +1,5 @@
-ï»¿Skip to content
-Search or jump toâ€¦
+Skip to content
+Search or jump to…
 
 Pull requests
 Issues
@@ -8,7 +8,7 @@ Explore
  
 @lalaorome 
 Learn Git and GitHub without any code!
-Using the Hello World guide, youâ€™ll start a branch, write comments, and open a pull request.
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
 
 
 github
@@ -376,7 +376,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
-Â© 2020 GitHub, Inc.
+© 2020 GitHub, Inc.
 Terms
 Privacy
 Security

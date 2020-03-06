@@ -230,7 +230,6 @@ namespace AlienSays
 
             Console.WriteLine("**********************************************************************");
             scoreList.ForEach(Console.WriteLine);
-
         }
 
 

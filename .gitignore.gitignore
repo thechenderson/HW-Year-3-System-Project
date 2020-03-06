@@ -1,4 +1,4 @@
-Skip to content
+﻿Skip to content
 Search or jump to…
 
 Pull requests
@@ -30,7 +30,7 @@ b4551f2 on 16 Dec 2019
 
 # User-specific files
 *.rsuser
-*.suo
+.suo
 *.user
 *.userosscache
 *.sln.docstates

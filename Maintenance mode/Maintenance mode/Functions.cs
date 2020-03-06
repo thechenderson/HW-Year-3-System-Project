@@ -138,6 +138,8 @@ namespace Maintenance_mode
             return Convert.ToBoolean(Convert.ToInt32(cardinserted));
         }
 
+
+
         public int CardIDRead(SerialPort serialPort)
         {
 
@@ -147,6 +149,10 @@ namespace Maintenance_mode
 
             return Convert.ToInt32(cardID);
         }
+
+
+
+
 
     }
 }

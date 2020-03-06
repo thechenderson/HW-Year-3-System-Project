@@ -127,6 +127,7 @@ namespace AlienSays
 
             for (int i = 0; i <= (colourList.Count - 1); i++) //For each of the items in the colour list flash the corresponding colour button
             {
+
                 switch (colourList[i])
                 {
                     case 0:
@@ -224,7 +225,6 @@ namespace AlienSays
                     break;
                 }
             }
-
 
 
 

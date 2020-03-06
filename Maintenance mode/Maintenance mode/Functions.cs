@@ -50,12 +50,12 @@ namespace Maintenance_mode
             return Response;
         }
 
-        public string ButtonRead(SerialPort serialPort)
+        public int ButtonRead(SerialPort serialPort)
         {
             string command = "B";
             serialPort.WriteLine(command);//Send the command to the MBED
             string button = ReadData(serialPort);
-            return button;
+            return Convert.ToInt32(button);
         }
 
         public int ServoMove(string state, SerialPort serialPort)

@@ -196,7 +196,6 @@ C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.csprojAs
 C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.ADVERTISE.resources
 C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.CTRL_PANEL.resources
 C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.MAIN_MENU.resources
-C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.OFF.resources
 C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.Properties.Resources.resources
 C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.SIM_SENSORS.resources
 C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.TRANSLATION.resources
@@ -227,3 +226,4 @@ C:\Users\Patrick Geiger\Source\Repos\chenderson99\HW-Year-3-System-Project\UI\UI
 C:\Users\Patrick Geiger\Source\Repos\chenderson99\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.exe
 C:\Users\Patrick Geiger\Source\Repos\chenderson99\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.pdb
 C:\Users\Patrick Geiger\Source\Repos\chenderson99\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.WLC.resources
+C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.WLC.resources

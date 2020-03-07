@@ -1,5 +1,5 @@
-JOE
-JOHN
-JACK
-JERRY
-JIM
+joe
+jim
+jack
+jerry
+john

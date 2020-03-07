@@ -40,12 +40,6 @@ namespace AlienSays
         List<int> highScores = new List<int>();
         List<string> highScoreNames = new List<string>();
 
-
-        System.IO.StreamReader scoreFileRead = new System.IO.StreamReader(@"..\..\..\..\src\AlienSays\Resources\highScoresValue.txt");
-        System.IO.StreamReader nameFileRead = new System.IO.StreamReader(@"..\..\..\..\src\AlienSays\Resources\highScoresName.txt");
-
-       
-
         private void alienSaysForm_Load(object sender, EventArgs e)
         {
             highScores.Clear();
@@ -63,38 +57,38 @@ namespace AlienSays
         void readHighScoreFiles(List<int> highScoreList, List<string> highScoreNames)
         {
 
-            string fileRead;
             int fileReadToInt;
 
-           
+            var readScoresStream = new FileStream(@"..\..\..\..\src\AlienSays\Resources\highScoresValue.txt", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            var readNamesStream = new FileStream(@"..\..\..\..\src\AlienSays\Resources\highScoresName.txt", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+
+            var readScores = new System.IO.StreamReader(readScoresStream);
+            var readNames = new System.IO.StreamReader(readNamesStream);
 
 
-            
+            string scoreLineRead;
+            string nameLineRead;
+
+
 
             for (int i = 0; i <= highScores.Count(); i++) //For each item in the high scores array (5 items) populate with high scores from the text file on game start
             {
-                while ((fileRead = scoreFileRead.ReadLine()) != null) //While there is still a line in the scores file
+                while ((scoreLineRead = readScores.ReadLine()) != null) //While there is still a line in the scores file
                 {
-                    Int32.TryParse(fileRead, out fileReadToInt);
+                    Int32.TryParse(scoreLineRead, out fileReadToInt);
                     highScores.Add(fileReadToInt); //Populate the scores array
-
                 }
 
 
 
-                while ((fileRead = nameFileRead.ReadLine()) != null) //While there is still a line in the names file
+                while ((nameLineRead = readNames.ReadLine()) != null) //While there is still a line in the names file
                 {
-                    highScoreNames.Add(fileRead); //Populate the names array
-
+                    highScoreNames.Add(nameLineRead); //Populate the names array
                 }
             }
 
 
-            nameFileRead.Close();
-            scoreFileRead.Close();
-
-            //File.WriteAllText("..\\..\\..\\..\\src\\AlienSays\\Resources\\highScoresValue.txt", String.Empty); //Empty scores file
-          //  File.WriteAllText("..\\..\\..\\..\\src\\AlienSays\\Resources\\highScoresName.txt", String.Empty); //Empty names file
+           
 
 
             score1Label.Text = highScores[0].ToString();
@@ -225,11 +219,6 @@ namespace AlienSays
                     break;
                 }
             }
-
-
-
-            Console.WriteLine("**********************************************************************");
-            scoreList.ForEach(Console.WriteLine);
         }
 
 
@@ -348,23 +337,26 @@ namespace AlienSays
         private void exit_button_Click(object sender, EventArgs e)
         {
 
-/*
+            File.WriteAllText("..\\..\\..\\..\\src\\AlienSays\\Resources\\highScoresValue.txt", String.Empty); //Empty scores file
+            File.WriteAllText("..\\..\\..\\..\\src\\AlienSays\\Resources\\highScoresName.txt", String.Empty); //Empty names file
 
-            System.IO.StreamWriter scoreFileWrite = new System.IO.StreamWriter(@"..\..\..\..\src\AlienSays\Resources\highScoresValue.txt");
-            System.IO.StreamWriter nameFileWrite = new System.IO.StreamWriter(@"..\..\..\..\src\AlienSays\Resources\highScoresValue.txt");
+            Console.WriteLine("TEXT FILES ARE EMPTIED");
 
+            var writeScoresStream = new FileStream(@"..\..\..\..\src\AlienSays\Resources\highScoresValue.txt", FileMode.Append, FileAccess.Write, FileShare.Read);
+            var writeNamesStream = new FileStream(@"..\..\..\..\src\AlienSays\Resources\highScoresName.txt", FileMode.Append, FileAccess.Write, FileShare.Read);
 
+            var writeScores = new System.IO.StreamWriter(writeScoresStream);
+            var writeNames = new System.IO.StreamWriter(writeNamesStream);
 
-            for (int i = 4; i==0; i++)
+            for (int i = 0; i<=4; i++)
             {
-                scoreFileWrite.WriteLine(highScores[i]);
-                nameFileWrite.WriteLine(highScoreNames[i]);
+                Console.WriteLine(highScores[i]);
+                writeScores.WriteLine(highScores[i]);
+                writeScores.Flush();
+                writeNames.WriteLine(highScoreNames[i]);
+                writeNames.Flush();
             }
 
-
-            nameFileWrite.Close();
-            scoreFileWrite.Close();
-*/
             this.Hide();
             inGame = false;
         }

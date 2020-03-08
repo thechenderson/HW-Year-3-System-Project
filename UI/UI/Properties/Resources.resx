@@ -118,28 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="FR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ENG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ENG2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ENG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ENG1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ENG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ENG.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>BLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ENG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ENG2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GREEN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>GREEN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PURPLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>PURPLE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Card Tutorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Card Tutorial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RED" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>RED.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PURPLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>PURPLE.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BLUE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BLUE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Card Tutorial1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Card Tutorial1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

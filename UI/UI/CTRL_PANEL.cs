@@ -54,17 +54,19 @@ namespace UI
             {
                 if (!card_reader && !presence_detected)
                 {
-                    off.Show();
-                    advertising.Hide();
-                    main_menu.Hide();
-                    warning.Hide();
-                }
-                else if (!card_reader && presence_detected)
-                {
                     advertising.Show();
                     main_menu.Hide();
                     warning.Hide();
                     off.Hide();
+
+           
+                }
+                else if (card_reader && !presence_detected)
+                {
+                    off.Show();
+                    advertising.Hide();
+                    main_menu.Hide();
+                    warning.Hide();
                 }
                 else if (card_reader && !presence_detected)
                 {
@@ -89,14 +91,14 @@ namespace UI
 
             if (maintenance)
             {
-                if (!card_reader && !presence_detected)
+                if (!card_reader && presence_detected)
                 {
                     off.Show();
                     advertising.Hide();
                     main_menu.Hide();
                     warning.Hide();
                 }
-                else if (!card_reader && presence_detected)
+                else if (!card_reader && !presence_detected)
                 {
                     advertising.Show();
                     main_menu.Hide();

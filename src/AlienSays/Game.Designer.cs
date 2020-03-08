@@ -241,7 +241,6 @@
             this.scoreLabel.Size = new System.Drawing.Size(200, 55);
             this.scoreLabel.TabIndex = 12;
             this.scoreLabel.Text = "SCORE";
-            this.scoreLabel.Click += new System.EventHandler(this.scoreLabel_Click);
             // 
             // pictureBox2
             // 

@@ -49,12 +49,27 @@ namespace AlienSays
             this.Text = String.Empty;
 
             readHighScoreFiles(highScores, highScoreNames);
-
-
         }
 
 
-        void readHighScoreFiles(List<int> highScoreList, List<string> highScoreNames)
+
+        public void set_inGame(bool inGame)
+        {
+            this.inGame = inGame;
+        }
+
+        public bool get_inGame()
+        {
+            return inGame;
+        }
+
+
+
+
+        /*
+         * Read saved high scores and names from text files and set labels to match
+         */
+        private void readHighScoreFiles(List<int> highScoreList, List<string> highScoreNames)
         {
 
             int fileReadToInt;
@@ -87,10 +102,6 @@ namespace AlienSays
                 }
             }
 
-
-           
-
-
             score1Label.Text = highScores[0].ToString();
             score2Label.Text = highScores[1].ToString();
             score3Label.Text = highScores[2].ToString();
@@ -105,15 +116,17 @@ namespace AlienSays
 
         }
 
-        private void startButton_Click(object sender, EventArgs e)
-        {
-            gameInProgress = true;
-            score = 0;
-            currentScoreLabel.Text = "Score: " + score;
-            colourList.Clear();
-            displaySequence();
-        }
+       
 
+
+
+
+
+
+
+        /*
+         * Adds a new item to the array that stores the sequence and displays the sequence again with the added colour
+         */
         private void displaySequence()
         {
             colourList.Add(generateColour.Next(0, 4)); //Add a new colour to the sequence
@@ -163,7 +176,13 @@ namespace AlienSays
             }
         }
 
-        //Compares the users sequence to the correct sequence
+
+
+
+
+        /*
+         * Compares the users sequence to the correct sequence
+         */
         private void checkCorrect()
         {
             for(int i = 0; i < (userGuess.Count()); i++) //For each guess the user has made so far
@@ -171,12 +190,7 @@ namespace AlienSays
                 if (userGuess[i] != colourList[i]) //Check if pattern list matches users pattern list.
                 {
                     gameInProgress = false; //User has got the sequence wrong so game ends
-
-
                     updateHighScores(highScores, highScoreNames, (userGuess.Count()));
-
-                    MessageBox.Show("YOU FAIL!");    
-
                     break;
                 }
             }
@@ -184,44 +198,22 @@ namespace AlienSays
             {
                 score += 1;
                 currentScoreLabel.Text = "Score: " + score;
-
                 displaySequence();
             }
         }
 
 
-        private void updateHighScores(List<int> scoreList, List<string> nameList, int currentScore)
+
+
+        // Button Presses Start --------------------------------------------------------------------------------------------------------
+        private void startButton_Click(object sender, EventArgs e)
         {
-
-            for (int i = 0; i <=4; i++)
-            {
-                if (currentScore > scoreList[i])
-                {
-
-                       scoreList.Insert(i, currentScore - 1);
-                        nameList.Insert(i, "Insert Name Here");/////////////////////////////////////////////////////////
-              
-
-
-
-                    score1Label.Text = highScores[0].ToString();
-                    score2Label.Text = highScores[1].ToString();
-                    score3Label.Text = highScores[2].ToString();
-                    score4Label.Text = highScores[3].ToString();
-                    score5Label.Text = highScores[4].ToString();
-
-                    name1Label.Text = highScoreNames[0];
-                    name2Label.Text = highScoreNames[1];
-                    name3Label.Text = highScoreNames[2];
-                    name4Label.Text = highScoreNames[3];
-                    name5Label.Text = highScoreNames[4];
-
-                    break;
-                }
-            }
+            gameInProgress = true;
+            score = 0;
+            currentScoreLabel.Text = "Score: " + score;
+            colourList.Clear();
+            displaySequence();
         }
-
-
 
         private void redButton_Click(object sender, EventArgs e)
         {
@@ -322,21 +314,56 @@ namespace AlienSays
             
 
         }
+        //Button Presses End --------------------------------------------------------------------------------------------------------
 
 
-        public void set_inGame(bool inGame)
+
+
+
+        /*
+         * Function that updates the high scores and names to match the users current score, placing them on the leaderboard appropriately
+         */
+        private void updateHighScores(List<int> scoreList, List<string> nameList, int currentScore)
         {
-            this.inGame = inGame;
+
+            for (int i = 0; i <= 4; i++)
+            {
+                if (currentScore > scoreList[i])
+                {
+
+                    scoreList.Insert(i, currentScore - 1);
+                    nameList.Insert(i, "Insert Name Here");/////////////////////////////////////////////////////////
+
+
+
+
+                    score1Label.Text = highScores[0].ToString();
+                    score2Label.Text = highScores[1].ToString();
+                    score3Label.Text = highScores[2].ToString();
+                    score4Label.Text = highScores[3].ToString();
+                    score5Label.Text = highScores[4].ToString();
+
+                    name1Label.Text = highScoreNames[0];
+                    name2Label.Text = highScoreNames[1];
+                    name3Label.Text = highScoreNames[2];
+                    name4Label.Text = highScoreNames[3];
+                    name5Label.Text = highScoreNames[4];
+
+                    break;
+                }
+            }
         }
 
-        public bool get_inGame()
-        {
-            return inGame;
-        }
 
-        private void exit_button_Click(object sender, EventArgs e)
-        {
 
+
+
+
+        /*
+         * Function to write scores and names from their respective arrays into the text files stored on the system
+         */
+        private void writeTextFiles()
+        {
             File.WriteAllText("..\\..\\..\\..\\src\\AlienSays\\Resources\\highScoresValue.txt", String.Empty); //Empty scores file
             File.WriteAllText("..\\..\\..\\..\\src\\AlienSays\\Resources\\highScoresName.txt", String.Empty); //Empty names file
 
@@ -348,7 +375,7 @@ namespace AlienSays
             var writeScores = new System.IO.StreamWriter(writeScoresStream);
             var writeNames = new System.IO.StreamWriter(writeNamesStream);
 
-            for (int i = 0; i<=4; i++)
+            for (int i = 0; i <= 4; i++)
             {
                 Console.WriteLine(highScores[i]);
                 writeScores.WriteLine(highScores[i]);
@@ -356,14 +383,22 @@ namespace AlienSays
                 writeNames.WriteLine(highScoreNames[i]);
                 writeNames.Flush();
             }
-
-            this.Hide();
-            inGame = false;
         }
 
-        private void scoreLabel_Click(object sender, EventArgs e)
+
+
+
+
+
+        private void exit_button_Click(object sender, EventArgs e)
         {
 
+            writeTextFiles();
+
+            this.Hide(); //Hide current form
+            inGame = false; //No longer in the game
         }
+
+   
     }
 }

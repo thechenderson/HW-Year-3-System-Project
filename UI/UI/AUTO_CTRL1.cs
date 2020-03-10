@@ -159,14 +159,10 @@ namespace UI
             }
             else if (card_reader && !presence_detected)
             {
-
-                if (main_menu.Visible)
-                {
                     warning.Show();
                     wlc.Hide();
                     main_menu.Hide();
                     advertising.Hide();
-                }   
             }
             else
             {

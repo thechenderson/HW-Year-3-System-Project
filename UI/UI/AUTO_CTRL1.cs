@@ -157,7 +157,7 @@ namespace UI
                 warning.Hide();
                 wlc.Hide();
             }
-            else if (card_reader && !presence_detected)
+            else if (card_reader && !presence_detected && main_menu.Visible)
             {
                 warning.Show();
                 wlc.Hide();

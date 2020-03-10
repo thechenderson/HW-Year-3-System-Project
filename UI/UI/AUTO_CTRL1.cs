@@ -157,12 +157,16 @@ namespace UI
                 warning.Hide();
                 wlc.Hide();
             }
-            else if (card_reader && !presence_detected && main_menu.Visible)
+            else if (card_reader && !presence_detected)
             {
-                warning.Show();
-                wlc.Hide();
-                main_menu.Hide();
-                advertising.Hide();
+
+                if (main_menu.Visible)
+                {
+                    warning.Show();
+                    wlc.Hide();
+                    main_menu.Hide();
+                    advertising.Hide();
+                }   
             }
             else
             {

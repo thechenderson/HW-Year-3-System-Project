@@ -108,5 +108,17 @@
   <ItemGroup>
     <None Include="Resources\yellowButtonOn.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FR.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ENG2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ENG1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ENG.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

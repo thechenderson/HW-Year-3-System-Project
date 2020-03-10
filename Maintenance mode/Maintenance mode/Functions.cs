@@ -11,6 +11,8 @@ namespace Maintenance_mode
         const int ERROR = -1;
         const string STR_ERROR = "";
 
+        
+
         public int CheckConnect(SerialPort serialPort)//Checking if there is a connection between the PC and an MBED
         {
             string Response;
@@ -119,11 +121,11 @@ namespace Maintenance_mode
             String command = "c";
             serialPort.WriteLine(command);
 
-            /*Calling ReadData to get the 4 values frome the MBED*/
             string clear, red, green, blue;
 
             string line = ReadData(serialPort);
             string[] values = line.Split('\t');
+
 
             clear = values[0];
             //Console.WriteLine("clear " + clear);
@@ -133,6 +135,8 @@ namespace Maintenance_mode
             //Console.WriteLine("green " + green);
             blue = values[3];
             //Console.WriteLine("blue " + blue);
+            
+            
             return Tuple.Create(clear, red, green, blue);
         }
 

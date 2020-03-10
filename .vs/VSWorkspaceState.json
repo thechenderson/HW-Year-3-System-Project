@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Alien Robot",
-    "\\Alien Robot\\Alien Robot"
+    "\\Alien Robot\\Alien Robot",
+    "\\UI",
+    "\\UI\\UI"
   ],
-  "SelectedNode": "\\Alien Robot\\Alien Robot.sln",
+  "SelectedNode": "\\UI\\UI\\MAIN_MENU.cs",
   "PreviewInSolutionExplorer": false
 }

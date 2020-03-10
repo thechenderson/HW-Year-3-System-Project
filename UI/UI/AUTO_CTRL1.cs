@@ -68,7 +68,7 @@ namespace UI
             timer.Tick += new EventHandler(timer_tick);
             //timer.Interval = 500;
             //timer.Start();
-            timer.Interval = 500;
+            timer.Interval = 250;
             timer.Start();
             ctrl_panel = ctrl_pan;
             wlc = off_given;

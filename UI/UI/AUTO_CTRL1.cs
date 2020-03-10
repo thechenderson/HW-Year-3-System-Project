@@ -317,7 +317,7 @@ namespace UI
 
             //-----------------Card User ID---------------------------------------------------------
 
-            if (user_id == 13)
+            if (user_id == 15)
             {
                 maintenance = true;
             }

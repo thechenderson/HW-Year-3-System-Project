@@ -13,6 +13,5 @@ namespace Maintenance_mode
         /// </summary>
         [STAThread]
         static void Main(){}
-        //test
     }
 }

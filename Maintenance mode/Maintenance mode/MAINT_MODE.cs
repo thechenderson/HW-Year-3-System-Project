@@ -172,11 +172,17 @@ namespace Maintenance_mode
 
         private void btnButtonRead_Click(object sender, EventArgs e)
         {
-            while (checkButton.Checked)
+            while (true)
             {
                 int button = function.ButtonRead(serialPort1);
-                tbDisplay.AppendText(button + Environment.NewLine);
-
+                if (button == 1)
+                {
+                    break;
+                }
+                else if (button != 0)
+                {
+                    tbDisplay.AppendText(button + Environment.NewLine);
+                }
             }
         }
 
@@ -194,13 +200,19 @@ namespace Maintenance_mode
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string command = "L 0";
+            string command = "L 2";
             serialPort1.WriteLine(command);//Send the command to the MBED
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             string command = "L 1";
+            serialPort1.WriteLine(command);//Send the command to the MBED
+        }
+
+        private void btnLEDOff_Click(object sender, EventArgs e)
+        {
+            string command = "L 0";
             serialPort1.WriteLine(command);//Send the command to the MBED
         }
 

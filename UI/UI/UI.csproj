@@ -170,5 +170,11 @@
       <Name>AlienSays</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Card Tutorial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Card Tutorial1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -66,6 +66,8 @@ namespace UI
                          TRANSLATION translate)
         {
             timer.Tick += new EventHandler(timer_tick);
+            //timer.Interval = 500;
+            //timer.Start();
             timer.Interval = 500;
             timer.Start();
             ctrl_panel = ctrl_pan;
@@ -142,7 +144,7 @@ namespace UI
         {
             if (!card_reader && presence_detected)
             {
-
+                //wlc.Focus();
                 wlc.Show();
                 advertising.Hide();
                 main_menu.Hide();
@@ -150,7 +152,6 @@ namespace UI
             }
             else if (!card_reader && !presence_detected)
             {
-
                 advertising.Show();
                 main_menu.Hide();
                 warning.Hide();
@@ -158,15 +159,14 @@ namespace UI
             }
             else if (card_reader && !presence_detected)
             {
-
-                warning.Show();
-                wlc.Hide();
-                main_menu.Hide();
-                advertising.Hide();
+                    warning.Show();
+                    wlc.Hide();
+                    main_menu.Hide();
+                    advertising.Hide();
             }
             else
             {
-                if (aliensays.get_inGame()) aliensays.Show();
+                if (aliensays.get_inGame())aliensays.Show();
                 if (translation.get_inTranslation()) translation.Show();
                 if (!aliensays.get_inGame() && !translation.get_inTranslation()) main_menu.Show();
 
@@ -317,7 +317,7 @@ namespace UI
 
             //-----------------Card User ID---------------------------------------------------------
 
-            if (user_id == 13)
+            if (user_id == 15)
             {
                 maintenance = true;
             }

@@ -201,9 +201,32 @@ namespace UI
         }
         private void get_sensors_values()
         {
+            //---------------------------------------ALL STATES-------------------------------------------
+
+            var States = function.GetAll(maint_mode.serialPort1);
+
+            int statusStates = function.CheckConnect(maint_mode.serialPort1);
+
+            if (statusStates != 0)//If there was errors
+            {
+                Console.WriteLine("Error reading states" + Environment.NewLine);
+            }
+
+            card_reader = States.Item1;
+            user_id = States.Item2;
+            dist = States.Item3;
+
+
+
+
+            //---------------------------------------------------------------------------------------
+
+
+
+
             //------------------------------Distance-------------------------------------------------
 
-            dist = function.GetDistance(maint_mode.serialPort1);
+            //dist = function.GetDistance(maint_mode.serialPort1);
             //Console.WriteLine(dist);
 
             //---------------------------------------------------------------------------------------
@@ -247,32 +270,32 @@ namespace UI
 
             //-----------------Card User ID---------------------------------------------------------
 
-            user_id = function.CardIDRead(maint_mode.serialPort1);
+            //user_id = function.CardIDRead(maint_mode.serialPort1);
 
-            int statusID = function.CheckConnect(maint_mode.serialPort1);//Getting the status
+            //int statusID = function.CheckConnect(maint_mode.serialPort1);//Getting the status
 
            // Console.WriteLine("ID " + user_id);
 
-            if (statusID != 0)//If there was no errors
-            {
-                Console.WriteLine("Error reading the card ID");
-            }
+           // if (statusID != 0)//If there was no errors
+            //{
+                //Console.WriteLine("Error reading the card ID");
+            //}
 
             //---------------------------------------------------------------------------------------
 
 
             //-----------------Card inserted---------------------------------------------------------
 
-            card_reader = function.CardCheck(maint_mode.serialPort1);
+            //card_reader = function.CardCheck(maint_mode.serialPort1);
 
-            int statusCardIn = function.CheckConnect(maint_mode.serialPort1);//Getting the status
+           // int statusCardIn = function.CheckConnect(maint_mode.serialPort1);//Getting the status
 
             //Console.WriteLine("somebody " + card_reader);
 
-            if (statusCardIn != 0)//If there was errors
-            {
-                Console.WriteLine("Error reading the card");
-            }
+           // if (statusCardIn != 0)//If there was errors
+           // {
+               // Console.WriteLine("Error reading the card");
+           // }
 
             //---------------------------------------------------------------------------------------
         }

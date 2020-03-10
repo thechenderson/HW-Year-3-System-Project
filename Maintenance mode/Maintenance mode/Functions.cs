@@ -158,7 +158,24 @@ namespace Maintenance_mode
             return Convert.ToInt32(cardID);
         }
 
+        public Tuple<bool, int, int, int> GetAll(SerialPort serialPort)
+        {
+            String command = "A";
+            serialPort.WriteLine(command);
+            string states = ReadData(serialPort);
 
+            string[] all = states.Split('\t');
+
+            bool CardIn;
+            int UserNo, Dist, Button;
+
+            CardIn = Convert.ToBoolean(Convert.ToInt32(all[0]));
+            UserNo = Convert.ToInt32(all[1]);
+            Dist = Convert.ToInt32(all[2]);
+            Button = Convert.ToInt32(all[3]);
+
+            return Tuple.Create(CardIn, UserNo, Dist, Button);
+        }
 
 
 

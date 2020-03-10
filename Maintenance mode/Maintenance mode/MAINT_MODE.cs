@@ -172,11 +172,17 @@ namespace Maintenance_mode
 
         private void btnButtonRead_Click(object sender, EventArgs e)
         {
-            while (checkButton.Checked)
+            while (true)
             {
                 int button = function.ButtonRead(serialPort1);
-                tbDisplay.AppendText(button + Environment.NewLine);
-
+                if (button == 1)
+                {
+                    break;
+                }
+                else if (button != 0)
+                {
+                    tbDisplay.AppendText(button + Environment.NewLine);
+                }
             }
         }
 

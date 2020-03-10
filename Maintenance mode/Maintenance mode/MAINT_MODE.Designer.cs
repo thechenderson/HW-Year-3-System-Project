@@ -52,7 +52,6 @@
             this.btnServoDisable = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkButton = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbColour)).BeginInit();
             this.SuspendLayout();
             // 
@@ -314,22 +313,11 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkButton
-            // 
-            this.checkButton.AutoSize = true;
-            this.checkButton.Location = new System.Drawing.Point(166, 638);
-            this.checkButton.Name = "checkButton";
-            this.checkButton.Size = new System.Drawing.Size(162, 21);
-            this.checkButton.TabIndex = 42;
-            this.checkButton.Text = "Button Check Enable";
-            this.checkButton.UseVisualStyleBackColor = true;
-            // 
             // MAINT_MODE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 853);
-            this.Controls.Add(this.checkButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnServoDisable);
@@ -389,6 +377,5 @@
         private System.Windows.Forms.Button btnServoDisable;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkButton;
     }
 }

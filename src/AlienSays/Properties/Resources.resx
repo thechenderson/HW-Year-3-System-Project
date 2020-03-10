@@ -118,11 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="redButtonOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\redButtonOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ENG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ENG1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blueButtonOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\blueButtonOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yellowButtonOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellowButtonOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ENG2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ENG2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blueButtonOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blueButtonOn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,16 +133,25 @@
   <data name="greenButtonOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\greenButtonOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="blueButtonOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blueButtonOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="redButtonOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\redButtonOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="greenButtonOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\greenButtonOn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="redButtonOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redButtonOn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="yellowButtonOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\yellowButtonOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="yellowButtonOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellowButtonOn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ENG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ENG.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

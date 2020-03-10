@@ -62,6 +62,7 @@ namespace UI
         {
             translation.Show();
             translation.set_inTranslation(true);
+            
 
         }
 

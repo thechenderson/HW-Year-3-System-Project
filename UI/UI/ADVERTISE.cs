@@ -39,6 +39,7 @@ namespace UI
             if (color_num == GREEN)
             {
                 advertise_name.Text = "Green Alien Quality";
+                this.BackColor = Color.Green;
                 pictureGreen.Visible = true;
                 pictureBlue.Visible = false;
                 picturePurple.Visible = false;
@@ -48,6 +49,7 @@ namespace UI
             if (color_num == RED)
             {
                 advertise_name.Text = "Doggylon";
+                this.BackColor = Color.Red;
                 pictureRed.Visible = true;
                 pictureGreen.Visible = false;
                 pictureBlue.Visible = false;
@@ -57,6 +59,7 @@ namespace UI
             if (color_num == PURPLE)
             {
                 advertise_name.Text = "DPurple";
+                this.BackColor = Color.Purple;
                 picturePurple.Visible = true;
                 pictureGreen.Visible = false;
                 pictureBlue.Visible = false;
@@ -66,6 +69,7 @@ namespace UI
             if (color_num == BLUE)
             {
                 advertise_name.Text = "Blue Store";
+                this.BackColor = Color.Blue;
                 pictureBlue.Visible = true;
                 pictureGreen.Visible = false;
                 picturePurple.Visible = false;

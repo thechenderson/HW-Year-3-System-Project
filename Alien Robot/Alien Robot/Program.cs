@@ -19,7 +19,7 @@ namespace Alien_Robot
             /* Set the screen
              * Working on the PC only : 
              * Scr = 0 OR working on the PC + Robot's screen : Scr = 1*/
-            int Scr = 1;
+            int Scr = 0;
 
             Functions functions = new Functions();
             SIM_SENSORS sensors = new SIM_SENSORS();

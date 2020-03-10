@@ -50,8 +50,10 @@
             this.btnButtonRead = new System.Windows.Forms.Button();
             this.btnServoEnable = new System.Windows.Forms.Button();
             this.btnServoDisable = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLEDGreen = new System.Windows.Forms.Button();
+            this.btnLEDRed = new System.Windows.Forms.Button();
+            this.btnLEDOff = new System.Windows.Forms.Button();
+            this.lblLEDs = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbColour)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             // 
             this.tbDistance.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbDistance.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDistance.Location = new System.Drawing.Point(72, 462);
+            this.tbDistance.Location = new System.Drawing.Point(67, 389);
             this.tbDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDistance.Name = "tbDistance";
             this.tbDistance.ReadOnly = true;
@@ -71,7 +73,7 @@
             // 
             this.pbColour.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbColour.BackColor = System.Drawing.Color.Black;
-            this.pbColour.Location = new System.Drawing.Point(316, 462);
+            this.pbColour.Location = new System.Drawing.Point(314, 389);
             this.pbColour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbColour.Name = "pbColour";
             this.pbColour.Size = new System.Drawing.Size(100, 50);
@@ -81,7 +83,7 @@
             // btnReadColour
             // 
             this.btnReadColour.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReadColour.Location = new System.Drawing.Point(280, 386);
+            this.btnReadColour.Location = new System.Drawing.Point(280, 324);
             this.btnReadColour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReadColour.Name = "btnReadColour";
             this.btnReadColour.Size = new System.Drawing.Size(168, 52);
@@ -93,7 +95,7 @@
             // btnReadDistance
             // 
             this.btnReadDistance.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReadDistance.Location = new System.Drawing.Point(39, 386);
+            this.btnReadDistance.Location = new System.Drawing.Point(39, 324);
             this.btnReadDistance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReadDistance.Name = "btnReadDistance";
             this.btnReadDistance.Size = new System.Drawing.Size(168, 52);
@@ -107,7 +109,7 @@
             this.lblSensorOps.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSensorOps.AutoSize = true;
             this.lblSensorOps.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSensorOps.Location = new System.Drawing.Point(116, 319);
+            this.lblSensorOps.Location = new System.Drawing.Point(116, 274);
             this.lblSensorOps.Name = "lblSensorOps";
             this.lblSensorOps.Size = new System.Drawing.Size(257, 35);
             this.lblSensorOps.TabIndex = 29;
@@ -116,7 +118,7 @@
             // btnServoRead
             // 
             this.btnServoRead.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnServoRead.Location = new System.Drawing.Point(189, 255);
+            this.btnServoRead.Location = new System.Drawing.Point(189, 231);
             this.btnServoRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnServoRead.Name = "btnServoRead";
             this.btnServoRead.Size = new System.Drawing.Size(93, 31);
@@ -205,20 +207,20 @@
             this.tbDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbDisplay.Location = new System.Drawing.Point(12, 658);
+            this.tbDisplay.Location = new System.Drawing.Point(12, 684);
             this.tbDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDisplay.Multiline = true;
             this.tbDisplay.Name = "tbDisplay";
             this.tbDisplay.ReadOnly = true;
             this.tbDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbDisplay.Size = new System.Drawing.Size(464, 175);
+            this.tbDisplay.Size = new System.Drawing.Size(464, 149);
             this.tbDisplay.TabIndex = 17;
             this.tbDisplay.Text = "\r\n\r\n\r\n";
             // 
             // btncheckCard
             // 
             this.btncheckCard.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btncheckCard.Location = new System.Drawing.Point(39, 538);
+            this.btncheckCard.Location = new System.Drawing.Point(39, 462);
             this.btncheckCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btncheckCard.Name = "btncheckCard";
             this.btncheckCard.Size = new System.Drawing.Size(168, 52);
@@ -230,7 +232,7 @@
             // btnCardRead
             // 
             this.btnCardRead.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCardRead.Location = new System.Drawing.Point(280, 538);
+            this.btnCardRead.Location = new System.Drawing.Point(280, 462);
             this.btnCardRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCardRead.Name = "btnCardRead";
             this.btnCardRead.Size = new System.Drawing.Size(168, 52);
@@ -257,9 +259,9 @@
             // 
             // btnButtonRead
             // 
-            this.btnButtonRead.Location = new System.Drawing.Point(189, 609);
+            this.btnButtonRead.Location = new System.Drawing.Point(179, 531);
             this.btnButtonRead.Name = "btnButtonRead";
-            this.btnButtonRead.Size = new System.Drawing.Size(116, 23);
+            this.btnButtonRead.Size = new System.Drawing.Size(121, 49);
             this.btnButtonRead.TabIndex = 37;
             this.btnButtonRead.Text = "Button Read";
             this.btnButtonRead.UseVisualStyleBackColor = true;
@@ -289,37 +291,61 @@
             this.btnServoDisable.UseVisualStyleBackColor = true;
             this.btnServoDisable.Click += new System.EventHandler(this.btnServoDisable_Click);
             // 
-            // button1
+            // btnLEDGreen
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Location = new System.Drawing.Point(48, 604);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 33);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Green";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLEDGreen.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLEDGreen.Location = new System.Drawing.Point(179, 631);
+            this.btnLEDGreen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLEDGreen.Name = "btnLEDGreen";
+            this.btnLEDGreen.Size = new System.Drawing.Size(124, 33);
+            this.btnLEDGreen.TabIndex = 40;
+            this.btnLEDGreen.Text = "Green";
+            this.btnLEDGreen.UseVisualStyleBackColor = true;
+            this.btnLEDGreen.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnLEDRed
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.Location = new System.Drawing.Point(316, 604);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 33);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Red";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnLEDRed.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLEDRed.Location = new System.Drawing.Point(314, 631);
+            this.btnLEDRed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLEDRed.Name = "btnLEDRed";
+            this.btnLEDRed.Size = new System.Drawing.Size(124, 33);
+            this.btnLEDRed.TabIndex = 41;
+            this.btnLEDRed.Text = "Red";
+            this.btnLEDRed.UseVisualStyleBackColor = true;
+            this.btnLEDRed.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnLEDOff
+            // 
+            this.btnLEDOff.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLEDOff.Location = new System.Drawing.Point(39, 631);
+            this.btnLEDOff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLEDOff.Name = "btnLEDOff";
+            this.btnLEDOff.Size = new System.Drawing.Size(124, 33);
+            this.btnLEDOff.TabIndex = 42;
+            this.btnLEDOff.Text = "Off";
+            this.btnLEDOff.UseVisualStyleBackColor = true;
+            this.btnLEDOff.Click += new System.EventHandler(this.btnLEDOff_Click);
+            // 
+            // lblLEDs
+            // 
+            this.lblLEDs.AutoSize = true;
+            this.lblLEDs.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLEDs.Location = new System.Drawing.Point(34, 602);
+            this.lblLEDs.Name = "lblLEDs";
+            this.lblLEDs.Size = new System.Drawing.Size(68, 27);
+            this.lblLEDs.TabIndex = 43;
+            this.lblLEDs.Text = "LEDs";
             // 
             // MAINT_MODE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 853);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblLEDs);
+            this.Controls.Add(this.btnLEDOff);
+            this.Controls.Add(this.btnLEDRed);
+            this.Controls.Add(this.btnLEDGreen);
             this.Controls.Add(this.btnServoDisable);
             this.Controls.Add(this.btnServoEnable);
             this.Controls.Add(this.btnButtonRead);
@@ -375,7 +401,9 @@
         private System.Windows.Forms.Button btnButtonRead;
         private System.Windows.Forms.Button btnServoEnable;
         private System.Windows.Forms.Button btnServoDisable;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLEDGreen;
+        private System.Windows.Forms.Button btnLEDRed;
+        private System.Windows.Forms.Button btnLEDOff;
+        private System.Windows.Forms.Label lblLEDs;
     }
 }

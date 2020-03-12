@@ -79,7 +79,7 @@
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startButton.ForeColor = System.Drawing.Color.White;
-            this.startButton.Location = new System.Drawing.Point(12, 1117);
+            this.startButton.Location = new System.Drawing.Point(16, 1089);
             this.startButton.Margin = new System.Windows.Forms.Padding(4);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(368, 46);
@@ -109,7 +109,7 @@
             this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_button.ForeColor = System.Drawing.Color.White;
-            this.exit_button.Location = new System.Drawing.Point(388, 1117);
+            this.exit_button.Location = new System.Drawing.Point(392, 1089);
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(368, 46);
             this.exit_button.TabIndex = 9;
@@ -123,7 +123,7 @@
             this.nameLabel.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.ForeColor = System.Drawing.Color.White;
-            this.nameLabel.Location = new System.Drawing.Point(291, 580);
+            this.nameLabel.Location = new System.Drawing.Point(293, 540);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(167, 55);
@@ -149,7 +149,7 @@
             this.rankLabel.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.rankLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rankLabel.ForeColor = System.Drawing.Color.White;
-            this.rankLabel.Location = new System.Drawing.Point(16, 580);
+            this.rankLabel.Location = new System.Drawing.Point(18, 540);
             this.rankLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rankLabel.Name = "rankLabel";
             this.rankLabel.Size = new System.Drawing.Size(162, 55);
@@ -162,7 +162,7 @@
             this.scoreLabel.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.ForeColor = System.Drawing.Color.White;
-            this.scoreLabel.Location = new System.Drawing.Point(556, 580);
+            this.scoreLabel.Location = new System.Drawing.Point(558, 540);
             this.scoreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.Size = new System.Drawing.Size(200, 55);
@@ -175,7 +175,7 @@
             this.rank1Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.rank1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rank1Label.ForeColor = System.Drawing.Color.White;
-            this.rank1Label.Location = new System.Drawing.Point(66, 668);
+            this.rank1Label.Location = new System.Drawing.Point(68, 628);
             this.rank1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rank1Label.Name = "rank1Label";
             this.rank1Label.Size = new System.Drawing.Size(80, 55);
@@ -188,7 +188,7 @@
             this.rank2Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.rank2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rank2Label.ForeColor = System.Drawing.Color.White;
-            this.rank2Label.Location = new System.Drawing.Point(66, 762);
+            this.rank2Label.Location = new System.Drawing.Point(68, 722);
             this.rank2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rank2Label.Name = "rank2Label";
             this.rank2Label.Size = new System.Drawing.Size(80, 55);
@@ -201,7 +201,7 @@
             this.rank3Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.rank3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rank3Label.ForeColor = System.Drawing.Color.White;
-            this.rank3Label.Location = new System.Drawing.Point(66, 855);
+            this.rank3Label.Location = new System.Drawing.Point(68, 815);
             this.rank3Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rank3Label.Name = "rank3Label";
             this.rank3Label.Size = new System.Drawing.Size(80, 55);
@@ -214,7 +214,7 @@
             this.rank4Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.rank4Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rank4Label.ForeColor = System.Drawing.Color.White;
-            this.rank4Label.Location = new System.Drawing.Point(66, 955);
+            this.rank4Label.Location = new System.Drawing.Point(68, 915);
             this.rank4Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rank4Label.Name = "rank4Label";
             this.rank4Label.Size = new System.Drawing.Size(80, 55);
@@ -227,7 +227,7 @@
             this.rank5Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.rank5Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rank5Label.ForeColor = System.Drawing.Color.White;
-            this.rank5Label.Location = new System.Drawing.Point(66, 1049);
+            this.rank5Label.Location = new System.Drawing.Point(68, 1009);
             this.rank5Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rank5Label.Name = "rank5Label";
             this.rank5Label.Size = new System.Drawing.Size(80, 55);
@@ -240,7 +240,7 @@
             this.name1Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.name1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name1Label.ForeColor = System.Drawing.Color.White;
-            this.name1Label.Location = new System.Drawing.Point(329, 668);
+            this.name1Label.Location = new System.Drawing.Point(331, 628);
             this.name1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name1Label.Name = "name1Label";
             this.name1Label.Size = new System.Drawing.Size(108, 55);
@@ -253,7 +253,7 @@
             this.name2Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.name2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name2Label.ForeColor = System.Drawing.Color.White;
-            this.name2Label.Location = new System.Drawing.Point(329, 762);
+            this.name2Label.Location = new System.Drawing.Point(331, 722);
             this.name2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name2Label.Name = "name2Label";
             this.name2Label.Size = new System.Drawing.Size(108, 55);
@@ -266,7 +266,7 @@
             this.name3Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.name3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name3Label.ForeColor = System.Drawing.Color.White;
-            this.name3Label.Location = new System.Drawing.Point(329, 855);
+            this.name3Label.Location = new System.Drawing.Point(331, 815);
             this.name3Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name3Label.Name = "name3Label";
             this.name3Label.Size = new System.Drawing.Size(108, 55);
@@ -279,7 +279,7 @@
             this.name4Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.name4Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name4Label.ForeColor = System.Drawing.Color.White;
-            this.name4Label.Location = new System.Drawing.Point(329, 955);
+            this.name4Label.Location = new System.Drawing.Point(331, 915);
             this.name4Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name4Label.Name = "name4Label";
             this.name4Label.Size = new System.Drawing.Size(108, 55);
@@ -292,7 +292,7 @@
             this.name5Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.name5Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name5Label.ForeColor = System.Drawing.Color.White;
-            this.name5Label.Location = new System.Drawing.Point(329, 1049);
+            this.name5Label.Location = new System.Drawing.Point(331, 1009);
             this.name5Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name5Label.Name = "name5Label";
             this.name5Label.Size = new System.Drawing.Size(108, 55);
@@ -305,7 +305,7 @@
             this.score5Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.score5Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.score5Label.ForeColor = System.Drawing.Color.White;
-            this.score5Label.Location = new System.Drawing.Point(604, 1049);
+            this.score5Label.Location = new System.Drawing.Point(606, 1009);
             this.score5Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score5Label.Name = "score5Label";
             this.score5Label.Size = new System.Drawing.Size(108, 55);
@@ -318,7 +318,7 @@
             this.score4Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.score4Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.score4Label.ForeColor = System.Drawing.Color.White;
-            this.score4Label.Location = new System.Drawing.Point(604, 955);
+            this.score4Label.Location = new System.Drawing.Point(606, 915);
             this.score4Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score4Label.Name = "score4Label";
             this.score4Label.Size = new System.Drawing.Size(108, 55);
@@ -331,7 +331,7 @@
             this.score3Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.score3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.score3Label.ForeColor = System.Drawing.Color.White;
-            this.score3Label.Location = new System.Drawing.Point(604, 855);
+            this.score3Label.Location = new System.Drawing.Point(606, 815);
             this.score3Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score3Label.Name = "score3Label";
             this.score3Label.Size = new System.Drawing.Size(108, 55);
@@ -344,7 +344,7 @@
             this.score2Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.score2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.score2Label.ForeColor = System.Drawing.Color.White;
-            this.score2Label.Location = new System.Drawing.Point(604, 762);
+            this.score2Label.Location = new System.Drawing.Point(606, 722);
             this.score2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score2Label.Name = "score2Label";
             this.score2Label.Size = new System.Drawing.Size(108, 55);
@@ -357,7 +357,7 @@
             this.score1Label.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.score1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.score1Label.ForeColor = System.Drawing.Color.White;
-            this.score1Label.Location = new System.Drawing.Point(604, 668);
+            this.score1Label.Location = new System.Drawing.Point(606, 628);
             this.score1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score1Label.Name = "score1Label";
             this.score1Label.Size = new System.Drawing.Size(108, 55);
@@ -433,7 +433,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.pictureBox6.Location = new System.Drawing.Point(13, 950);
+            this.pictureBox6.Location = new System.Drawing.Point(15, 910);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(744, 67);
             this.pictureBox6.TabIndex = 17;
@@ -442,7 +442,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.pictureBox5.Location = new System.Drawing.Point(13, 1044);
+            this.pictureBox5.Location = new System.Drawing.Point(15, 1004);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(744, 67);
             this.pictureBox5.TabIndex = 16;
@@ -451,7 +451,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.pictureBox4.Location = new System.Drawing.Point(13, 850);
+            this.pictureBox4.Location = new System.Drawing.Point(15, 810);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(744, 67);
             this.pictureBox4.TabIndex = 15;
@@ -460,7 +460,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.pictureBox3.Location = new System.Drawing.Point(13, 757);
+            this.pictureBox3.Location = new System.Drawing.Point(15, 717);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(744, 67);
             this.pictureBox3.TabIndex = 14;
@@ -469,7 +469,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 663);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 623);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(744, 67);
             this.pictureBox2.TabIndex = 13;
@@ -484,7 +484,7 @@
             this.greenButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
             this.greenButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.greenButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.greenButton.Location = new System.Drawing.Point(239, 404);
+            this.greenButton.Location = new System.Drawing.Point(241, 364);
             this.greenButton.Margin = new System.Windows.Forms.Padding(4);
             this.greenButton.Name = "greenButton";
             this.greenButton.Size = new System.Drawing.Size(334, 141);
@@ -514,7 +514,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 98);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 58);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(743, 456);
             this.pictureBox1.TabIndex = 10;

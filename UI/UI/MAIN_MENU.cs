@@ -40,7 +40,7 @@ namespace UI
             this.translation = translation;
             this.aliensays = aliensays;
             this.maint_mode = maint_mode;
-            translate_button.BackColor = Color.Black;
+            translate_button.FlatAppearance.BorderSize = 10;
         }
 
         private void fr_button_Click(object sender, EventArgs e)

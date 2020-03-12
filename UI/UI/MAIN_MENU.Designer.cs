@@ -40,6 +40,7 @@
             this.fr_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fr_button.BackgroundImage = global::UI.Properties.Resources.FR;
             this.fr_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fr_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.fr_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fr_button.Location = new System.Drawing.Point(441, 11);
             this.fr_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -54,6 +55,7 @@
             this.eng_buttton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.eng_buttton.BackgroundImage = global::UI.Properties.Resources.ENG;
             this.eng_buttton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eng_buttton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.eng_buttton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eng_buttton.Location = new System.Drawing.Point(503, 11);
             this.eng_buttton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);

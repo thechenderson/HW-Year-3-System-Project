@@ -50,7 +50,7 @@
             this.backtomm.FlatAppearance.BorderSize = 0;
             this.backtomm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backtomm.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backtomm.Location = new System.Drawing.Point(0, 1209);
+            this.backtomm.Location = new System.Drawing.Point(0, 1063);
             this.backtomm.Margin = new System.Windows.Forms.Padding(2);
             this.backtomm.Name = "backtomm";
             this.backtomm.Size = new System.Drawing.Size(768, 157);
@@ -112,6 +112,7 @@
             this.fr_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fr_button.BackgroundImage = global::UI.Properties.Resources.FR;
             this.fr_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fr_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.fr_button.Location = new System.Drawing.Point(596, 11);
             this.fr_button.Margin = new System.Windows.Forms.Padding(2);
             this.fr_button.Name = "fr_button";
@@ -125,6 +126,7 @@
             this.eng_buttton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.eng_buttton.BackgroundImage = global::UI.Properties.Resources.ENG;
             this.eng_buttton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eng_buttton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.eng_buttton.Location = new System.Drawing.Point(670, 11);
             this.eng_buttton.Margin = new System.Windows.Forms.Padding(2);
             this.eng_buttton.Name = "eng_buttton";
@@ -156,7 +158,7 @@
             this.Translate_sentence.Font = new System.Drawing.Font("Constantia", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Translate_sentence.Location = new System.Drawing.Point(374, 1190);
             this.Translate_sentence.Name = "Translate_sentence";
-            this.Translate_sentence.Size = new System.Drawing.Size(0, 54);
+            this.Translate_sentence.Size = new System.Drawing.Size(0, 42);
             this.Translate_sentence.TabIndex = 11;
             this.Translate_sentence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -168,7 +170,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 116);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(740, 69);
+            this.label1.Size = new System.Drawing.Size(599, 55);
             this.label1.TabIndex = 12;
             this.label1.Text = "I can speak any language !";
             // 
@@ -178,7 +180,7 @@
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 1032);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(322, 97);
+            this.label2.Size = new System.Drawing.Size(258, 79);
             this.label2.TabIndex = 13;
             this.label2.Text = "Too easy :";
             // 
@@ -196,7 +198,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(768, 1366);
+            this.ClientSize = new System.Drawing.Size(768, 1220);
             this.Controls.Add(this.sentence4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

@@ -42,7 +42,7 @@ namespace AlienSays
             int h = Screen.AllScreens[Scr].Bounds.Height;
             int w = Screen.AllScreens[Scr].Bounds.Width;
             this.Size = new Size(w, h);
-            startButton.FlatAppearance.BorderSize = 10;
+            startButton.FlatAppearance.BorderSize = 5;
         }
 
         private void alienSaysForm_Load(object sender, EventArgs e)
@@ -399,23 +399,23 @@ namespace AlienSays
             {
                 case START:
                     eng_buttton.FlatAppearance.BorderSize = 0;
-                    startButton.FlatAppearance.BorderSize = 10;
+                    startButton.FlatAppearance.BorderSize = 5;
                     break;
                 case EXIT:
                     startButton.FlatAppearance.BorderSize = 0;
-                    exit_button.FlatAppearance.BorderSize = 10;
+                    exit_button.FlatAppearance.BorderSize = 5;
                     break;
                 case FR:
                     exit_button.FlatAppearance.BorderSize = 0;
-                    fr_button.FlatAppearance.BorderSize = 10;
+                    fr_button.FlatAppearance.BorderSize = 5;
                     break;
                 case ENG:
                     fr_button.FlatAppearance.BorderSize = 0;
-                    eng_buttton.FlatAppearance.BorderSize = 10;
+                    eng_buttton.FlatAppearance.BorderSize = 5;
                     break;
                 case 5:
                     eng_buttton.FlatAppearance.BorderSize = 0;
-                    startButton.FlatAppearance.BorderSize = 10;
+                    startButton.FlatAppearance.BorderSize = 5;
                     selected_button = START;
                     break;
             }

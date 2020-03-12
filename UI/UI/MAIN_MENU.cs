@@ -40,7 +40,7 @@ namespace UI
             this.translation = translation;
             this.aliensays = aliensays;
             this.maint_mode = maint_mode;
-            translate_button.FlatAppearance.BorderSize = 10;
+            translate_button.FlatAppearance.BorderSize = 5;
         }
 
         private void fr_button_Click(object sender, EventArgs e)
@@ -124,23 +124,23 @@ namespace UI
             {
                 case TRANSLATE:
                     eng_buttton.FlatAppearance.BorderSize = 0;
-                    translate_button.FlatAppearance.BorderSize = 10;
+                    translate_button.FlatAppearance.BorderSize = 5;
                     break;
                 case AL_SAYS:
                     translate_button.FlatAppearance.BorderSize = 0;
-                    button_game1.FlatAppearance.BorderSize = 10;
+                    button_game1.FlatAppearance.BorderSize = 5;
                     break;
                 case FR:
                     button_game1.FlatAppearance.BorderSize = 0;
-                    fr_button.FlatAppearance.BorderSize = 10;
+                    fr_button.FlatAppearance.BorderSize = 5;
                     break;
                 case ENG:
                     fr_button.FlatAppearance.BorderSize = 0;
-                    eng_buttton.FlatAppearance.BorderSize = 10;
+                    eng_buttton.FlatAppearance.BorderSize = 5;
                     break;
                 case 5:
                     eng_buttton.FlatAppearance.BorderSize = 0;
-                    translate_button.FlatAppearance.BorderSize = 10;
+                    translate_button.FlatAppearance.BorderSize = 5;
                     selected_button = TRANSLATE;
                     break;
             }

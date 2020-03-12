@@ -285,7 +285,7 @@ namespace UI
                 }
 
                 /*
-                int statusColor = function.CheckConnect(maint_mode.serialPort1);//Getting the status
+                int statusColor = function.CheckConnect(maint_mode.serialPort1);//Getting the status .
 
                 if (statusColor != 0)//If there was errors
                 {

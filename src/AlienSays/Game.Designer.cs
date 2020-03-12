@@ -94,7 +94,7 @@
             this.label1.Location = new System.Drawing.Point(14, 99);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 86);
+            this.label1.Size = new System.Drawing.Size(264, 69);
             this.label1.TabIndex = 8;
             this.label1.Text = "Alien says...";
             // 
@@ -121,7 +121,7 @@
             this.nameLabel.Location = new System.Drawing.Point(291, 580);
             this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(207, 69);
+            this.nameLabel.Size = new System.Drawing.Size(167, 55);
             this.nameLabel.TabIndex = 5;
             this.nameLabel.Text = "NAME";
             // 
@@ -134,7 +134,7 @@
             this.currentScoreLabel.Location = new System.Drawing.Point(568, 99);
             this.currentScoreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.currentScoreLabel.Name = "currentScoreLabel";
-            this.currentScoreLabel.Size = new System.Drawing.Size(231, 86);
+            this.currentScoreLabel.Size = new System.Drawing.Size(188, 69);
             this.currentScoreLabel.TabIndex = 4;
             this.currentScoreLabel.Text = "Score: 0";
             // 
@@ -147,7 +147,7 @@
             this.rankLabel.Location = new System.Drawing.Point(16, 580);
             this.rankLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rankLabel.Name = "rankLabel";
-            this.rankLabel.Size = new System.Drawing.Size(200, 69);
+            this.rankLabel.Size = new System.Drawing.Size(162, 55);
             this.rankLabel.TabIndex = 11;
             this.rankLabel.Text = "RANK";
             // 
@@ -160,7 +160,7 @@
             this.scoreLabel.Location = new System.Drawing.Point(556, 580);
             this.scoreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(248, 69);
+            this.scoreLabel.Size = new System.Drawing.Size(200, 55);
             this.scoreLabel.TabIndex = 12;
             this.scoreLabel.Text = "SCORE";
             // 
@@ -173,7 +173,7 @@
             this.rank1Label.Location = new System.Drawing.Point(66, 668);
             this.rank1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rank1Label.Name = "rank1Label";
-            this.rank1Label.Size = new System.Drawing.Size(98, 69);
+            this.rank1Label.Size = new System.Drawing.Size(80, 55);
             this.rank1Label.TabIndex = 18;
             this.rank1Label.Text = "01";
             // 
@@ -186,7 +186,7 @@
             this.rank2Label.Location = new System.Drawing.Point(66, 762);
             this.rank2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rank2Label.Name = "rank2Label";
-            this.rank2Label.Size = new System.Drawing.Size(98, 69);
+            this.rank2Label.Size = new System.Drawing.Size(80, 55);
             this.rank2Label.TabIndex = 19;
             this.rank2Label.Text = "02";
             // 
@@ -199,7 +199,7 @@
             this.rank3Label.Location = new System.Drawing.Point(66, 855);
             this.rank3Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rank3Label.Name = "rank3Label";
-            this.rank3Label.Size = new System.Drawing.Size(98, 69);
+            this.rank3Label.Size = new System.Drawing.Size(80, 55);
             this.rank3Label.TabIndex = 20;
             this.rank3Label.Text = "03";
             // 
@@ -212,7 +212,7 @@
             this.rank4Label.Location = new System.Drawing.Point(66, 955);
             this.rank4Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rank4Label.Name = "rank4Label";
-            this.rank4Label.Size = new System.Drawing.Size(98, 69);
+            this.rank4Label.Size = new System.Drawing.Size(80, 55);
             this.rank4Label.TabIndex = 21;
             this.rank4Label.Text = "04";
             // 
@@ -225,7 +225,7 @@
             this.rank5Label.Location = new System.Drawing.Point(66, 1049);
             this.rank5Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rank5Label.Name = "rank5Label";
-            this.rank5Label.Size = new System.Drawing.Size(98, 69);
+            this.rank5Label.Size = new System.Drawing.Size(80, 55);
             this.rank5Label.TabIndex = 22;
             this.rank5Label.Text = "05";
             // 
@@ -238,7 +238,7 @@
             this.name1Label.Location = new System.Drawing.Point(329, 668);
             this.name1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name1Label.Name = "name1Label";
-            this.name1Label.Size = new System.Drawing.Size(132, 69);
+            this.name1Label.Size = new System.Drawing.Size(108, 55);
             this.name1Label.TabIndex = 23;
             this.name1Label.Text = "###";
             // 
@@ -251,7 +251,7 @@
             this.name2Label.Location = new System.Drawing.Point(329, 762);
             this.name2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name2Label.Name = "name2Label";
-            this.name2Label.Size = new System.Drawing.Size(132, 69);
+            this.name2Label.Size = new System.Drawing.Size(108, 55);
             this.name2Label.TabIndex = 24;
             this.name2Label.Text = "###";
             // 
@@ -264,7 +264,7 @@
             this.name3Label.Location = new System.Drawing.Point(329, 855);
             this.name3Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name3Label.Name = "name3Label";
-            this.name3Label.Size = new System.Drawing.Size(132, 69);
+            this.name3Label.Size = new System.Drawing.Size(108, 55);
             this.name3Label.TabIndex = 25;
             this.name3Label.Text = "###";
             // 
@@ -277,7 +277,7 @@
             this.name4Label.Location = new System.Drawing.Point(329, 955);
             this.name4Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name4Label.Name = "name4Label";
-            this.name4Label.Size = new System.Drawing.Size(132, 69);
+            this.name4Label.Size = new System.Drawing.Size(108, 55);
             this.name4Label.TabIndex = 26;
             this.name4Label.Text = "###";
             // 
@@ -290,7 +290,7 @@
             this.name5Label.Location = new System.Drawing.Point(329, 1049);
             this.name5Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name5Label.Name = "name5Label";
-            this.name5Label.Size = new System.Drawing.Size(132, 69);
+            this.name5Label.Size = new System.Drawing.Size(108, 55);
             this.name5Label.TabIndex = 27;
             this.name5Label.Text = "###";
             // 
@@ -303,7 +303,7 @@
             this.score5Label.Location = new System.Drawing.Point(604, 1049);
             this.score5Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score5Label.Name = "score5Label";
-            this.score5Label.Size = new System.Drawing.Size(132, 69);
+            this.score5Label.Size = new System.Drawing.Size(108, 55);
             this.score5Label.TabIndex = 32;
             this.score5Label.Text = "###";
             // 
@@ -316,7 +316,7 @@
             this.score4Label.Location = new System.Drawing.Point(604, 955);
             this.score4Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score4Label.Name = "score4Label";
-            this.score4Label.Size = new System.Drawing.Size(132, 69);
+            this.score4Label.Size = new System.Drawing.Size(108, 55);
             this.score4Label.TabIndex = 31;
             this.score4Label.Text = "###";
             // 
@@ -329,7 +329,7 @@
             this.score3Label.Location = new System.Drawing.Point(604, 855);
             this.score3Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score3Label.Name = "score3Label";
-            this.score3Label.Size = new System.Drawing.Size(132, 69);
+            this.score3Label.Size = new System.Drawing.Size(108, 55);
             this.score3Label.TabIndex = 30;
             this.score3Label.Text = "###";
             // 
@@ -342,7 +342,7 @@
             this.score2Label.Location = new System.Drawing.Point(604, 762);
             this.score2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score2Label.Name = "score2Label";
-            this.score2Label.Size = new System.Drawing.Size(132, 69);
+            this.score2Label.Size = new System.Drawing.Size(108, 55);
             this.score2Label.TabIndex = 29;
             this.score2Label.Text = "###";
             // 
@@ -355,7 +355,7 @@
             this.score1Label.Location = new System.Drawing.Point(604, 668);
             this.score1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score1Label.Name = "score1Label";
-            this.score1Label.Size = new System.Drawing.Size(132, 69);
+            this.score1Label.Size = new System.Drawing.Size(108, 55);
             this.score1Label.TabIndex = 28;
             this.score1Label.Text = "###";
             // 
@@ -365,7 +365,7 @@
             this.eng_buttton.BackgroundImage = global::AlienSays.Properties.Resources.ENG;
             this.eng_buttton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.eng_buttton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eng_buttton.Location = new System.Drawing.Point(709, 11);
+            this.eng_buttton.Location = new System.Drawing.Point(692, 11);
             this.eng_buttton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eng_buttton.Name = "eng_buttton";
             this.eng_buttton.Size = new System.Drawing.Size(77, 42);
@@ -379,7 +379,7 @@
             this.fr_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fr_button.BackgroundImage")));
             this.fr_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fr_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fr_button.Location = new System.Drawing.Point(626, 11);
+            this.fr_button.Location = new System.Drawing.Point(609, 11);
             this.fr_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fr_button.Name = "fr_button";
             this.fr_button.Size = new System.Drawing.Size(77, 42);

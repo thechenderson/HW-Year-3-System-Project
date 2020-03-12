@@ -24,6 +24,13 @@ namespace UI
         const int PURPLE = 2;
         const int BLUE = 3; //test git
         const int RGB_CONST = 256;
+        const int BLACK_BUTTON = 1;
+        const int WHITE_BUTTON = 2;
+        const int BLUE_BUTTON = 3;
+        const int YELLOW_BUTTON = 4;
+        const int RED_BUTTON = 5;
+        const int GREEN_BUTTON = 6;
+        const int NO_BUTTON = 0;
 
         /*Declaration Timer*/
         static System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
@@ -35,8 +42,10 @@ namespace UI
         static bool presence_detected = false;
         static int color = NO_COLOR;
         static bool maintenance = true; // THE USER 0 IS THE MAINTENANCE GUY
+        static int active_window = 0;
         static int dist = -1;
         static int user_id = -1;
+        static int button = 0;
         static int R = 0, G = 0, B = 0;
         static int[] minmaxR = new int[] { 130, 170, 40, 85, 30, 60 }; //For RED {minR, maxR, minG, maxG, minB, maxB}
         static int[] minmaxG = new int[] { 80, 120, 150, 255, 0, 40 }; //For GREEN {minR, maxR, minG, maxG, minB, maxB}
@@ -66,9 +75,7 @@ namespace UI
                          TRANSLATION translate)
         {
             timer.Tick += new EventHandler(timer_tick);
-            //timer.Interval = 500;
-            //timer.Start();
-            timer.Interval = 500;
+            timer.Interval = 125;
             timer.Start();
             ctrl_panel = ctrl_pan;
             wlc = off_given;
@@ -90,6 +97,7 @@ namespace UI
             if (twice)
             {
                 maintenance = ctrl_panel.get_maintenance();
+                
                 //Console.WriteLine("ick");
                 /*Here we uses the get of sensors because we simulate the MBED with it
                  *but in the near futur we have to get them from the MBED with its method*/
@@ -109,6 +117,7 @@ namespace UI
                         get_sensors_values(); // how does the auto control know when we take back the main card ????
                     }
 
+
                     // Set all the bool as card_reader, presence_detected ...
                     set_bool();
 
@@ -122,6 +131,7 @@ namespace UI
 
                     /*FSM for the UI in auto mode*/
                     auto_fsm();
+                    button_press();
                 }
                 else
                 {
@@ -144,11 +154,11 @@ namespace UI
         {
             if (!card_reader && presence_detected)
             {
-                //wlc.Focus();
                 wlc.Show();
                 advertising.Hide();
                 main_menu.Hide();
                 warning.Hide();
+                active_window = 0;
             }
             else if (!card_reader && !presence_detected)
             {
@@ -156,19 +166,37 @@ namespace UI
                 main_menu.Hide();
                 warning.Hide();
                 wlc.Hide();
+                active_window = 0;
             }
             else if (card_reader && !presence_detected)
             {
-                    warning.Show();
-                    wlc.Hide();
-                    main_menu.Hide();
-                    advertising.Hide();
+                warning.Show();
+                wlc.Hide();
+                main_menu.Hide();
+                advertising.Hide();
+                active_window = 0;
             }
             else
             {
-                if (aliensays.get_inGame())aliensays.Show();
-                if (translation.get_inTranslation()) translation.Show();
-                if (!aliensays.get_inGame() && !translation.get_inTranslation()) main_menu.Show();
+                if (aliensays.get_inGame())
+                {
+                    Console.WriteLine(aliensays.get_french());
+                    main_menu.set_french(aliensays.get_french());
+                    //translation.set_french(aliensays.get_french());
+                    aliensays.Show();
+                }
+                else if (translation.get_inTranslation())
+                {
+                    //main_menu.set_french(translation.get_french());
+                    //aliensays.set_french(translation.get_french());
+                    translation.Show();
+                }
+                else if (!aliensays.get_inGame() && !translation.get_inTranslation())
+                {
+                    aliensays.set_french(main_menu.get_french());
+                    //translation.set_french(main_menu.getfrench());
+                    main_menu.Show();
+                }
 
                 advertising.Hide();
                 wlc.Hide();
@@ -201,9 +229,36 @@ namespace UI
         }
         private void get_sensors_values()
         {
+            //---------------------------------------ALL STATES-------------------------------------------
+
+            var States = function.GetAll(maint_mode.serialPort1);
+
+            /*
+            int statusStates = function.CheckConnect(maint_mode.serialPort1);
+
+            if (statusStates != 0)//If there was errors
+            {
+                Console.WriteLine("Error reading states" + Environment.NewLine);
+            }
+            */
+
+            card_reader = States.Item1;
+            user_id = States.Item2;
+            dist = States.Item3;
+            button = States.Item4;
+
+            //Console.WriteLine(States);
+
+
+
+            //---------------------------------------------------------------------------------------
+
+
+
+
             //------------------------------Distance-------------------------------------------------
 
-            dist = function.GetDistance(maint_mode.serialPort1);
+            //dist = function.GetDistance(maint_mode.serialPort1);
             //Console.WriteLine(dist);
 
             //---------------------------------------------------------------------------------------
@@ -214,11 +269,11 @@ namespace UI
 
             long_tick++;
 
-            if (long_tick % 4 == 0) // ask the color each 2s
+            if (long_tick % 16 == 0) // ask the color each 2s
             {
                 var Colours = function.GetColour(maint_mode.serialPort1);// get color sensor values
 
-                Console.WriteLine(Colours);
+                //Console.WriteLine(Colours);
 
                 int C = Convert.ToInt32(Colours.Item1);
 
@@ -229,15 +284,17 @@ namespace UI
                     B = Convert.ToInt32(Colours.Item4) * RGB_CONST / C;
                 }
 
+                /*
                 int statusColor = function.CheckConnect(maint_mode.serialPort1);//Getting the status
 
                 if (statusColor != 0)//If there was errors
                 {
                     Console.WriteLine("Error reading the colours" + Environment.NewLine);
                 }
+                */
             }
 
-            if (long_tick == 5) //raz of long_tick
+            if (long_tick == 17) //raz of long_tick
             {
                 long_tick = 1;
             }
@@ -247,32 +304,32 @@ namespace UI
 
             //-----------------Card User ID---------------------------------------------------------
 
-            user_id = function.CardIDRead(maint_mode.serialPort1);
+            //user_id = function.CardIDRead(maint_mode.serialPort1);
 
-            int statusID = function.CheckConnect(maint_mode.serialPort1);//Getting the status
+            //int statusID = function.CheckConnect(maint_mode.serialPort1);//Getting the status
 
            // Console.WriteLine("ID " + user_id);
 
-            if (statusID != 0)//If there was no errors
-            {
-                Console.WriteLine("Error reading the card ID");
-            }
+           // if (statusID != 0)//If there was no errors
+            //{
+                //Console.WriteLine("Error reading the card ID");
+            //}
 
             //---------------------------------------------------------------------------------------
 
 
             //-----------------Card inserted---------------------------------------------------------
 
-            card_reader = function.CardCheck(maint_mode.serialPort1);
+            //card_reader = function.CardCheck(maint_mode.serialPort1);
 
-            int statusCardIn = function.CheckConnect(maint_mode.serialPort1);//Getting the status
+           // int statusCardIn = function.CheckConnect(maint_mode.serialPort1);//Getting the status
 
             //Console.WriteLine("somebody " + card_reader);
 
-            if (statusCardIn != 0)//If there was errors
-            {
-                Console.WriteLine("Error reading the card");
-            }
+           // if (statusCardIn != 0)//If there was errors
+           // {
+               // Console.WriteLine("Error reading the card");
+           // }
 
             //---------------------------------------------------------------------------------------
         }
@@ -331,6 +388,51 @@ namespace UI
             main_menu.set_maintenance(maintenance);
 
             //---------------------------------------------------------------------------------------
+        }
+
+        private void button_press()
+        {
+            
+            switch (button)
+            {
+                case NO_BUTTON: 
+                    break;
+                case BLACK_BUTTON:
+                    if (aliensays.get_inGame()) aliensays.black_click();
+                    else if (translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation())
+                    {
+                        main_menu.black_click();
+                    }
+                    break;
+                case WHITE_BUTTON:
+                    if (aliensays.get_inGame()) aliensays.white_click();
+                    else if (translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) main_menu.white_click();
+                    break;
+                case BLUE_BUTTON:
+                    if (aliensays.get_inGame()) aliensays.blue_click();
+                    else if (translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
+                    break;
+                case YELLOW_BUTTON:
+                    if (aliensays.get_inGame()) aliensays.yellow_click();
+                    else if (translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
+                    break;
+                case RED_BUTTON:
+                    if (aliensays.get_inGame()) aliensays.red_click();
+                    else if (translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
+                    break;
+                case GREEN_BUTTON:
+                    if (aliensays.get_inGame()) aliensays.green_click();
+                    else if (translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
+                    break;
+                default: break;
+            }
+                 
         }
     }
 }

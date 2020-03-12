@@ -15,21 +15,15 @@ namespace AlienSays
 {
     public partial class alienSaysForm : Form
     {
+        const int START = 1;
+        const int EXIT = 2;
+        const int FR = 3;
+        const int ENG = 4;
+
 
         bool inGame = false;
-
-        public alienSaysForm(int Scr)
-        {
-            InitializeComponent();
-            StartPosition = FormStartPosition.Manual;
-            this.Location = Screen.AllScreens[Scr].WorkingArea.Location;
-            int h = Screen.AllScreens[Scr].Bounds.Height;
-            int w = Screen.AllScreens[Scr].Bounds.Width;
-            this.Size = new Size(w, h);
-
-        }
-
-
+        bool french = false;
+        int selected_button = 1;
 
         bool gameInProgress = false; //If game is runnning = true
         List<int> colourList = new List<int>(); //Stores the pattern of colours generated
@@ -39,6 +33,17 @@ namespace AlienSays
 
         List<int> highScores = new List<int>();
         List<string> highScoreNames = new List<string>();
+
+        public alienSaysForm(int Scr)
+        {
+            InitializeComponent();
+            StartPosition = FormStartPosition.Manual;
+            this.Location = Screen.AllScreens[Scr].WorkingArea.Location;
+            int h = Screen.AllScreens[Scr].Bounds.Height;
+            int w = Screen.AllScreens[Scr].Bounds.Width;
+            this.Size = new Size(w, h);
+            startButton.BackColor = Color.Black;
+        }
 
         private void alienSaysForm_Load(object sender, EventArgs e)
         {
@@ -51,8 +56,6 @@ namespace AlienSays
             readHighScoreFiles(highScores, highScoreNames);
         }
 
-
-
         public void set_inGame(bool inGame)
         {
             this.inGame = inGame;
@@ -62,9 +65,6 @@ namespace AlienSays
         {
             return inGame;
         }
-
-
-
 
         /*
          * Read saved high scores and names from text files and set labels to match
@@ -115,14 +115,6 @@ namespace AlienSays
             name5Label.Text = highScoreNames[4];
 
         }
-
-       
-
-
-
-
-
-
 
         /*
          * Adds a new item to the array that stores the sequence and displays the sequence again with the added colour
@@ -176,10 +168,6 @@ namespace AlienSays
             }
         }
 
-
-
-
-
         /*
          * Compares the users sequence to the correct sequence
          */
@@ -201,9 +189,6 @@ namespace AlienSays
                 displaySequence();
             }
         }
-
-
-
 
         // Button Presses Start --------------------------------------------------------------------------------------------------------
         private void startButton_Click(object sender, EventArgs e)
@@ -316,10 +301,6 @@ namespace AlienSays
         }
         //Button Presses End --------------------------------------------------------------------------------------------------------
 
-
-
-
-
         /*
          * Function that updates the high scores and names to match the users current score, placing them on the leaderboard appropriately
          */
@@ -354,11 +335,6 @@ namespace AlienSays
             }
         }
 
-
-
-
-
-
         /*
          * Function to write scores and names from their respective arrays into the text files stored on the system
          */
@@ -383,22 +359,147 @@ namespace AlienSays
                 writeNames.WriteLine(highScoreNames[i]);
                 writeNames.Flush();
             }
+            writeScores.Close();
+            writeNames.Close();
         }
-
-
-
-
-
 
         private void exit_button_Click(object sender, EventArgs e)
         {
 
             writeTextFiles();
 
-            this.Hide(); //Hide current form
             inGame = false; //No longer in the game
+            this.Hide(); //Hide current form
+            
         }
 
-   
+        public void white_click()
+        {
+            switch (selected_button)
+            {
+                case START:
+                    startButton.PerformClick();
+                    break;
+                case EXIT:
+                    exit_button.PerformClick();
+                    break;
+                case FR:
+                    fr_button.PerformClick();
+                    break;
+                case ENG:
+                    eng_buttton.PerformClick();
+                    break;
+            }
+        }
+
+        public void black_click()
+        {
+            selected_button += 1;
+            switch (selected_button)
+            {
+                case START:
+                    eng_buttton.FlatStyle = FlatStyle.Flat;
+                    startButton.BackColor = Color.Black;
+                    break;
+                case EXIT:
+                    startButton.BackColor = Color.DeepSkyBlue;
+                    exit_button.BackColor = Color.Black;
+                    break;
+                case FR:
+                    exit_button.BackColor = Color.DeepSkyBlue;
+                    fr_button.FlatStyle = FlatStyle.Standard;
+                    break;
+                case ENG:
+                    fr_button.FlatStyle = FlatStyle.Flat;
+                    eng_buttton.FlatStyle = FlatStyle.Standard;
+                    break;
+                case 5:
+                    eng_buttton.FlatStyle = FlatStyle.Flat;
+                    startButton.BackColor = Color.Black;
+                    selected_button = START;
+                    break;
+            }
+        }
+
+        public void blue_click()
+        {
+            blueButton.PerformClick();
+        }
+        public void green_click()
+        {
+            greenButton.PerformClick();
+        }
+        public void yellow_click()
+        {
+            yellowButton.PerformClick();
+        }
+        public void red_click()
+        {
+            redButton.PerformClick();
+        }
+
+        private void fr_button_Click(object sender, EventArgs e)
+        {
+            french = true;
+            redButton.Text = "ROUGE";
+            yellowButton.Text = "JAUNE";
+            greenButton.Text = "VERT";
+            blueButton.Text = "BLEU";
+            startButton.Text = "JOUER";
+            exit_button.Text = "RETOUR";
+            rankLabel.Text = "RANG";
+            nameLabel.Text = "NOM";
+            label1.Text = "Alien à dit...";
+            
+        }
+
+        private void eng_buttton_Click(object sender, EventArgs e)
+        {
+            french = false;
+            redButton.Text = "RED";
+            yellowButton.Text = "YELLOW";
+            greenButton.Text = "GREEN";
+            blueButton.Text = "BLUE";
+            startButton.Text = "START";
+            exit_button.Text = "EXIT";
+            rankLabel.Text = "RANK";
+            nameLabel.Text = "NAME";
+            label1.Text = "Alien says...";
+        }
+
+        public void set_french(bool french)
+        {
+
+            if (french)
+            {
+                this.french = true;
+                redButton.Text = "ROUGE";
+                yellowButton.Text = "JAUNE";
+                greenButton.Text = "VERT";
+                blueButton.Text = "BLEU";
+                startButton.Text = "JOUER";
+                exit_button.Text = "RETOUR";
+                rankLabel.Text = "RANG";
+                nameLabel.Text = "NOM";
+                label1.Text = "Alien à dit...";
+            }
+            else
+            {
+                this.french = false;
+                redButton.Text = "RED";
+                yellowButton.Text = "YELLOW";
+                greenButton.Text = "GREEN";
+                blueButton.Text = "BLUE";
+                startButton.Text = "START";
+                exit_button.Text = "EXIT";
+                rankLabel.Text = "RANK";
+                nameLabel.Text = "NAME";
+                label1.Text = "Alien says...";
+            }
+        }
+        public bool get_french()
+        {
+            return french;
+        }
     }
 }

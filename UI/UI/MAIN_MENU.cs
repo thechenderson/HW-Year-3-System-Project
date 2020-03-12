@@ -14,9 +14,16 @@ namespace UI
 {
     public partial class MAIN_MENU : Form
     {
+        /*Declaration of constants*/
+        const int FR = 3;
+        const int ENG = 4;
+        const int TRANSLATE = 1;
+        const int AL_SAYS = 2;
+
         /*Variable for the language selection*/
         bool french = false;
         bool maintenance = true;
+        int selected_button = 1;
 
         TRANSLATION translation;
         alienSaysForm aliensays;
@@ -33,12 +40,13 @@ namespace UI
             this.translation = translation;
             this.aliensays = aliensays;
             this.maint_mode = maint_mode;
+            translate_button.BackColor = Color.Black;
         }
 
         private void fr_button_Click(object sender, EventArgs e)
         {
             french = true;
-            button_game1.Text = "ALIEN DIT";
+            button_game1.Text = "ALIEN A DIT";
             button_maintMode.Text = "ENTRETIEN";
             translate_button.Text = "TRADUCTION";
         }
@@ -62,7 +70,6 @@ namespace UI
         {
             translation.Show();
             translation.set_inTranslation(true);
-
         }
 
         private void button_game1_Click(object sender, EventArgs e)
@@ -80,6 +87,92 @@ namespace UI
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void blue_click()
+        {
+
+        }
+        public void green_click()
+        {
+
+        }
+        public void white_click()
+        {
+            switch (selected_button)
+            {
+                case TRANSLATE:
+                    translate_button.PerformClick();
+                    break;
+                case AL_SAYS:
+                    button_game1.PerformClick();
+                    break;
+                case FR:
+                    fr_button.PerformClick();
+                    break;
+                case ENG:
+                    eng_buttton.PerformClick();
+                    Console.WriteLine("yep");
+                    break;
+
+            }
+        }
+        public void black_click()
+        {
+            selected_button += 1;
+            switch (selected_button)
+            {
+                case TRANSLATE:
+                    eng_buttton.FlatStyle = FlatStyle.Flat;
+                    translate_button.BackColor = Color.Black;
+                    break;
+                case AL_SAYS:
+                    translate_button.BackColor = Color.DeepSkyBlue;
+                    button_game1.BackColor = Color.Black;
+                    break;
+                case FR:
+                    button_game1.BackColor = Color.DeepSkyBlue;
+                    fr_button.FlatStyle = FlatStyle.Standard;
+                    break;
+                case ENG:
+                    fr_button.FlatStyle = FlatStyle.Flat;
+                    eng_buttton.FlatStyle = FlatStyle.Standard;
+                    break;
+                case 5:
+                    eng_buttton.FlatStyle = FlatStyle.Flat;
+                    translate_button.BackColor = Color.Black;
+                    selected_button = TRANSLATE;
+                    break;
+            }
+          
+        }
+        public void yellow_click()
+        {
+
+        }
+        public void red_click()
+        {
+
+        }
+
+        private void set_selected(Button button)
+        {
+            button.BackColor = Color.Black;
+        }
+        private void unset_selected(Button button)
+        {
+            button.BackColor = Color.DeepSkyBlue;
+        }
+
+        public void set_french(bool french)
+        {
+            if (french) fr_button.PerformClick();
+            else eng_buttton.PerformClick();
+        }
+
+        public bool get_french()
+        {
+            return french;
         }
     }
 }

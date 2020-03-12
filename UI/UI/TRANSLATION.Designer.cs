@@ -50,10 +50,11 @@
             this.backtomm.FlatAppearance.BorderSize = 0;
             this.backtomm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backtomm.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backtomm.Location = new System.Drawing.Point(0, 1063);
+            this.backtomm.ForeColor = System.Drawing.Color.White;
+            this.backtomm.Location = new System.Drawing.Point(0, 1094);
             this.backtomm.Margin = new System.Windows.Forms.Padding(2);
             this.backtomm.Name = "backtomm";
-            this.backtomm.Size = new System.Drawing.Size(768, 157);
+            this.backtomm.Size = new System.Drawing.Size(768, 126);
             this.backtomm.TabIndex = 3;
             this.backtomm.Text = "Main Menu";
             this.backtomm.UseVisualStyleBackColor = false;
@@ -65,7 +66,7 @@
             this.sentence1.BackColor = System.Drawing.Color.Maroon;
             this.sentence1.FlatAppearance.BorderSize = 0;
             this.sentence1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sentence1.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sentence1.Font = new System.Drawing.Font("Chiller", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sentence1.Location = new System.Drawing.Point(450, 477);
             this.sentence1.Margin = new System.Windows.Forms.Padding(2);
             this.sentence1.Name = "sentence1";
@@ -81,7 +82,7 @@
             this.sentence2.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.sentence2.FlatAppearance.BorderSize = 0;
             this.sentence2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sentence2.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sentence2.Font = new System.Drawing.Font("Chiller", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sentence2.Location = new System.Drawing.Point(245, 235);
             this.sentence2.Margin = new System.Windows.Forms.Padding(2);
             this.sentence2.Name = "sentence2";
@@ -97,7 +98,7 @@
             this.sentence4.BackColor = System.Drawing.Color.MidnightBlue;
             this.sentence4.FlatAppearance.BorderSize = 0;
             this.sentence4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sentence4.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sentence4.Font = new System.Drawing.Font("Chiller", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sentence4.Location = new System.Drawing.Point(37, 477);
             this.sentence4.Margin = new System.Windows.Forms.Padding(2);
             this.sentence4.Name = "sentence4";
@@ -141,7 +142,7 @@
             this.sentence3.BackColor = System.Drawing.Color.DarkGreen;
             this.sentence3.FlatAppearance.BorderSize = 0;
             this.sentence3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sentence3.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sentence3.Font = new System.Drawing.Font("Chiller", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sentence3.Location = new System.Drawing.Point(245, 717);
             this.sentence3.Margin = new System.Windows.Forms.Padding(2);
             this.sentence3.Name = "sentence3";
@@ -168,7 +169,8 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 116);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(87, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(599, 55);
             this.label1.TabIndex = 12;
@@ -177,10 +179,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 1032);
+            this.label2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label2.Font = new System.Drawing.Font("Chiller", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 990);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(258, 79);
+            this.label2.Size = new System.Drawing.Size(230, 74);
             this.label2.TabIndex = 13;
             this.label2.Text = "Too easy :";
             // 

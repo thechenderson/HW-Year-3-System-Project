@@ -74,6 +74,7 @@
             // startButton
             // 
             this.startButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.startButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.startButton.FlatAppearance.BorderSize = 0;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startButton.Location = new System.Drawing.Point(389, 1125);
@@ -101,7 +102,7 @@
             // exit_button
             // 
             this.exit_button.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.exit_button.FlatAppearance.BorderColor = System.Drawing.Color.OliveDrab;
+            this.exit_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.exit_button.FlatAppearance.BorderSize = 0;
             this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_button.Location = new System.Drawing.Point(13, 1125);
@@ -365,7 +366,7 @@
             this.eng_buttton.BackgroundImage = global::AlienSays.Properties.Resources.ENG;
             this.eng_buttton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.eng_buttton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eng_buttton.Location = new System.Drawing.Point(692, 11);
+            this.eng_buttton.Location = new System.Drawing.Point(675, 11);
             this.eng_buttton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eng_buttton.Name = "eng_buttton";
             this.eng_buttton.Size = new System.Drawing.Size(77, 42);
@@ -379,7 +380,7 @@
             this.fr_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fr_button.BackgroundImage")));
             this.fr_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fr_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fr_button.Location = new System.Drawing.Point(609, 11);
+            this.fr_button.Location = new System.Drawing.Point(592, 11);
             this.fr_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fr_button.Name = "fr_button";
             this.fr_button.Size = new System.Drawing.Size(77, 42);

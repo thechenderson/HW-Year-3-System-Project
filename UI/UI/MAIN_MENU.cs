@@ -123,24 +123,24 @@ namespace UI
             switch (selected_button)
             {
                 case TRANSLATE:
-                    eng_buttton.FlatStyle = FlatStyle.Flat;
-                    translate_button.BackColor = Color.Black;
+                    eng_buttton.FlatAppearance.BorderSize = 0;
+                    translate_button.FlatAppearance.BorderSize = 10;
                     break;
                 case AL_SAYS:
-                    translate_button.BackColor = Color.DeepSkyBlue;
-                    button_game1.BackColor = Color.Black;
+                    translate_button.FlatAppearance.BorderSize = 0;
+                    button_game1.FlatAppearance.BorderSize = 10;
                     break;
                 case FR:
-                    button_game1.BackColor = Color.DeepSkyBlue;
-                    fr_button.FlatStyle = FlatStyle.Standard;
+                    button_game1.FlatAppearance.BorderSize = 0;
+                    fr_button.FlatAppearance.BorderSize = 10;
                     break;
                 case ENG:
-                    fr_button.FlatStyle = FlatStyle.Flat;
-                    eng_buttton.FlatStyle = FlatStyle.Standard;
+                    fr_button.FlatAppearance.BorderSize = 0;
+                    eng_buttton.FlatAppearance.BorderSize = 10;
                     break;
                 case 5:
-                    eng_buttton.FlatStyle = FlatStyle.Flat;
-                    translate_button.BackColor = Color.Black;
+                    eng_buttton.FlatAppearance.BorderSize = 0;
+                    translate_button.FlatAppearance.BorderSize = 10;
                     selected_button = TRANSLATE;
                     break;
             }

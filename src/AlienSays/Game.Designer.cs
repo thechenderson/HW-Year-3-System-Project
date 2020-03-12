@@ -82,7 +82,7 @@
             this.startButton.Location = new System.Drawing.Point(13, 1105);
             this.startButton.Margin = new System.Windows.Forms.Padding(4);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(368, 46);
+            this.startButton.Size = new System.Drawing.Size(368, 61);
             this.startButton.TabIndex = 6;
             this.startButton.Text = "START";
             this.startButton.UseVisualStyleBackColor = false;
@@ -111,7 +111,7 @@
             this.exit_button.ForeColor = System.Drawing.Color.White;
             this.exit_button.Location = new System.Drawing.Point(389, 1105);
             this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(368, 46);
+            this.exit_button.Size = new System.Drawing.Size(368, 61);
             this.exit_button.TabIndex = 9;
             this.exit_button.Text = "EXIT";
             this.exit_button.UseVisualStyleBackColor = false;

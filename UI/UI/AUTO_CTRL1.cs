@@ -399,7 +399,7 @@ namespace UI
                     break;
                 case BLACK_BUTTON:
                     if (aliensays.get_inGame()) aliensays.black_click();
-                    else if (translation.get_inTranslation()) ;
+                    else if (translation.get_inTranslation()) translation.black_click();
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation())
                     {
                         main_menu.black_click();
@@ -407,27 +407,27 @@ namespace UI
                     break;
                 case WHITE_BUTTON:
                     if (aliensays.get_inGame()) aliensays.white_click();
-                    else if (translation.get_inTranslation()) ;
+                    else if (translation.get_inTranslation()) translation.white_click();
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation()) main_menu.white_click();
                     break;
                 case BLUE_BUTTON:
                     if (aliensays.get_inGame()) aliensays.blue_click();
-                    else if (translation.get_inTranslation()) ;
+                    else if (translation.get_inTranslation()) translation.blue_click();
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
                     break;
                 case YELLOW_BUTTON:
                     if (aliensays.get_inGame()) aliensays.yellow_click();
-                    else if (translation.get_inTranslation()) ;
+                    else if (translation.get_inTranslation()) translation.yellow_click();
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
                     break;
                 case RED_BUTTON:
                     if (aliensays.get_inGame()) aliensays.red_click();
-                    else if (translation.get_inTranslation()) ;
+                    else if (translation.get_inTranslation()) translation.red_click();
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
                     break;
                 case GREEN_BUTTON:
                     if (aliensays.get_inGame()) aliensays.green_click();
-                    else if (translation.get_inTranslation()) ;
+                    else if (translation.get_inTranslation()) translation.green_click();
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
                     break;
                 default: break;

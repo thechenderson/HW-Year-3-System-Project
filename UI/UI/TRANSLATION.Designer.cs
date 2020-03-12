@@ -46,6 +46,7 @@
             // 
             this.backtomm.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.backtomm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.backtomm.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.backtomm.FlatAppearance.BorderSize = 0;
             this.backtomm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backtomm.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

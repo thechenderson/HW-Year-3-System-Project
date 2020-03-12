@@ -410,10 +410,26 @@ namespace UI
                     else if (translation.get_inTranslation()) ;
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation()) main_menu.white_click();
                     break;
-                case BLUE_BUTTON: break;
-                case YELLOW_BUTTON: break;
-                case RED_BUTTON: break;
-                case GREEN_BUTTON: break;
+                case BLUE_BUTTON:
+                    if (aliensays.get_inGame()) aliensays.blue_click();
+                    else if (translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
+                    break;
+                case YELLOW_BUTTON:
+                    if (aliensays.get_inGame()) aliensays.yellow_click();
+                    else if (translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
+                    break;
+                case RED_BUTTON:
+                    if (aliensays.get_inGame()) aliensays.red_click();
+                    else if (translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
+                    break;
+                case GREEN_BUTTON:
+                    if (aliensays.get_inGame()) aliensays.green_click();
+                    else if (translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
+                    break;
                 default: break;
             }
                  

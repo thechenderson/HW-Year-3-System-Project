@@ -421,6 +421,23 @@ namespace AlienSays
             }
         }
 
+        public void blue_click()
+        {
+            blueButton.PerformClick();
+        }
+        public void green_click()
+        {
+            greenButton.PerformClick();
+        }
+        public void yellow_click()
+        {
+            yellowButton.PerformClick();
+        }
+        public void red_click()
+        {
+            redButton.PerformClick();
+        }
+
         private void fr_button_Click(object sender, EventArgs e)
         {
             french = true;

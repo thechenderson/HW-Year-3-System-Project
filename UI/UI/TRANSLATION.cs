@@ -150,7 +150,7 @@ namespace UI
             {
                 case EXIT:
                     eng_buttton.FlatStyle = FlatStyle.Flat;
-                    backtomm.FlatAppearance.BorderSize = 10;
+                    backtomm.FlatAppearance.BorderSize = 5;
                     break;
                 case FR:
                     backtomm.FlatAppearance.BorderSize = 0;
@@ -162,7 +162,7 @@ namespace UI
                     break;
                 case 4:
                     eng_buttton.FlatStyle = FlatStyle.Flat;
-                    backtomm.FlatAppearance.BorderSize = 10;
+                    backtomm.FlatAppearance.BorderSize = 5; 
                     selected_button = EXIT;
                     break;
             }

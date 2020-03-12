@@ -365,6 +365,7 @@
             this.eng_buttton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.eng_buttton.BackgroundImage = global::AlienSays.Properties.Resources.ENG;
             this.eng_buttton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eng_buttton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.eng_buttton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eng_buttton.Location = new System.Drawing.Point(675, 11);
             this.eng_buttton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -379,6 +380,7 @@
             this.fr_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fr_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fr_button.BackgroundImage")));
             this.fr_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fr_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.fr_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fr_button.Location = new System.Drawing.Point(592, 11);
             this.fr_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

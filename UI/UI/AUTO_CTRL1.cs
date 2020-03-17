@@ -52,6 +52,8 @@ namespace UI
         static int[] minmaxB = new int[] { 60, 100, 80, 110, 70, 100 }; //For BLUE {minR, maxR, minG, maxG, minB, maxB}
         static int[] minmaxP = new int[] { 120, 160, 30, 60, 150, 255 }; //For PURPLE {minR, maxR, minG, maxG, minB, maxB}
 
+        
+
         int long_tick = 0; //for having the color sensor values each 2s 
         bool twice = false;
 
@@ -87,6 +89,9 @@ namespace UI
             function = func;
             translation = translate;
             aliensays = game;
+
+
+          
         }
 
         void timer_tick(object sender, EventArgs e)
@@ -152,6 +157,23 @@ namespace UI
 
         private void auto_fsm()
         {
+            //List of all known users
+            List<string> cardIDNames = new List<string>();
+            cardIDNames.Add("Soosin");
+            cardIDNames.Add("La-a");
+            cardIDNames.Add("Kevin");
+            cardIDNames.Add("Pierre");
+            cardIDNames.Add("Patrick");
+            cardIDNames.Add("Max");
+            cardIDNames.Add("Alex");
+            cardIDNames.Add("Jordan");
+            cardIDNames.Add("Chris");
+            cardIDNames.Add("Tilly");
+            cardIDNames.Add("Candy");
+            cardIDNames.Add("Richard");
+            cardIDNames.Add("Jurgen");
+            cardIDNames.Add("Maintenance");
+
             if (!card_reader && presence_detected)
             {
                 wlc.Show();
@@ -175,6 +197,9 @@ namespace UI
                 main_menu.Hide();
                 advertising.Hide();
                 active_window = 0;
+
+                 string username = cardIDNames[user_id];
+
             }
             else
             {

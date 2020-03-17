@@ -227,3 +227,4 @@ C:\Users\chris\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.WLC.reso
 C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.WLC.resources
 C:\Users\Admin\Source\Repos\chenderson99\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.WLC.resources
 C:\Users\cjh7\Source\Repos\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.WLC.resources
+C:\Users\jorda\Source\Repos\chenderson99\HW-Year-3-System-Project\UI\UI\obj\Debug\UI.HELP.resources

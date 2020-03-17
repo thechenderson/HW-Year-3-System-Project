@@ -33,6 +33,8 @@
             this.button_game1 = new System.Windows.Forms.Button();
             this.translate_button = new System.Windows.Forms.Button();
             this.button_maintMode = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // fr_button
@@ -42,10 +44,10 @@
             this.fr_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fr_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.fr_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fr_button.Location = new System.Drawing.Point(441, 11);
-            this.fr_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fr_button.Location = new System.Drawing.Point(588, 14);
+            this.fr_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fr_button.Name = "fr_button";
-            this.fr_button.Size = new System.Drawing.Size(58, 34);
+            this.fr_button.Size = new System.Drawing.Size(77, 42);
             this.fr_button.TabIndex = 2;
             this.fr_button.UseVisualStyleBackColor = true;
             this.fr_button.Click += new System.EventHandler(this.fr_button_Click);
@@ -57,10 +59,10 @@
             this.eng_buttton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.eng_buttton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.eng_buttton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eng_buttton.Location = new System.Drawing.Point(503, 11);
-            this.eng_buttton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eng_buttton.Location = new System.Drawing.Point(671, 14);
+            this.eng_buttton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eng_buttton.Name = "eng_buttton";
-            this.eng_buttton.Size = new System.Drawing.Size(58, 34);
+            this.eng_buttton.Size = new System.Drawing.Size(77, 42);
             this.eng_buttton.TabIndex = 1;
             this.eng_buttton.UseVisualStyleBackColor = true;
             this.eng_buttton.Click += new System.EventHandler(this.eng_buttton_Click);
@@ -74,10 +76,10 @@
             this.button_game1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_game1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_game1.ForeColor = System.Drawing.Color.White;
-            this.button_game1.Location = new System.Drawing.Point(67, 421);
-            this.button_game1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_game1.Location = new System.Drawing.Point(89, 518);
+            this.button_game1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_game1.Name = "button_game1";
-            this.button_game1.Size = new System.Drawing.Size(432, 112);
+            this.button_game1.Size = new System.Drawing.Size(576, 138);
             this.button_game1.TabIndex = 3;
             this.button_game1.Text = "ALIEN SAYS";
             this.button_game1.UseVisualStyleBackColor = false;
@@ -92,10 +94,10 @@
             this.translate_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.translate_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.translate_button.ForeColor = System.Drawing.Color.White;
-            this.translate_button.Location = new System.Drawing.Point(67, 197);
-            this.translate_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.translate_button.Location = new System.Drawing.Point(89, 242);
+            this.translate_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.translate_button.Name = "translate_button";
-            this.translate_button.Size = new System.Drawing.Size(432, 112);
+            this.translate_button.Size = new System.Drawing.Size(576, 138);
             this.translate_button.TabIndex = 4;
             this.translate_button.Text = "TRANSLATE";
             this.translate_button.UseVisualStyleBackColor = false;
@@ -110,31 +112,59 @@
             this.button_maintMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_maintMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_maintMode.ForeColor = System.Drawing.Color.White;
-            this.button_maintMode.Location = new System.Drawing.Point(31, 636);
-            this.button_maintMode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_maintMode.Location = new System.Drawing.Point(41, 783);
+            this.button_maintMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_maintMode.Name = "button_maintMode";
-            this.button_maintMode.Size = new System.Drawing.Size(511, 112);
+            this.button_maintMode.Size = new System.Drawing.Size(681, 138);
             this.button_maintMode.TabIndex = 5;
             this.button_maintMode.Text = "MAINTENANCE";
             this.button_maintMode.UseVisualStyleBackColor = false;
             this.button_maintMode.Click += new System.EventHandler(this.button_maintMode_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Yellow;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(322, 997);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 135);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "?";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(61, 1132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(650, 32);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Press the Yellow Button to open the Help Page";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MAIN_MENU
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(576, 991);
+            this.ClientSize = new System.Drawing.Size(768, 1220);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.eng_buttton);
             this.Controls.Add(this.fr_button);
             this.Controls.Add(this.button_maintMode);
             this.Controls.Add(this.translate_button);
             this.Controls.Add(this.button_game1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MAIN_MENU";
             this.Text = "Main Menu";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -145,5 +175,7 @@
         private System.Windows.Forms.Button button_game1;
         private System.Windows.Forms.Button translate_button;
         private System.Windows.Forms.Button button_maintMode;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

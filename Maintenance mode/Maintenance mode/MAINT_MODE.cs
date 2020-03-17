@@ -188,32 +188,27 @@ namespace Maintenance_mode
 
         private void btnServoEnable_Click(object sender, EventArgs e)
         {
-            string command = "E 1";
-            serialPort1.WriteLine(command);//Send the command to the MBED
+            function.ServoEnable("1", serialPort1);
         }
 
         private void btnServoDisable_Click(object sender, EventArgs e)
         {
-            string command = "E 0";
-            serialPort1.WriteLine(command);//Send the command to the MBED
+            function.ServoEnable("0", serialPort1);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string command = "L 2";
-            serialPort1.WriteLine(command);//Send the command to the MBED
+            function.LEDs("2", serialPort1);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string command = "L 1";
-            serialPort1.WriteLine(command);//Send the command to the MBED
+            function.LEDs("1", serialPort1);
         }
 
         private void btnLEDOff_Click(object sender, EventArgs e)
         {
-            string command = "L 0";
-            serialPort1.WriteLine(command);//Send the command to the MBED
+            function.LEDs("1", serialPort1);
         }
 
         private void btnCardRead_Click(object sender, EventArgs e)

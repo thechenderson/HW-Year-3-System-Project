@@ -23,13 +23,15 @@ namespace UI
         /*Variable for the language selection*/
         bool french = false;
         bool maintenance = true;
+        bool helpOpen = false;
         int selected_button = 1;
 
         TRANSLATION translation;
         alienSaysForm aliensays;
         MAINT_MODE maint_mode;
+        HELP help;
 
-        public MAIN_MENU(MAINT_MODE maint_mode, alienSaysForm aliensays, TRANSLATION translation, int Scr)
+        public MAIN_MENU(MAINT_MODE maint_mode, alienSaysForm aliensays, TRANSLATION translation, HELP help, int Scr)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
@@ -40,6 +42,7 @@ namespace UI
             this.translation = translation;
             this.aliensays = aliensays;
             this.maint_mode = maint_mode;
+            this.help = help;
             translate_button.FlatAppearance.BorderSize = 5;
         }
 
@@ -148,7 +151,16 @@ namespace UI
         }
         public void yellow_click()
         {
-
+            if (helpOpen)
+            {
+                help.Hide();
+                helpOpen = false;
+            }
+            else 
+            {
+                help.Show();
+                helpOpen = true;
+            }
         }
         public void red_click()
         {

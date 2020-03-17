@@ -25,9 +25,10 @@ namespace Alien_Robot
             SIM_SENSORS sensors = new SIM_SENSORS();
             MAINT_MODE maint_mode = new MAINT_MODE(functions);
             TRANSLATION translation = new TRANSLATION(Scr);
+            HELP help = new HELP(Scr);
             WLC off = new WLC(Scr);
             alienSaysForm aliensays_game = new alienSaysForm(Scr);
-            MAIN_MENU main_M = new MAIN_MENU(maint_mode, aliensays_game ,translation, Scr);
+            MAIN_MENU main_M = new MAIN_MENU(maint_mode, aliensays_game ,translation,help, Scr);
             ADVERTISE advertising = new ADVERTISE(Scr);
             WARNING warning = new WARNING(Scr);
             CTRL_PANEL control_panel = new CTRL_PANEL(off, main_M, warning, advertising, Scr);

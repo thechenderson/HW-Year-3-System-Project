@@ -42,7 +42,7 @@ namespace AlienSays
             int h = Screen.AllScreens[Scr].Bounds.Height;
             int w = Screen.AllScreens[Scr].Bounds.Width;
             this.Size = new Size(w, h);
-            startButton.BackColor = Color.Black;
+            startButton.FlatAppearance.BorderSize = 5;
         }
 
         private void alienSaysForm_Load(object sender, EventArgs e)
@@ -398,24 +398,24 @@ namespace AlienSays
             switch (selected_button)
             {
                 case START:
-                    eng_buttton.FlatStyle = FlatStyle.Flat;
-                    startButton.BackColor = Color.Black;
+                    eng_buttton.FlatAppearance.BorderSize = 0;
+                    startButton.FlatAppearance.BorderSize = 5;
                     break;
                 case EXIT:
-                    startButton.BackColor = Color.DeepSkyBlue;
-                    exit_button.BackColor = Color.Black;
+                    startButton.FlatAppearance.BorderSize = 0;
+                    exit_button.FlatAppearance.BorderSize = 5;
                     break;
                 case FR:
-                    exit_button.BackColor = Color.DeepSkyBlue;
-                    fr_button.FlatStyle = FlatStyle.Standard;
+                    exit_button.FlatAppearance.BorderSize = 0;
+                    fr_button.FlatAppearance.BorderSize = 5;
                     break;
                 case ENG:
-                    fr_button.FlatStyle = FlatStyle.Flat;
-                    eng_buttton.FlatStyle = FlatStyle.Standard;
+                    fr_button.FlatAppearance.BorderSize = 0;
+                    eng_buttton.FlatAppearance.BorderSize = 5;
                     break;
                 case 5:
-                    eng_buttton.FlatStyle = FlatStyle.Flat;
-                    startButton.BackColor = Color.Black;
+                    eng_buttton.FlatAppearance.BorderSize = 0;
+                    startButton.FlatAppearance.BorderSize = 5;
                     selected_button = START;
                     break;
             }

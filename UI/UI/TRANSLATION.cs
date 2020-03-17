@@ -17,6 +17,12 @@ namespace UI
         /*creation of the speech synthesizer*/
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
+        int selected_button = 1;
+
+        const int EXIT = 1;
+        const int FR = 2;
+        const int ENG = 3;
+
         /*Select fr/en*/
         bool fr = false;
         bool en = true;
@@ -121,5 +127,61 @@ namespace UI
             this.inTranslation = inTranslation;
         }
 
+        public void white_click()
+        {
+            switch (selected_button)
+            {
+                case EXIT:
+                    backtomm.PerformClick();
+                    break;
+                case FR:
+                    fr_button.PerformClick();
+                    break;
+                case ENG:
+                    eng_buttton.PerformClick();
+                    break;
+            }
+        }
+
+        public void black_click()
+        {
+            selected_button += 1;
+            switch (selected_button)
+            {
+                case EXIT:
+                    eng_buttton.FlatStyle = FlatStyle.Flat;
+                    backtomm.FlatAppearance.BorderSize = 5;
+                    break;
+                case FR:
+                    backtomm.FlatAppearance.BorderSize = 0;
+                    fr_button.FlatStyle = FlatStyle.Standard;
+                    break;
+                case ENG:
+                    fr_button.FlatStyle = FlatStyle.Flat;
+                    eng_buttton.FlatStyle = FlatStyle.Standard;
+                    break;
+                case 4:
+                    eng_buttton.FlatStyle = FlatStyle.Flat;
+                    backtomm.FlatAppearance.BorderSize = 5; 
+                    selected_button = EXIT;
+                    break;
+            }
+        }
+        public void blue_click()
+        {
+            sentence4.PerformClick();
+        }
+        public void green_click()
+        {
+            sentence3.PerformClick();
+        }
+        public void yellow_click()
+        {
+            sentence2.PerformClick();
+        }
+        public void red_click()
+        {
+            sentence1.PerformClick();
+        }
     }
 }

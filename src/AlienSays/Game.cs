@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Media;
 using System.IO;
+//using System.Speech.Synthesis;
 
 namespace AlienSays
 {
@@ -25,7 +26,7 @@ namespace AlienSays
         bool french = false;
         int selected_button = 1;
 
-        bool gameInProgress = false; //If game is runnning = true
+        public bool gameInProgress = false; //If game is runnning = true
         List<int> colourList = new List<int>(); //Stores the pattern of colours generated
         Random generateColour = new Random(); //Used to generate a random int that represents the colour in the sequence.
         List<int> userGuess = new List<int>(); //Used to store each of users guesses as to what the pattern was.
@@ -33,6 +34,8 @@ namespace AlienSays
 
         List<int> highScores = new List<int>();
         List<string> highScoreNames = new List<string>();
+
+        //SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
         public alienSaysForm(int Scr)
         {

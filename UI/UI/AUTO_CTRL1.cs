@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
 
 using Maintenance_mode;
 using AlienSays;
@@ -71,6 +72,7 @@ namespace UI
         static TRANSLATION translation;
         static SerialPort SerialPort;
         string currentUser;
+        SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
         public AUTO_CTRL(SIM_SENSORS sensor, WLC off_given, MAIN_MENU main_men,
                          WARNING warn, ADVERTISE advertise, CTRL_PANEL ctrl_pan,
@@ -204,7 +206,7 @@ namespace UI
                 function.ServoEnable("0", maint_mode.serialPort1);
                 function.LEDs("1", maint_mode.serialPort1);
 
-                currentUser = cardIDNames[user_id];
+                //currentUser = cardIDNames[user_id];
 
             }
             else
@@ -445,12 +447,34 @@ namespace UI
                     break;
                 case BLUE_BUTTON:
                     if (aliensays.get_inGame()) aliensays.blue_click();
-                    else if (translation.get_inTranslation()) translation.blue_click();
+                    else if (translation.get_inTranslation())
+                    {
+                        timer.Stop();
+                        translation.blue_click();
+                        timer.Start();
+                    }
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
                     break;
                 case YELLOW_BUTTON:
-                    if (aliensays.get_inGame()) aliensays.yellow_click();
-                    else if (translation.get_inTranslation()) translation.yellow_click();
+                    if (aliensays.get_inGame())
+                    {
+                        if (aliensays.gameInProgress == false)
+                        {
+                            timer.Stop();
+                            synthesizer.Speak("Press start to begin the game. The on screen shapes will then flash in a sequence, use the buttons to repeat this sequence");
+                            timer.Start();
+                        }
+                        else
+                        {
+                            aliensays.yellow_click();
+                        }
+                    }
+                    else if (translation.get_inTranslation())
+                    {
+                        timer.Stop();
+                        translation.yellow_click();
+                        timer.Start();
+                    }
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation())
                     {
                         main_menu.yellow_click();
@@ -458,12 +482,22 @@ namespace UI
                     break;
                 case RED_BUTTON:
                     if (aliensays.get_inGame()) aliensays.red_click();
-                    else if (translation.get_inTranslation()) translation.red_click();
+                    else if (translation.get_inTranslation())
+                    {
+                        timer.Stop();
+                        translation.red_click();
+                        timer.Start();
+                    }
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
                     break;
                 case GREEN_BUTTON:
                     if (aliensays.get_inGame()) aliensays.green_click();
-                    else if (translation.get_inTranslation()) translation.green_click();
+                    else if (translation.get_inTranslation())
+                    {
+                        timer.Stop();
+                        translation.green_click();
+                        timer.Start();
+                    }
                     else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
                     break;
                 default: break;

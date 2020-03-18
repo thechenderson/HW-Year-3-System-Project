@@ -186,5 +186,12 @@ namespace UI
         {
             return french;
         }
+        
+
+
+        public void set_userid(string userID)
+        {
+            nameLabel.Text = userID;
+        }
     }
 }

@@ -90,11 +90,11 @@ namespace UI
             function = func;
             translation = translate;
             aliensays = game;
-<<<<<<< HEAD
+
+
             currentUser = username;
           
-=======
->>>>>>> parent of bfdb6ed... Sys files
+
         }
 
         void timer_tick(object sender, EventArgs e)
@@ -188,14 +188,11 @@ namespace UI
                 main_menu.Hide();
                 advertising.Hide();
                 active_window = 0;
-<<<<<<< HEAD
 
-                currentUser = cardIDNames[user_id];
+                //currentUser = cardIDNames[user_id];
 
-=======
                 function.ServoEnable("0", maint_mode.serialPort1);
                 function.LEDs("1", maint_mode.serialPort1);
->>>>>>> parent of bfdb6ed... Sys files
             }
             else
             {

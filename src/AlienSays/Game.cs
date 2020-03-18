@@ -34,6 +34,8 @@ namespace AlienSays
         List<int> highScores = new List<int>();
         List<string> highScoreNames = new List<string>();
 
+        string currentUserName;
+
         public alienSaysForm(int Scr)
         {
             InitializeComponent();
@@ -53,6 +55,7 @@ namespace AlienSays
             //this.WindowState = FormWindowState.Maximized;
             this.ControlBox = false;
             this.Text = String.Empty;
+
 
             readHighScoreFiles(highScores, highScoreNames);
         }
@@ -314,7 +317,10 @@ namespace AlienSays
                 {
 
                     scoreList.Insert(i, currentScore - 1);
-                    nameList.Insert(i, "Insert Name Here");/////////////////////////////////////////////////////////
+
+                    set_userid(currentUserName);
+
+                    nameList.Insert(i, currentUserName);/////////////////////////////////////////////////////////
 
 
 
@@ -502,5 +508,11 @@ namespace AlienSays
         {
             return french;
         }
+
+        public void set_userid(string userID)
+        {
+            currentUserName = userID;    
+        }
+
     }
 }

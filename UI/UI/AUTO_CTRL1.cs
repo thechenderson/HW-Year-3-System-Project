@@ -149,6 +149,7 @@ namespace UI
         public void timer_start()
         {
             timer.Start();
+            function.ServoMove("3", maint_mode.serialPort1);
         }
         public void timer_stop()
         {
@@ -181,6 +182,8 @@ namespace UI
                 main_menu.Hide();
                 warning.Hide();
                 active_window = 0;
+                function.ServoEnable("0", maint_mode.serialPort1);
+                function.LEDs("1", maint_mode.serialPort1);
             }
             else if (!card_reader && !presence_detected)
             {
@@ -189,6 +192,8 @@ namespace UI
                 warning.Hide();
                 wlc.Hide();
                 active_window = 0;
+                function.ServoEnable("0", maint_mode.serialPort1);
+                function.LEDs("1", maint_mode.serialPort1);
             }
             else if (card_reader && !presence_detected)
             {
@@ -197,6 +202,8 @@ namespace UI
                 main_menu.Hide();
                 advertising.Hide();
                 active_window = 0;
+                function.ServoEnable("0", maint_mode.serialPort1);
+                function.LEDs("1", maint_mode.serialPort1);
 
                 currentUser = cardIDNames[user_id];
 
@@ -226,6 +233,8 @@ namespace UI
                 advertising.Hide();
                 wlc.Hide();
                 warning.Hide();
+                function.ServoEnable("1", maint_mode.serialPort1);
+                function.LEDs("2", maint_mode.serialPort1);
             }
         }
         private void set_color_advertising()
@@ -443,7 +452,10 @@ namespace UI
                 case YELLOW_BUTTON:
                     if (aliensays.get_inGame()) aliensays.yellow_click();
                     else if (translation.get_inTranslation()) translation.yellow_click();
-                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation())
+                    {
+                        main_menu.yellow_click();
+                    }
                     break;
                 case RED_BUTTON:
                     if (aliensays.get_inGame()) aliensays.red_click();

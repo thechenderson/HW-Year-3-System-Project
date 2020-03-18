@@ -117,12 +117,12 @@ namespace Maintenance_mode
             String command = "d";
             serialPort.WriteLine(command);
             string distance = ReadData(serialPort);
-            //int status = CheckConnect(serialPort);
+            int status = CheckConnect(serialPort);
 
-            /*if (status != 0)
+            if (status != 0)
             {
                 return ERROR;
-            }*/
+            }
 
             return Convert.ToInt32(distance);
         }

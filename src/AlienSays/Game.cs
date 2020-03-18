@@ -43,6 +43,7 @@ namespace AlienSays
             int w = Screen.AllScreens[Scr].Bounds.Width;
             this.Size = new Size(w, h);
             startButton.FlatAppearance.BorderSize = 5;
+            
         }
 
         private void alienSaysForm_Load(object sender, EventArgs e)

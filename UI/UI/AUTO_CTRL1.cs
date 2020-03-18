@@ -70,11 +70,12 @@ namespace UI
         static alienSaysForm aliensays;
         static TRANSLATION translation;
         static SerialPort SerialPort;
+        string currentUser;
 
         public AUTO_CTRL(SIM_SENSORS sensor, WLC off_given, MAIN_MENU main_men,
                          WARNING warn, ADVERTISE advertise, CTRL_PANEL ctrl_pan,
                          MAINT_MODE maint, Functions func, alienSaysForm game, 
-                         TRANSLATION translate)
+                         TRANSLATION translate, string username)
         {
             timer.Tick += new EventHandler(timer_tick);
             timer.Interval = 125;
@@ -89,8 +90,7 @@ namespace UI
             function = func;
             translation = translate;
             aliensays = game;
-
-
+            currentUser = username;
           
         }
 
@@ -198,7 +198,7 @@ namespace UI
                 advertising.Hide();
                 active_window = 0;
 
-                 string username = cardIDNames[user_id];
+                currentUser = cardIDNames[user_id];
 
             }
             else

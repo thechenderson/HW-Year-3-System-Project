@@ -222,26 +222,24 @@ namespace UI
             }
             else
             {
-
-
-
                 if (aliensays.get_inGame())
                 {
                     Console.WriteLine(aliensays.get_french());
                     main_menu.set_french(aliensays.get_french());
-                    //translation.set_french(aliensays.get_french());
+                    translation.set_french(aliensays.get_french());
+                    aliensays.setUserID(currentUser);
                     aliensays.Show();
                 }
                 else if (translation.get_inTranslation())
                 {
-                    //main_menu.set_french(translation.get_french());
-                    //aliensays.set_french(translation.get_french());
+                    main_menu.set_french(translation.get_french());
+                    aliensays.set_french(translation.get_french());
                     translation.Show();
                 }
                 else if (!aliensays.get_inGame() && !translation.get_inTranslation())
                 {
                     aliensays.set_french(main_menu.get_french());
-                    //translation.set_french(main_menu.getfrench());
+                    translation.set_french(main_menu.get_french());
                     main_menu.set_userid(currentUser);
                     main_menu.Show();
                 }
@@ -484,7 +482,14 @@ namespace UI
                         if (aliensays.gameInProgress == false)
                         {
                             timer.Stop();
-                            synthesizer.Speak("Press start to begin the game. The on screen shapes will then flash in a sequence, use the buttons to repeat this sequence");
+                            if (!aliensays.get_french())
+                            {
+                                synthesizer.Speak("Press start to begin the game. The on screen shapes will then flash in a sequence, use the buttons to repeat this sequence");
+                            }
+                            else
+                            {
+                                synthesizer.Speak("Appuyer sur start pour commencer. Appuyer sur les boutons de couleurs pour reproduire les sequence qui apparaitront a l'ecran");
+                            }
                             timer.Start();
                         }
                         else

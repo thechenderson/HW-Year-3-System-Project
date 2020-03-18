@@ -317,7 +317,7 @@ namespace AlienSays
                 {
 
                     scoreList.Insert(i, currentScore - 1);
-                    nameList.Insert(i, "Insert Name Here");/////////////////////////////////////////////////////////
+                    nameList.Insert(i, currentUserName);
 
 
 
@@ -504,6 +504,11 @@ namespace AlienSays
         public bool get_french()
         {
             return french;
+        }
+
+        public void setUserID(string user_id)
+        {
+            currentUserName = user_id;
         }
     }
 }

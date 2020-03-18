@@ -25,7 +25,6 @@ namespace UI
 
         /*Select fr/en*/
         bool fr = false;
-        bool en = true;
         bool inTranslation = false;
 
         public TRANSLATION(int Scr)
@@ -48,10 +47,10 @@ namespace UI
 
         private void sentence1_Click(object sender, EventArgs e)
         {
-            if(en)
+            if(!fr)
             {
                 Translate_sentence.Text = "Je suis un robot alien";
-            }else if(fr)
+            }else
             {
                 Translate_sentence.Text = "I am an alien robot";
             }
@@ -60,11 +59,11 @@ namespace UI
 
         private void sentence2_Click(object sender, EventArgs e)
         {
-            if (en)
+            if (!fr)
             {
                 Translate_sentence.Text = "J'aime les pizzas au Haggis";
             }
-            else if (fr)
+            else
             {
                 Translate_sentence.Text = "I like Haggis pizza";
             }
@@ -73,11 +72,11 @@ namespace UI
 
         private void sentence3_Click(object sender, EventArgs e)
         {
-            if (en)
+            if (!fr)
             {
                 Translate_sentence.Text = "J'ai été crée par ArBots";
             }
-            else if (fr)
+            else
             {
                 Translate_sentence.Text = "I was created by ArBots";
             }
@@ -86,11 +85,11 @@ namespace UI
 
         private void sentence4_Click(object sender, EventArgs e)
         {
-            if (en)
+            if (!fr)
             {
                 Translate_sentence.Text = "Viens jouer avec moi !";
             }
-            else if (fr)
+            else
             {
                 Translate_sentence.Text = "Come play with me!";
             }
@@ -100,21 +99,25 @@ namespace UI
         private void eng_buttton_Click(object sender, EventArgs e)
         {
             fr = false;
-            en = true;
             sentence1.Text = "I am an alien robot";
             sentence2.Text = "I like Haggis pizza";
             sentence3.Text = "I was created by ArBots";
             sentence4.Text = "Come play with me!";
+            label1.Text = "Je parle Anglais !";
+            label2.Text = "Trop facile :";
+            backtomm.Text = "Menu Principal";
         }
 
         private void fr_button_Click(object sender, EventArgs e)
         {
             fr = true;
-            en = false;
             sentence1.Text = "Je suis un robot alien";
             sentence2.Text = "J'aime les pizzas au Haggis";
             sentence3.Text = "J'ai été crée par ArBots";
             sentence4.Text = "Viens jouer avec moi !";
+            label1.Text = "I can speak any language";
+            label2.Text = "Too easy :";
+            backtomm.Text = "Main Menu";
         }
 
         public bool get_inTranslation()
@@ -182,6 +185,35 @@ namespace UI
         public void red_click()
         {
             sentence1.PerformClick();
+        }
+        public void set_french(bool french)
+        {
+            fr = french;
+            if (fr)
+            {
+                sentence1.Text = "Je suis un robot alien";
+                sentence2.Text = "J'aime les pizzas au Haggis";
+                sentence3.Text = "J'ai été crée par ArBots";
+                sentence4.Text = "Viens jouer avec moi !";
+                label1.Text = "Je parle Anglais !";
+                label2.Text = "Trop facile :";
+                backtomm.Text = "Menu Principal";
+            }
+            else
+            {
+                sentence1.Text = "I am an alien robot";
+                sentence2.Text = "I like Haggis pizza";
+                sentence3.Text = "I was created by ArBots";
+                sentence4.Text = "Come play with me!";
+                label1.Text = "I can speak any language";
+                label2.Text = "Too easy :";
+                backtomm.Text = "Main Menu";
+            }
+        }
+
+        public bool get_french()
+        {
+            return fr;
         }
     }
 }

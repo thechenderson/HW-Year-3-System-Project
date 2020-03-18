@@ -94,7 +94,7 @@
             this.translate_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.translate_button.FlatAppearance.BorderSize = 0;
             this.translate_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.translate_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.translate_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.translate_button.ForeColor = System.Drawing.Color.White;
             this.translate_button.Location = new System.Drawing.Point(89, 242);
             this.translate_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

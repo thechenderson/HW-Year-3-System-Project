@@ -67,7 +67,7 @@ namespace Maintenance_mode
         private void btnServoMove_Click(object sender, EventArgs e)
         {
             string State = Convert.ToString(cbServoState.SelectedIndex);
-            
+
             int status = function.ServoMove(State, serialPort1);
 
             if (status == 0)
@@ -126,7 +126,7 @@ namespace Maintenance_mode
                 B = Convert.ToInt32(blue) * RGB_CONST / C;
             }
 
-            int status = function.CheckConnect(serialPort1);//Getting the status
+            int status = 0;//function.CheckConnect(serialPort1);//Getting the status
 
             if (status == 0)//If there was no errors
             {
@@ -155,7 +155,7 @@ namespace Maintenance_mode
 
             var CheckCard = function.CardCheck(serialPort1);
 
-            int status = function.CheckConnect(serialPort1);//Getting the status
+            int status = 0;//function.CheckConnect(serialPort1);//Getting the status
 
 
             if (status == 0)//If there was no errors
@@ -208,7 +208,7 @@ namespace Maintenance_mode
 
         private void btnLEDOff_Click(object sender, EventArgs e)
         {
-            function.LEDs("1", serialPort1);
+            function.LEDs("0", serialPort1);
         }
 
         private void btnCardRead_Click(object sender, EventArgs e)
@@ -218,7 +218,7 @@ namespace Maintenance_mode
 
             var CardValue = function.CardIDRead(serialPort1);
 
-            int status = function.CheckConnect(serialPort1);//Getting the status
+            int status = 0;//function.CheckConnect(serialPort1);//Getting the status
 
 
             if (status == 0)//If there was no errors

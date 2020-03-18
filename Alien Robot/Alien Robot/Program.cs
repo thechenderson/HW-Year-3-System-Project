@@ -3,6 +3,7 @@ using Maintenance_mode;
 using System;
 using System.Windows.Forms;
 using UI;
+using System.Collections.Generic;
 namespace Alien_Robot
 {
     static class Program
@@ -20,6 +21,7 @@ namespace Alien_Robot
              * Working on the PC only : 
              * Scr = 0 OR working on the PC + Robot's screen : Scr = 1*/
             int Scr = 1;
+            string username ="";
 
             Functions functions = new Functions();
             SIM_SENSORS sensors = new SIM_SENSORS();
@@ -33,10 +35,13 @@ namespace Alien_Robot
             WARNING warning = new WARNING(Scr);
             CTRL_PANEL control_panel = new CTRL_PANEL(off, main_M, warning, advertising, Scr);
             AUTO_CTRL auto_ctrl = new AUTO_CTRL(sensors, off, main_M, warning, advertising, control_panel,
-                                                maint_mode, functions, aliensays_game, translation);
+                                                maint_mode, functions, aliensays_game, translation, username);
 
-           //auto_ctrl.timer_initialise();
-           // auto_ctrl.timer_start();
+
+                
+
+            //auto_ctrl.timer_initialise();
+            // auto_ctrl.timer_start();
             off.Show();
             Application.Run(sensors);
           

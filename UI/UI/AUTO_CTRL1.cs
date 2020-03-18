@@ -52,10 +52,10 @@ namespace UI
         static int[] minmaxB = new int[] { 60, 100, 80, 110, 70, 100 }; //For BLUE {minR, maxR, minG, maxG, minB, maxB}
         static int[] minmaxP = new int[] { 120, 160, 30, 60, 150, 255 }; //For PURPLE {minR, maxR, minG, maxG, minB, maxB}
 
+        
+
         int long_tick = 0; //for having the color sensor values each 2s 
         bool twice = false;
-
-        int status;
 
 
         /*Declaration of the attached class for the control*/
@@ -70,11 +70,12 @@ namespace UI
         static alienSaysForm aliensays;
         static TRANSLATION translation;
         static SerialPort SerialPort;
+        string currentUser;
 
         public AUTO_CTRL(SIM_SENSORS sensor, WLC off_given, MAIN_MENU main_men,
                          WARNING warn, ADVERTISE advertise, CTRL_PANEL ctrl_pan,
                          MAINT_MODE maint, Functions func, alienSaysForm game, 
-                         TRANSLATION translate)
+                         TRANSLATION translate, string username)
         {
             timer.Tick += new EventHandler(timer_tick);
             timer.Interval = 125;
@@ -89,6 +90,8 @@ namespace UI
             function = func;
             translation = translate;
             aliensays = game;
+            currentUser = username;
+          
         }
 
         void timer_tick(object sender, EventArgs e)
@@ -146,7 +149,6 @@ namespace UI
         public void timer_start()
         {
             timer.Start();
-            function.ServoMove("3", maint_mode.serialPort1);
         }
         public void timer_stop()
         {
@@ -155,6 +157,23 @@ namespace UI
 
         private void auto_fsm()
         {
+            //List of all known users
+            List<string> cardIDNames = new List<string>();
+            cardIDNames.Add("Soosin");
+            cardIDNames.Add("La-a");
+            cardIDNames.Add("Kevin");
+            cardIDNames.Add("Pierre");
+            cardIDNames.Add("Patrick");
+            cardIDNames.Add("Max");
+            cardIDNames.Add("Alex");
+            cardIDNames.Add("Jordan");
+            cardIDNames.Add("Chris");
+            cardIDNames.Add("Tilly");
+            cardIDNames.Add("Candy");
+            cardIDNames.Add("Richard");
+            cardIDNames.Add("Jurgen");
+            cardIDNames.Add("Maintenance");
+
             if (!card_reader && presence_detected)
             {
                 wlc.Show();
@@ -162,8 +181,6 @@ namespace UI
                 main_menu.Hide();
                 warning.Hide();
                 active_window = 0;
-                function.ServoEnable("0", maint_mode.serialPort1);
-                function.LEDs("1", maint_mode.serialPort1);
             }
             else if (!card_reader && !presence_detected)
             {
@@ -172,8 +189,6 @@ namespace UI
                 warning.Hide();
                 wlc.Hide();
                 active_window = 0;
-                function.ServoEnable("0", maint_mode.serialPort1);
-                function.LEDs("1", maint_mode.serialPort1);
             }
             else if (card_reader && !presence_detected)
             {
@@ -182,8 +197,9 @@ namespace UI
                 main_menu.Hide();
                 advertising.Hide();
                 active_window = 0;
-                function.ServoEnable("0", maint_mode.serialPort1);
-                function.LEDs("1", maint_mode.serialPort1);
+
+                currentUser = cardIDNames[user_id];
+
             }
             else
             {
@@ -210,8 +226,6 @@ namespace UI
                 advertising.Hide();
                 wlc.Hide();
                 warning.Hide();
-                function.ServoEnable("1", maint_mode.serialPort1);
-                function.LEDs("2", maint_mode.serialPort1);
             }
         }
         private void set_color_advertising()
@@ -429,10 +443,7 @@ namespace UI
                 case YELLOW_BUTTON:
                     if (aliensays.get_inGame()) aliensays.yellow_click();
                     else if (translation.get_inTranslation()) translation.yellow_click();
-                    else if (!aliensays.get_inGame() && !translation.get_inTranslation())
-                    {
-                        main_menu.yellow_click();
-                    }
+                    else if (!aliensays.get_inGame() && !translation.get_inTranslation()) ;
                     break;
                 case RED_BUTTON:
                     if (aliensays.get_inGame()) aliensays.red_click();

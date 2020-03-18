@@ -198,7 +198,7 @@ namespace UI
                 advertising.Hide();
                 active_window = 0;
 
-                 string username = cardIDNames[user_id];
+                 //string username = cardIDNames[user_id];
 
             }
             else

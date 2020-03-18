@@ -216,7 +216,7 @@
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox7.Location = new System.Drawing.Point(185, 1118);
+            this.textBox7.Location = new System.Drawing.Point(185, 1047);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
@@ -230,7 +230,7 @@
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox7.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox7.Location = new System.Drawing.Point(338, 1041);
+            this.pictureBox7.Location = new System.Drawing.Point(338, 970);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(74, 71);
             this.pictureBox7.TabIndex = 15;
@@ -240,7 +240,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(750, 1173);
+            this.ClientSize = new System.Drawing.Size(750, 1102);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);

@@ -34,7 +34,7 @@ namespace Alien_Robot
             ADVERTISE advertising = new ADVERTISE(Scr);
             WARNING warning = new WARNING(Scr);
             CTRL_PANEL control_panel = new CTRL_PANEL(off, main_M, warning, advertising, Scr);
-            AUTO_CTRL auto_ctrl = new AUTO_CTRL(sensors, off, main_M, warning, advertising, control_panel,maint_mode, functions, aliensays_game, translation, username);
+            AUTO_CTRL auto_ctrl = new AUTO_CTRL(sensors, off, main_M, warning, advertising, control_panel,maint_mode, functions, aliensays_game, translation);
 
             off.Show();
             Application.Run(sensors);

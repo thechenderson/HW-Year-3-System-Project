@@ -50,15 +50,16 @@ namespace UI
         static bool maintenance = true; // THE USER 0 IS THE MAINTENANCE GUY
         static int active_window = 0;
         static int dist = -1;
-        static int user_id = -1;
+        static int user_id = 15;
         static int button = 0;
         static int R = 0, G = 0, B = 0;
         static int[] minmaxR = new int[] { 130, 170, 40, 85, 30, 60 }; //For RED {minR, maxR, minG, maxG, minB, maxB}
         static int[] minmaxG = new int[] { 80, 120, 150, 255, 0, 40 }; //For GREEN {minR, maxR, minG, maxG, minB, maxB}
         static int[] minmaxB = new int[] { 60, 100, 80, 110, 70, 100 }; //For BLUE {minR, maxR, minG, maxG, minB, maxB}
         static int[] minmaxP = new int[] { 120, 160, 30, 60, 150, 255 }; //For PURPLE {minR, maxR, minG, maxG, minB, maxB}
+        List<string> cardIDNames = new List<string>();
 
-        
+
 
         int long_tick = 0; //for having the color sensor values each 2s 
         bool twice = false;
@@ -76,7 +77,6 @@ namespace UI
         static alienSaysForm aliensays;
         static TRANSLATION translation;
         static SerialPort SerialPort;
-        string currentUser;
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
         
@@ -102,7 +102,6 @@ namespace UI
             aliensays = game;
 
             //List of all known users
-            List<string> cardIDNames = new List<string>();
             cardIDNames.Add("Soosin");
             cardIDNames.Add("La-a");
             cardIDNames.Add("Kevin");
@@ -116,9 +115,9 @@ namespace UI
             cardIDNames.Add("Candy");
             cardIDNames.Add("Richard");
             cardIDNames.Add("Jurgen");
+            cardIDNames.Add("Boris");
+            cardIDNames.Add("Covid");
             cardIDNames.Add("Maintenance");
-
-            currentUser = cardIDNames[user_id];
 
         }
 
@@ -297,6 +296,14 @@ namespace UI
             user_id = States.Item2;
             dist = States.Item3;
             button = States.Item4;
+            if (user_id != -1)
+            {
+                currentUser = cardIDNames[user_id];
+            }
+            else 
+            {
+                currentUser = "";
+            }
 
             //Console.WriteLine(States);
 

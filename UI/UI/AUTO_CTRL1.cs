@@ -15,6 +15,7 @@ using System.Timers;
 
 namespace UI
 {
+
     public class AUTO_CTRL
     {
         /*Declaration of the magic numbers*/
@@ -31,6 +32,10 @@ namespace UI
         const int RED_BUTTON = 5;
         const int GREEN_BUTTON = 6;
         const int NO_BUTTON = 0;
+
+        string currentUser;
+
+
 
         /*Declaration Timer*/
         static System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
@@ -70,12 +75,14 @@ namespace UI
         static alienSaysForm aliensays;
         static TRANSLATION translation;
         static SerialPort SerialPort;
-        string currentUser;
+
+        
+
 
         public AUTO_CTRL(SIM_SENSORS sensor, WLC off_given, MAIN_MENU main_men,
                          WARNING warn, ADVERTISE advertise, CTRL_PANEL ctrl_pan,
                          MAINT_MODE maint, Functions func, alienSaysForm game, 
-                         TRANSLATION translate, string username)
+                         TRANSLATION translate)
         {
             timer.Tick += new EventHandler(timer_tick);
             timer.Interval = 125;
@@ -90,7 +97,7 @@ namespace UI
             function = func;
             translation = translate;
             aliensays = game;
-            currentUser = username;
+
             //List of all known users
             List<string> cardIDNames = new List<string>();
             cardIDNames.Add("Soosin");
@@ -107,6 +114,9 @@ namespace UI
             cardIDNames.Add("Richard");
             cardIDNames.Add("Jurgen");
             cardIDNames.Add("Maintenance");
+
+            currentUser = cardIDNames[user_id];
+
         }
 
         void timer_tick(object sender, EventArgs e)
@@ -165,6 +175,7 @@ namespace UI
         {
             timer.Start();
             function.ServoMove("3", maint_mode.serialPort1);
+
         }
         public void timer_stop()
         {
@@ -204,11 +215,14 @@ namespace UI
                 function.ServoEnable("0", maint_mode.serialPort1);
                 function.LEDs("1", maint_mode.serialPort1);
 
-                currentUser = cardIDNames[user_id];
+                
 
             }
             else
             {
+
+
+
                 if (aliensays.get_inGame())
                 {
                     Console.WriteLine(aliensays.get_french());
@@ -226,6 +240,7 @@ namespace UI
                 {
                     aliensays.set_french(main_menu.get_french());
                     //translation.set_french(main_menu.getfrench());
+                    main_menu.set_userid(currentUser);
                     main_menu.Show();
                 }
 

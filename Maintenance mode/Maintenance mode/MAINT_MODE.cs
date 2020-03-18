@@ -208,7 +208,7 @@ namespace Maintenance_mode
 
         private void btnLEDOff_Click(object sender, EventArgs e)
         {
-            function.LEDs("1", serialPort1);
+            function.LEDs("0", serialPort1);
         }
 
         private void btnCardRead_Click(object sender, EventArgs e)

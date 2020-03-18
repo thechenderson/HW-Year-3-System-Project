@@ -35,8 +35,8 @@
             this.button_maintMode = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.nameLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // fr_button
@@ -78,7 +78,7 @@
             this.button_game1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_game1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_game1.ForeColor = System.Drawing.Color.White;
-            this.button_game1.Location = new System.Drawing.Point(89, 518);
+            this.button_game1.Location = new System.Drawing.Point(89, 435);
             this.button_game1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_game1.Name = "button_game1";
             this.button_game1.Size = new System.Drawing.Size(576, 138);
@@ -114,7 +114,7 @@
             this.button_maintMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_maintMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_maintMode.ForeColor = System.Drawing.Color.White;
-            this.button_maintMode.Location = new System.Drawing.Point(41, 783);
+            this.button_maintMode.Location = new System.Drawing.Point(40, 657);
             this.button_maintMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_maintMode.Name = "button_maintMode";
             this.button_maintMode.Size = new System.Drawing.Size(681, 138);
@@ -129,7 +129,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Yellow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(322, 997);
+            this.label1.Location = new System.Drawing.Point(315, 841);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 135);
             this.label1.TabIndex = 17;
@@ -153,17 +153,31 @@
             this.nameLabel.AutoSize = true;
             this.nameLabel.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(414, 107);
+            this.nameLabel.Location = new System.Drawing.Point(380, 100);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(0, 91);
             this.nameLabel.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(74, 1007);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(647, 32);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Press the Yellow button to open the Help Page";
             // 
             // MAIN_MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(768, 1102);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -190,7 +204,7 @@
         private System.Windows.Forms.Button button_maintMode;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -91,7 +91,22 @@ namespace UI
             translation = translate;
             aliensays = game;
             currentUser = username;
-          
+            //List of all known users
+            List<string> cardIDNames = new List<string>();
+            cardIDNames.Add("Soosin");
+            cardIDNames.Add("La-a");
+            cardIDNames.Add("Kevin");
+            cardIDNames.Add("Pierre");
+            cardIDNames.Add("Patrick");
+            cardIDNames.Add("Max");
+            cardIDNames.Add("Alex");
+            cardIDNames.Add("Jordan");
+            cardIDNames.Add("Chris");
+            cardIDNames.Add("Tilly");
+            cardIDNames.Add("Candy");
+            cardIDNames.Add("Richard");
+            cardIDNames.Add("Jurgen");
+            cardIDNames.Add("Maintenance");
         }
 
         void timer_tick(object sender, EventArgs e)
@@ -158,22 +173,6 @@ namespace UI
 
         private void auto_fsm()
         {
-            //List of all known users
-            List<string> cardIDNames = new List<string>();
-            cardIDNames.Add("Soosin");
-            cardIDNames.Add("La-a");
-            cardIDNames.Add("Kevin");
-            cardIDNames.Add("Pierre");
-            cardIDNames.Add("Patrick");
-            cardIDNames.Add("Max");
-            cardIDNames.Add("Alex");
-            cardIDNames.Add("Jordan");
-            cardIDNames.Add("Chris");
-            cardIDNames.Add("Tilly");
-            cardIDNames.Add("Candy");
-            cardIDNames.Add("Richard");
-            cardIDNames.Add("Jurgen");
-            cardIDNames.Add("Maintenance");
 
             if (!card_reader && presence_detected)
             {

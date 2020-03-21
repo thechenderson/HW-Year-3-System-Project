@@ -23,13 +23,15 @@ namespace UI
         /*Variable for the language selection*/
         bool french = false;
         bool maintenance = true;
+        bool helpOpen = false;
         int selected_button = 1;
 
         TRANSLATION translation;
         alienSaysForm aliensays;
         MAINT_MODE maint_mode;
+        HELP help;
 
-        public MAIN_MENU(MAINT_MODE maint_mode, alienSaysForm aliensays, TRANSLATION translation, int Scr)
+        public MAIN_MENU(MAINT_MODE maint_mode, alienSaysForm aliensays, TRANSLATION translation, HELP help, int Scr)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
@@ -40,7 +42,8 @@ namespace UI
             this.translation = translation;
             this.aliensays = aliensays;
             this.maint_mode = maint_mode;
-            translate_button.BackColor = Color.Black;
+            this.help = help;
+            translate_button.FlatAppearance.BorderSize = 5;
         }
 
         private void fr_button_Click(object sender, EventArgs e)
@@ -123,24 +126,24 @@ namespace UI
             switch (selected_button)
             {
                 case TRANSLATE:
-                    eng_buttton.FlatStyle = FlatStyle.Flat;
-                    translate_button.BackColor = Color.Black;
+                    eng_buttton.FlatAppearance.BorderSize = 0;
+                    translate_button.FlatAppearance.BorderSize = 5;
                     break;
                 case AL_SAYS:
-                    translate_button.BackColor = Color.DeepSkyBlue;
-                    button_game1.BackColor = Color.Black;
+                    translate_button.FlatAppearance.BorderSize = 0;
+                    button_game1.FlatAppearance.BorderSize = 5;
                     break;
                 case FR:
-                    button_game1.BackColor = Color.DeepSkyBlue;
-                    fr_button.FlatStyle = FlatStyle.Standard;
+                    button_game1.FlatAppearance.BorderSize = 0;
+                    fr_button.FlatAppearance.BorderSize = 5;
                     break;
                 case ENG:
-                    fr_button.FlatStyle = FlatStyle.Flat;
-                    eng_buttton.FlatStyle = FlatStyle.Standard;
+                    fr_button.FlatAppearance.BorderSize = 0;
+                    eng_buttton.FlatAppearance.BorderSize = 5;
                     break;
                 case 5:
-                    eng_buttton.FlatStyle = FlatStyle.Flat;
-                    translate_button.BackColor = Color.Black;
+                    eng_buttton.FlatAppearance.BorderSize = 0;
+                    translate_button.FlatAppearance.BorderSize = 5;
                     selected_button = TRANSLATE;
                     break;
             }
@@ -148,7 +151,16 @@ namespace UI
         }
         public void yellow_click()
         {
-
+            if (helpOpen)
+            {
+                help.Hide();
+                helpOpen = false;
+            }
+            else 
+            {
+                help.Show();
+                helpOpen = true;
+            }
         }
         public void red_click()
         {
@@ -173,6 +185,13 @@ namespace UI
         public bool get_french()
         {
             return french;
+        }
+        
+
+
+        public void set_userid(string userID)
+        {
+            nameLabel.Text = userID;
         }
     }
 }

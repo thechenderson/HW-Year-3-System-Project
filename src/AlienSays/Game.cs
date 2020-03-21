@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Media;
 using System.IO;
+//using System.Speech.Synthesis;
 
 namespace AlienSays
 {
@@ -25,7 +26,7 @@ namespace AlienSays
         bool french = false;
         int selected_button = 1;
 
-        bool gameInProgress = false; //If game is runnning = true
+        public bool gameInProgress = false; //If game is runnning = true
         List<int> colourList = new List<int>(); //Stores the pattern of colours generated
         Random generateColour = new Random(); //Used to generate a random int that represents the colour in the sequence.
         List<int> userGuess = new List<int>(); //Used to store each of users guesses as to what the pattern was.
@@ -33,6 +34,8 @@ namespace AlienSays
 
         List<int> highScores = new List<int>();
         List<string> highScoreNames = new List<string>();
+
+        string currentUserName;
 
         public alienSaysForm(int Scr)
         {
@@ -42,7 +45,8 @@ namespace AlienSays
             int h = Screen.AllScreens[Scr].Bounds.Height;
             int w = Screen.AllScreens[Scr].Bounds.Width;
             this.Size = new Size(w, h);
-            startButton.BackColor = Color.Black;
+            startButton.FlatAppearance.BorderSize = 5;
+            
         }
 
         private void alienSaysForm_Load(object sender, EventArgs e)
@@ -313,7 +317,7 @@ namespace AlienSays
                 {
 
                     scoreList.Insert(i, currentScore - 1);
-                    nameList.Insert(i, "Insert Name Here");/////////////////////////////////////////////////////////
+                    nameList.Insert(i, currentUserName);
 
 
 
@@ -398,27 +402,44 @@ namespace AlienSays
             switch (selected_button)
             {
                 case START:
-                    eng_buttton.FlatStyle = FlatStyle.Flat;
-                    startButton.BackColor = Color.Black;
+                    eng_buttton.FlatAppearance.BorderSize = 0;
+                    startButton.FlatAppearance.BorderSize = 5;
                     break;
                 case EXIT:
-                    startButton.BackColor = Color.DeepSkyBlue;
-                    exit_button.BackColor = Color.Black;
+                    startButton.FlatAppearance.BorderSize = 0;
+                    exit_button.FlatAppearance.BorderSize = 5;
                     break;
                 case FR:
-                    exit_button.BackColor = Color.DeepSkyBlue;
-                    fr_button.FlatStyle = FlatStyle.Standard;
+                    exit_button.FlatAppearance.BorderSize = 0;
+                    fr_button.FlatAppearance.BorderSize = 5;
                     break;
                 case ENG:
-                    fr_button.FlatStyle = FlatStyle.Flat;
-                    eng_buttton.FlatStyle = FlatStyle.Standard;
+                    fr_button.FlatAppearance.BorderSize = 0;
+                    eng_buttton.FlatAppearance.BorderSize = 5;
                     break;
                 case 5:
-                    eng_buttton.FlatStyle = FlatStyle.Flat;
-                    startButton.BackColor = Color.Black;
+                    eng_buttton.FlatAppearance.BorderSize = 0;
+                    startButton.FlatAppearance.BorderSize = 5;
                     selected_button = START;
                     break;
             }
+        }
+
+        public void blue_click()
+        {
+            blueButton.PerformClick();
+        }
+        public void green_click()
+        {
+            greenButton.PerformClick();
+        }
+        public void yellow_click()
+        {
+            yellowButton.PerformClick();
+        }
+        public void red_click()
+        {
+            redButton.PerformClick();
         }
 
         private void fr_button_Click(object sender, EventArgs e)
@@ -483,6 +504,11 @@ namespace AlienSays
         public bool get_french()
         {
             return french;
+        }
+
+        public void setUserID(string user_id)
+        {
+            currentUserName = user_id;
         }
     }
 }

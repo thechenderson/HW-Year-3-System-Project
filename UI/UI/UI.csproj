@@ -56,6 +56,12 @@
     <Compile Include="CTRL_PANEL.Designer.cs">
       <DependentUpon>CTRL_PANEL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
     <Compile Include="SIM_SENSORS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CTRL_PANEL.resx">
       <DependentUpon>CTRL_PANEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MAIN_MENU.resx">
       <DependentUpon>MAIN_MENU.cs</DependentUpon>

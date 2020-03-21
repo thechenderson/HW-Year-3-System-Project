@@ -68,6 +68,18 @@ namespace Maintenance_mode
             return status;
         }
 
+        public void ServoEnable(string state, SerialPort serialPort)
+        {
+            string command = "E "+ state;
+            serialPort.WriteLine(command);//Send the command to the MBED
+        }
+
+        public void LEDs(string state, SerialPort serialPort)
+        {
+            string command = "L " + state;
+            serialPort.WriteLine(command);//Send the command to the MBED
+        }
+
         public int MBEDConnect(string com_port, SerialPort serialPort)
         {
             try

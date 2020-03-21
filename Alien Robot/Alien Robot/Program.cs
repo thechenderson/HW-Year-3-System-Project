@@ -37,7 +37,7 @@ namespace Alien_Robot
             AUTO_CTRL auto_ctrl = new AUTO_CTRL(sensors, off, main_M, warning, advertising, control_panel,maint_mode, functions, aliensays_game, translation);
 
             off.Show();
-            Application.Run(sensors);
+            Application.Run();
           
         }
     }

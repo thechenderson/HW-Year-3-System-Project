@@ -102,7 +102,7 @@ namespace Maintenance_mode
 
             string Servo = ReadData(serialPort);//Getting the value from the MBED
             string Pos = ReadData(serialPort);//Getting the value from the MBED
-            int status = CheckConnect(serialPort);//Getting the status from the MBED
+            int status = 0;// CheckConnect(serialPort);//Getting the status from the MBED
 
             string data = "Servo " + Servo + " was moved to position " + Pos;
             if (status != 0)
@@ -117,7 +117,7 @@ namespace Maintenance_mode
             String command = "d";
             serialPort.WriteLine(command);
             string distance = ReadData(serialPort);
-            int status = CheckConnect(serialPort);
+            int status = 0;// CheckConnect(serialPort);
 
             if (status != 0)
             {

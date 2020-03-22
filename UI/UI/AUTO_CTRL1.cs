@@ -24,7 +24,7 @@ namespace UI
         const int GREEN = 0;
         const int RED = 1;
         const int PURPLE = 2;
-        const int BLUE = 3; //test git
+        const int BLUE = 3; 
         const int RGB_CONST = 256;
         const int BLACK_BUTTON = 1;
         const int WHITE_BUTTON = 2;

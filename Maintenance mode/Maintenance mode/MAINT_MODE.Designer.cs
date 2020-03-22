@@ -34,8 +34,6 @@
             this.btnReadColour = new System.Windows.Forms.Button();
             this.btnReadDistance = new System.Windows.Forms.Button();
             this.lblSensorOps = new System.Windows.Forms.Label();
-            this.btnServoRead = new System.Windows.Forms.Button();
-            this.lblReadPosition = new System.Windows.Forms.Label();
             this.btnServoMove = new System.Windows.Forms.Button();
             this.lblServoMove1 = new System.Windows.Forms.Label();
             this.lblServoOps = new System.Windows.Forms.Label();
@@ -114,28 +112,6 @@
             this.lblSensorOps.Size = new System.Drawing.Size(257, 35);
             this.lblSensorOps.TabIndex = 29;
             this.lblSensorOps.Text = "Sensor Operations:";
-            // 
-            // btnServoRead
-            // 
-            this.btnServoRead.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnServoRead.Location = new System.Drawing.Point(189, 231);
-            this.btnServoRead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnServoRead.Name = "btnServoRead";
-            this.btnServoRead.Size = new System.Drawing.Size(93, 31);
-            this.btnServoRead.TabIndex = 28;
-            this.btnServoRead.Text = "Read";
-            this.btnServoRead.UseVisualStyleBackColor = true;
-            this.btnServoRead.Click += new System.EventHandler(this.btnServoRead_Click);
-            // 
-            // lblReadPosition
-            // 
-            this.lblReadPosition.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblReadPosition.AutoSize = true;
-            this.lblReadPosition.Location = new System.Drawing.Point(76, 212);
-            this.lblReadPosition.Name = "lblReadPosition";
-            this.lblReadPosition.Size = new System.Drawing.Size(338, 17);
-            this.lblReadPosition.TabIndex = 27;
-            this.lblReadPosition.Text = "Read the position of the most recently moved Servo:";
             // 
             // btnServoMove
             // 
@@ -357,8 +333,6 @@
             this.Controls.Add(this.btnReadColour);
             this.Controls.Add(this.btnReadDistance);
             this.Controls.Add(this.lblSensorOps);
-            this.Controls.Add(this.btnServoRead);
-            this.Controls.Add(this.lblReadPosition);
             this.Controls.Add(this.btnServoMove);
             this.Controls.Add(this.lblServoMove1);
             this.Controls.Add(this.lblServoOps);
@@ -385,8 +359,6 @@
         private System.Windows.Forms.Button btnReadColour;
         private System.Windows.Forms.Button btnReadDistance;
         private System.Windows.Forms.Label lblSensorOps;
-        private System.Windows.Forms.Button btnServoRead;
-        private System.Windows.Forms.Label lblReadPosition;
         private System.Windows.Forms.Button btnServoMove;
         private System.Windows.Forms.Label lblServoMove1;
         private System.Windows.Forms.Label lblServoOps;

@@ -126,7 +126,7 @@ namespace Maintenance_mode
                 B = Convert.ToInt32(blue) * RGB_CONST / C;
             }
 
-            int status = function.CheckConnect(serialPort1);//Getting the status
+            int status = 0;// function.CheckConnect(serialPort1);//Getting the status
 
             if (status == 0)//If there was no errors
             {
@@ -155,7 +155,7 @@ namespace Maintenance_mode
 
             var CheckCard = function.CardCheck(serialPort1);
 
-            int status = function.CheckConnect(serialPort1);//Getting the status
+            int status = 0;// function.CheckConnect(serialPort1);//Getting the status
 
 
             if (status == 0)//If there was no errors
@@ -218,7 +218,7 @@ namespace Maintenance_mode
 
             var CardValue = function.CardIDRead(serialPort1);
 
-            int status = function.CheckConnect(serialPort1);//Getting the status
+            int status = 0;// function.CheckConnect(serialPort1);//Getting the status
 
 
             if (status == 0)//If there was no errors

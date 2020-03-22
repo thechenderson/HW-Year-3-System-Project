@@ -1,17 +1,14 @@
 ﻿using System;
-
 using System.IO.Ports;     // added to use serial port features
 
 namespace Maintenance_mode
 {
     public class Functions
     {
-        //Constants
+        //Constants for communication
         const int READ_TIMEOUT = 10000;
         const int ERROR = -1;
         const string STR_ERROR = "";
-
-        
 
         public int CheckConnect(SerialPort serialPort)//Checking if there is a connection between the PC and an MBED
         {
@@ -138,20 +135,13 @@ namespace Maintenance_mode
             string line = ReadData(serialPort);
             string[] values = line.Split('\t');
 
-
             clear = values[0];
-            //Console.WriteLine("clear " + clear);
             red = values[1];
-            //Console.WriteLine("red " + red);
             green = values[2];
-            //Console.WriteLine("green " + green);
             blue = values[3];
-            //Console.WriteLine("blue " + blue);
-            
             
             return Tuple.Create(clear, red, green, blue);
         }
-
 
         public bool CardCheck(SerialPort serialPort)
         {
@@ -162,11 +152,8 @@ namespace Maintenance_mode
             return Convert.ToBoolean(Convert.ToInt32(cardinserted));
         }
 
-
-
         public int CardIDRead(SerialPort serialPort)
         {
-
             String command = "u";
             serialPort.WriteLine(command);
             string cardID = ReadData(serialPort);
@@ -192,8 +179,5 @@ namespace Maintenance_mode
 
             return Tuple.Create(CardIn, UserNo, Dist, Button);
         }
-
-
-
     }
 }

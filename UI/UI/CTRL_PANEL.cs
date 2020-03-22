@@ -46,13 +46,13 @@ namespace UI
             this.Location = Screen.AllScreens[0].WorkingArea.Location;
         }
 
-        private void cb_cardread_CheckedChanged(object sender, EventArgs e)
+        private void cb_cardread_CheckedChanged(object sender, EventArgs e) //Check if card reader detector is selected in crtl_panel
         {
             card_reader = cb_cardread.Checked;
 
             if (maintenance)
             {
-                if (!card_reader && !presence_detected)
+                if (!card_reader && !presence_detected) //Advertise selected
                 {
                     advertising.Show();
                     main_menu.Hide();
@@ -61,21 +61,21 @@ namespace UI
 
            
                 }
-                else if (card_reader && !presence_detected)
+                else if (card_reader && !presence_detected) //Welcome selected
                 {
                     off.Show();
                     advertising.Hide();
                     main_menu.Hide();
                     warning.Hide();
                 }
-                else if (card_reader && !presence_detected)
+                else if (card_reader && !presence_detected) //Warning selected
                 {
                     warning.Show();
                     off.Hide();
                     main_menu.Hide();
                     advertising.Hide();
                 }
-                else
+                else //Main menu selected
                 {
                     main_menu.Show();
                     advertising.Hide();
@@ -85,34 +85,34 @@ namespace UI
             }
         }
 
-        private void cb_presence_CheckedChanged(object sender, EventArgs e)
+        private void cb_presence_CheckedChanged(object sender, EventArgs e) //Check if persence is selected
         {
             presence_detected = cb_presence.Checked;
 
             if (maintenance)
             {
-                if (!card_reader && presence_detected)
+                if (!card_reader && presence_detected) //Advertise selected
                 {
                     off.Show();
                     advertising.Hide();
                     main_menu.Hide();
                     warning.Hide();
                 }
-                else if (!card_reader && !presence_detected)
+                else if (!card_reader && !presence_detected) //Welcome selected
                 {
                     advertising.Show();
                     main_menu.Hide();
                     warning.Hide();
                     off.Hide();
                 }
-                else if (card_reader && !presence_detected)
+                else if (card_reader && !presence_detected) //Warning selected
                 {
                     warning.Show();
                     off.Hide();
                     main_menu.Hide();
                     advertising.Hide();
                 }
-                else
+                else//Main menu selected
                 {
                     main_menu.Show();
                     advertising.Hide();
@@ -122,6 +122,7 @@ namespace UI
             }
         }
 
+        //Check witch color is selected in control panel
         private void green_CheckedChanged(object sender, EventArgs e)
         {
             if (green.Checked == true)
@@ -156,25 +157,6 @@ namespace UI
 
         private void color_sensor_Enter(object sender, EventArgs e) {}
 
-        public bool get_cardreader()
-        {
-            return card_reader;
-        }
-
-        public bool get_presence()
-        {
-            return presence_detected;
-        }
-
-        public int get_color()
-        {
-            if (green.Checked)  return GREEN;
-            if (blue.Checked)   return BLUE;
-            if (purple.Checked) return PURPLE;
-            if (red.Checked)    return RED;
-            else return NO_COLOR;
-        }
-
         public void set_maintenance(bool maintenance)
         {
             this.maintenance = maintenance;
@@ -185,7 +167,7 @@ namespace UI
             return maintenance;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Log off button
         {
             maintenance = false;
             main_menu.set_maintenance(maintenance);

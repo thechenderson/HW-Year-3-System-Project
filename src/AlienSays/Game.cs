@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Media;
 using System.IO;
-//using System.Speech.Synthesis;
 
 namespace AlienSays
 {
@@ -20,7 +19,6 @@ namespace AlienSays
         const int EXIT = 2;
         const int FR = 3;
         const int ENG = 4;
-
 
         bool inGame = false;
         bool french = false;
@@ -75,7 +73,6 @@ namespace AlienSays
          */
         private void readHighScoreFiles(List<int> highScoreList, List<string> highScoreNames)
         {
-
             int fileReadToInt;
 
             var readScoresStream = new FileStream(@"..\..\..\..\src\AlienSays\Resources\highScoresValue.txt", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
@@ -84,11 +81,8 @@ namespace AlienSays
             var readScores = new System.IO.StreamReader(readScoresStream);
             var readNames = new System.IO.StreamReader(readNamesStream);
 
-
             string scoreLineRead;
             string nameLineRead;
-
-
 
             for (int i = 0; i <= highScores.Count(); i++) //For each item in the high scores array (5 items) populate with high scores from the text file on game start
             {
@@ -97,9 +91,6 @@ namespace AlienSays
                     Int32.TryParse(scoreLineRead, out fileReadToInt);
                     highScores.Add(fileReadToInt); //Populate the scores array
                 }
-
-
-
                 while ((nameLineRead = readNames.ReadLine()) != null) //While there is still a line in the names file
                 {
                     highScoreNames.Add(nameLineRead); //Populate the names array
@@ -117,7 +108,6 @@ namespace AlienSays
             name3Label.Text = highScoreNames[2];
             name4Label.Text = highScoreNames[3];
             name5Label.Text = highScoreNames[4];
-
         }
 
         /*
@@ -227,10 +217,8 @@ namespace AlienSays
             }
 
         }
-
         private void yellowButton_Click(object sender, EventArgs e)
         {
-
             if (gameInProgress == false || userGuess.Count == colourList.Count)
             {
                 return;
@@ -244,19 +232,14 @@ namespace AlienSays
                 yellowButton.BackgroundImage = Properties.Resources.yellowButtonOff;
                 yellowButton.Update();
                 Thread.Sleep(100);
-
             }
             if (userGuess.Count == colourList.Count)
             {
                 checkCorrect();
             }
-
-
         }
-
         private void greenButton_Click(object sender, EventArgs e)
         {
-
             if (gameInProgress == false || userGuess.Count == colourList.Count)
             {
                 return;
@@ -270,18 +253,14 @@ namespace AlienSays
                 greenButton.BackgroundImage = Properties.Resources.greenButtonOff;
                 greenButton.Update();
                 Thread.Sleep(100);
-
             }
             if (userGuess.Count == colourList.Count)
             {
                 checkCorrect();
             }
-
         }
-
         private void blueButton_Click(object sender, EventArgs e)
         {
-
             if (gameInProgress == false || userGuess.Count == colourList.Count)
             {
                 return;
@@ -299,9 +278,7 @@ namespace AlienSays
             if(userGuess.Count == colourList.Count)
             {
                 checkCorrect();
-            }
-            
-
+            }          
         }
         //Button Presses End --------------------------------------------------------------------------------------------------------
 
@@ -310,17 +287,12 @@ namespace AlienSays
          */
         private void updateHighScores(List<int> scoreList, List<string> nameList, int currentScore)
         {
-
             for (int i = 0; i <= 4; i++)
             {
                 if (currentScore > scoreList[i])
                 {
-
                     scoreList.Insert(i, currentScore - 1);
                     nameList.Insert(i, currentUserName);
-
-
-
 
                     score1Label.Text = highScores[0].ToString();
                     score2Label.Text = highScores[1].ToString();
@@ -366,17 +338,13 @@ namespace AlienSays
             writeScores.Close();
             writeNames.Close();
         }
-
         private void exit_button_Click(object sender, EventArgs e)
         {
-
             writeTextFiles();
 
             inGame = false; //No longer in the game
-            this.Hide(); //Hide current form
-            
+            this.Hide(); //Hide current form           
         }
-
         public void white_click()
         {
             switch (selected_button)
@@ -441,7 +409,6 @@ namespace AlienSays
         {
             redButton.PerformClick();
         }
-
         private void fr_button_Click(object sender, EventArgs e)
         {
             french = true;
@@ -456,7 +423,6 @@ namespace AlienSays
             label1.Text = "Alien à dit...";
             
         }
-
         private void eng_buttton_Click(object sender, EventArgs e)
         {
             french = false;
@@ -470,10 +436,8 @@ namespace AlienSays
             nameLabel.Text = "NAME";
             label1.Text = "Alien says...";
         }
-
         public void set_french(bool french)
         {
-
             if (french)
             {
                 this.french = true;
@@ -505,7 +469,6 @@ namespace AlienSays
         {
             return french;
         }
-
         public void setUserID(string user_id)
         {
             currentUserName = user_id;

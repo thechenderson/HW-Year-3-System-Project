@@ -37,15 +37,13 @@ namespace UI
             this.Size = new Size(w, h);
         }
 
-       
-
-        private void backtomm_Click(object sender, EventArgs e)
+        private void backtomm_Click(object sender, EventArgs e) //Back to main menu
         {
             this.Hide();
             inTranslation = false;
         }
 
-        private void sentence1_Click(object sender, EventArgs e)
+        private void sentence1_Click(object sender, EventArgs e)//play sentence 1 w.r.t. the language
         {
             if(!fr)
             {
@@ -57,7 +55,7 @@ namespace UI
             synthesizer.Speak(Translate_sentence.Text);       
         }
 
-        private void sentence2_Click(object sender, EventArgs e)
+        private void sentence2_Click(object sender, EventArgs e)//play sentence 2 w.r.t. the language
         {
             if (!fr)
             {
@@ -70,7 +68,7 @@ namespace UI
             synthesizer.Speak(Translate_sentence.Text);      
         }
 
-        private void sentence3_Click(object sender, EventArgs e)
+        private void sentence3_Click(object sender, EventArgs e)//play sentence 3 w.r.t. the language
         {
             if (!fr)
             {
@@ -83,7 +81,7 @@ namespace UI
             synthesizer.Speak(Translate_sentence.Text);      
         }
 
-        private void sentence4_Click(object sender, EventArgs e)
+        private void sentence4_Click(object sender, EventArgs e)//play sentence 4 w.r.t. the language
         {
             if (!fr)
             {
@@ -130,7 +128,7 @@ namespace UI
             this.inTranslation = inTranslation;
         }
 
-        public void white_click()
+        public void white_click() //perform white click w.r.t the actual selected item
         {
             switch (selected_button)
             {
@@ -146,7 +144,7 @@ namespace UI
             }
         }
 
-        public void black_click()
+        public void black_click()//perform black click w.r.t the actual selected item
         {
             selected_button += 1;
             switch (selected_button)
@@ -186,7 +184,7 @@ namespace UI
         {
             sentence1.PerformClick();
         }
-        public void set_french(bool french)
+        public void set_french(bool french) //change the language of the Translation mode
         {
             fr = french;
             if (fr)

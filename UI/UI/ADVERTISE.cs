@@ -18,6 +18,7 @@ namespace UI
         int PURPLE = 2;
         int BLUE = 3;
 
+        //Declaration of variables used in advertise
         int color_num;
 
         public ADVERTISE(int Scr)

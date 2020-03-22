@@ -26,6 +26,7 @@ namespace UI
         bool helpOpen = false;
         int selected_button = 1;
 
+        /*Declaration of the attached class for the control*/
         TRANSLATION translation;
         alienSaysForm aliensays;
         MAINT_MODE maint_mode;
@@ -69,38 +70,25 @@ namespace UI
             else button_maintMode.Hide();
         }
 
-        private void translate_button_Click(object sender, EventArgs e)
+        private void translate_button_Click(object sender, EventArgs e) //choose translate mode
         {
             translation.Show();
             translation.set_inTranslation(true);
         }
 
-        private void button_game1_Click(object sender, EventArgs e)
+        private void button_game1_Click(object sender, EventArgs e) //choose game mode
         {
             aliensays.Show();
             aliensays.set_inGame(true);
             translation.set_inTranslation(false);
         }
 
-        private void button_maintMode_Click(object sender, EventArgs e)
+        private void button_maintMode_Click(object sender, EventArgs e) //enter the main mode
         {
             maint_mode.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void blue_click()
-        {
-
-        }
-        public void green_click()
-        {
-
-        }
-        public void white_click()
+        public void white_click() //perform the withe click w.r.t the actual state
         {
             switch (selected_button)
             {
@@ -120,7 +108,7 @@ namespace UI
 
             }
         }
-        public void black_click()
+        public void black_click() //perform the black click w.r.t the actual state
         {
             selected_button += 1;
             switch (selected_button)
@@ -146,10 +134,9 @@ namespace UI
                     translate_button.FlatAppearance.BorderSize = 5;
                     selected_button = TRANSLATE;
                     break;
-            }
-          
+            }       
         }
-        public void yellow_click()
+        public void yellow_click() //perform the yellow click w.r.t the actual state
         {
             if (helpOpen)
             {
@@ -161,19 +148,6 @@ namespace UI
                 help.Show();
                 helpOpen = true;
             }
-        }
-        public void red_click()
-        {
-
-        }
-
-        private void set_selected(Button button)
-        {
-            button.BackColor = Color.Black;
-        }
-        private void unset_selected(Button button)
-        {
-            button.BackColor = Color.DeepSkyBlue;
         }
 
         public void set_french(bool french)
@@ -187,8 +161,6 @@ namespace UI
             return french;
         }
         
-
-
         public void set_userid(string userID)
         {
             nameLabel.Text = userID;

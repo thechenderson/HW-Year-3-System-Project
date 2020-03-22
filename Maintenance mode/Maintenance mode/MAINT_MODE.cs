@@ -15,7 +15,7 @@ namespace Maintenance_mode
 {
     public partial class MAINT_MODE : Form
     {
-        //Constants
+        //Constants for maint mode
         const int OK = 0;
         const int FORMAT_ERROR = -1;
         const int COM_BAUD = 115200;
@@ -26,7 +26,6 @@ namespace Maintenance_mode
         //Variables
         int global_error;
         bool initialised = false;
-
         int R = 0, G = 0, B = 0;
 
         public MAINT_MODE(Functions func)
@@ -42,7 +41,7 @@ namespace Maintenance_mode
             {
                 cbPort.Items.Add(s);
             }
-            //cbPort.SelectedIndex = 0;
+
             serialPort1.BaudRate = COM_BAUD;
             global_error = OK;
             Thread.Sleep(2000);
@@ -78,12 +77,10 @@ namespace Maintenance_mode
             {
                 tbDisplay.AppendText("Error: Check the Servo" + Environment.NewLine);
             }
-
         }
 
         private void btnServoRead_Click(object sender, EventArgs e)
         {
-
             tbDisplay.AppendText("Reading reply: " + Environment.NewLine);
 
             string data = function.ServoRead(serialPort1);//Getting the status from the MBED
@@ -107,7 +104,6 @@ namespace Maintenance_mode
 
         private void btnReadColour_Click(object sender, EventArgs e)
         {
-
             tbDisplay.AppendText("Getting Colours" + Environment.NewLine);
 
             var Colours = function.GetColour(serialPort1);//Using the GetColour function to get the colours in a Tuple from the MBED
@@ -126,7 +122,7 @@ namespace Maintenance_mode
                 B = Convert.ToInt32(blue) * RGB_CONST / C;
             }
 
-            int status = 0;// function.CheckConnect(serialPort1);//Getting the status
+            int status = 0; //Getting the status
 
             if (status == 0)//If there was no errors
             {
@@ -145,18 +141,13 @@ namespace Maintenance_mode
             }
         }
 
-
-
-
         private void btncheckCard_Click(object sender, EventArgs e)
         {
-
             tbDisplay.AppendText("Checking card is inserted..." + Environment.NewLine);
 
             var CheckCard = function.CardCheck(serialPort1);
 
-            int status = 0;// function.CheckConnect(serialPort1);//Getting the status
-
+            int status = 0;//Getting the status
 
             if (status == 0)//If there was no errors
             {
@@ -166,8 +157,6 @@ namespace Maintenance_mode
             {
                 tbDisplay.AppendText("Error reading the card");
             }
-
-
         }
 
         private void btnButtonRead_Click(object sender, EventArgs e)
@@ -218,8 +207,7 @@ namespace Maintenance_mode
 
             var CardValue = function.CardIDRead(serialPort1);
 
-            int status = 0;// function.CheckConnect(serialPort1);//Getting the status
-
+            int status = 0;//Getting the status
 
             if (status == 0)//If there was no errors
             {
@@ -229,17 +217,11 @@ namespace Maintenance_mode
             {
                 tbDisplay.AppendText("Error reading the card ID");
             }
-
         }
-
-
-
 
         public bool get_initialised()
         {
             return initialised;
-        }
-
-       
+        } 
     }
 }
